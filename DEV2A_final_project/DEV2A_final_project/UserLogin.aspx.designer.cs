@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Dev2A_Finalproject
+namespace DEV2A_final_project
 {
 
 
