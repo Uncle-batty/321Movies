@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserLogin.aspx.cs" Inherits="DEV2A_final_project.UserLogin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserSignIn.aspx.cs" Inherits="DEV2A_final_project.UserSignIn" %>
 
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -49,77 +49,46 @@
 <form runat="server">
 <div class="login-wrap">
 	<div class="login-html">
-		<h2 class="heroForm" style="color: white; margin-bottom: 50px; justify-items:center; ">Welcome to 321 Movies</h2>
-		<!-- ======= Tab Headings ======= -->
-		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Personal Info</label>
-		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Payment info</label>
-
+		<h2 class="heroForm" style="color: white; margin-bottom: 50px; justify-items:center; ">Welcome to 321 Movies</h2> 
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Admin</label>
 		<div class="login-form">
 			<div class="sign-in-htm">
 				<div class="group">
-					<label for="user" class="label">First Name(s)</label>
-					<asp:TextBox id="tb_Fname" runat="server" type="text" class="input" />
+					<label for="user" class="label">Username</label>
+					<asp:TextBox id="tb_UserName" runat="server" type="text" class="input"/>
 				</div>
-				<div class="group">
-					<label for="user" class="label">Last Name</label>
-					<asp:TextBox id="tb_Lname" runat="server" type="text" class="input"/>
-				</div>
-				<div class="group">
-					<label for="user" class="label">Date Of Birth</label>
-					<asp:TextBox id="TextBox1" runat="server" type="date" class="input" />
-				</div>
-
-				<div class="group">
-					<label for="user" class="label">Email Address</label>
-					<asp:TextBox id="tb_Email" runat="server" type="text" class="input"/>
-				</div>
-
 				<div class="group">
 					<label for="pass" class="label">Password</label>
 					<asp:TextBox id="tb_UserPassword" runat="server" class="input" data-type="password"/>
 				</div>
 				<div class="group">
-					<label for="pass" class="label"> Re-Enter Password</label>
-					<asp:TextBox id="tb_UserPassword2" runat="server" class="input" data-type="password"/>
+					<asp:Button id="btn_UserSignIn" runat="server" class="button" Text="Sign In"/>
 				</div>
-				<div class="group">
-					<asp:Button id="btn_PersonalInfoSubmit" runat="server" class="button" Text="Next >"/>
+				<div class="foot-lnk">
+					<a href="UserLogin.aspx">Create an account</a>
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
-					<a href="UserSignIn.aspx">Already a member?</a>
+					<a href="#forgot">Forgot Password?</a>
 				</div>
 			</div>
 			<div class="sign-up-htm">
 				<div class="group">
-					<label for="user" class="Subscription Level"></label>
-					<div class="drop-down-container">
-					<asp:DropDownList runat="server" ID="dd_Pricing" class="drop-down">
-						<asp:ListItem value="Free" Text="Free" ></asp:ListItem> 
-						<asp:ListItem value="Standard" Text="Sandard" ></asp:ListItem>
-						<asp:ListItem value="Premium" Text="Premium" ></asp:ListItem>
-					</asp:DropDownList>
-					</div>
+					<label for="user" class="label">Username</label>
+					<asp:TextBox class="input" runat="server" id="tb_AdminUsername" />
 				</div>
 				<div class="group">
-					<label for="pass" class="label">Card Number</label>
-					<asp:TextBox id="tb_AdminPassword" runat="server" type="password" class="input" />
+					<label for="pass" class="label">Password</label>
+					<asp:TextBox id="tb_AdminPassword" runat="server" type="password" class="input" data-type="password" />
 				</div>
 				<div class="group">
-					<label for="pass" class="label">Expirery date</label>
-					<asp:TextBox id="tb_expDate" runat="server" type="password" class="input" />
+					<asp:Button runat="server" class="button" Text="Sign In"/>
 				</div>
-				<div class="group">
-					<label for="pass" class="label">CVV</label>
-					<asp:TextBox id="tb_CVV" runat="server" type="password" class="input" />
-				</div>
-				<div class="group">
-					<asp:Button ID="btn_CompleteLogin" runat="server" class="button" Text="Complete"/>
-				</div>
-				<div class="hr"></div>
+<%--				<div class="hr"></div>
 				<div class="foot-lnk">
-					<a href="UserLogin.aspx">Skip This step ></a>
-				</div>
+					<label for="tab-1">Already Member?</a>
+				</div>--%>
 			</div>
 		</div>		
 	</div>

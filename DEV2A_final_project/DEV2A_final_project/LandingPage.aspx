@@ -1,31 +1,34 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LandingPage.aspx.cs" Inherits="DEV2A_final_project.LandingPage" %>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ 
+<head runat="server">
+    
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Day Bootstrap Template - Index</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>321 Movies</title>
+  <meta content="" name="description"/>
+  <meta content="" name="keywords"/>
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/favicon.png" rel="icon"/>
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"/>
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet"/>
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet"/>
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"/>
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"/>
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet"/>
 
   <!-- =======================================================
   * Template Name: Day
@@ -38,22 +41,6 @@
 
 <body>
 
-  <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="d-flex align-items-center">
-    <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope-fill"></i><a ">contact@321movies.com</a>
-        <i class="bi bi-phone-fill phone-icon"></i> +27 65 321 000
-      </div>
-      <div class="social-links d-none d-md-block">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-      </div>
-    </div>
-  </section>
-
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
@@ -61,22 +48,20 @@
       <h1 class="logo"><a href="index.html">321 Movies</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-
-
     </div>
   </header><!-- End Header -->
 
 
-  </div>
   
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+      <form id="heroForm" runat="server">
       <h1>Welcome to 321 Movies</h1>
       <h2>This is the Template for the DEV project</h2>
-      <a href="#about" class="btn-get-started scrollto">Login in</a>
-      <a class="btn-get-started scrollto">Sign in</a>
+      <asp:Button ID="Login" Text ="Login"  class="btn-get-started" OnClick ="btn_UserLogin" runat="server" />
+      <asp:Button ID="Signin" Text ="Sign In" class="btn-get-started" OnClick ="btn_UserSignIn" runat="server" />
+          </form>
     </div>
   </section><!-- End Hero -->
 
@@ -99,7 +84,7 @@
                 Movies such as:
             </p>
             <ul>
-              <li><i class="bi bi-check-circle"></i> Award winners hollywood bangers.</li>
+              <li><i class="bi bi-check-circle"></i> Award winnering hollywood bangers.</li>
               <li><i class="bi bi-check-circle"></i> Family friendly movies that the whole family can enjoy.</li>
               <li><i class="bi bi-check-circle"></i> Romance flicks to keep your heart warm during winter:)</li>
             </ul>
@@ -123,27 +108,27 @@
           <div class="row d-flex align-items-center">
 
               <div class="col-lg-2 col-md-4 col-6">
-                  <img src="assets/img/clients/dc-comics.png" class="img-fluid" alt="">
+                  <img src="assets/img/clients/dc-comics.png" class="img-fluid" alt=""/>
               </div>
 
               <div class="col-lg-2 col-md-4 col-6">
-                  <img src="assets/img/clients/universal studios.png" class="img-fluid" alt="">
+                  <img src="assets/img/clients/universal studios.png" class="img-fluid" alt=""/>
               </div>
 
               <div class="col-lg-2 col-md-4 col-6">
-                  <img src="assets/img/clients/DreamWorks.png" class="img-fluid" alt="">
+                  <img src="assets/img/clients/DreamWorks.png" class="img-fluid" alt=""/>
               </div>
 
               <div class="col-lg-2 col-md-4 col-6">
-                  <img src="assets/img/clients/lucasfilm.png" class="img-fluid" alt="">
+                  <img src="assets/img/clients/lucasfilm.png" class="img-fluid" alt=""/>
               </div>
 
               <div class="col-lg-2 col-md-4 col-6">
-                  <img src="assets/img/clients/warner-bros.png" class="img-fluid" alt="">
+                  <img src="assets/img/clients/warner-bros.png" class="img-fluid" alt=""/>
               </div>
 
               <div class="col-lg-2 col-md-4 col-6">
-                  <img src="assets/img/clients/Marvel.png" class="img-fluid" alt="">
+                  <img src="assets/img/clients/Marvel.png" class="img-fluid" alt=""/>
               </div>
 
 
@@ -298,7 +283,7 @@
   
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">
               <div class="member">
-                <img src="assets/img/team/team-3.jpg" alt="">
+                <img src="assets/img/team/team-3.jpg" alt=""/>
                 <h4>Edwin Malaji</h4>
                 <span>Databse Designer</span>
                 <div class="social">
@@ -324,13 +309,13 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="footer-info">
-              <h3>Day</h3>
+              <h3>321 Movies</h3>
               <p>
-                Kingsway Avenue Auckland Park Johannesburg <br>
-                Johnannesburg, Gauteng <br>
-                South Africa <br><br>
-                <strong>Phone:</strong> +27 65 321 0000<br>
-                <strong>Email:</strong> contact@321movies.com<br>
+                Kingsway Avenue Auckland Park Johannesburg <br/>
+                Johnannesburg, Gauteng <br/>
+                South Africa <br/><br/>
+                <strong>Phone:</strong> +27 65 321 0000<br/>
+                <strong>Email:</strong> contact@321movies.com<br/>
               </p>
               <div class="social-links mt-3">
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>

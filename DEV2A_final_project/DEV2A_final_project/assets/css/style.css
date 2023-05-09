@@ -454,23 +454,24 @@ h6 {
   font-size: 24px;
 }
 
-#hero .btn-get-started {
-  font-family: "Raleway", sans-serif;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  display: inline-block;
-  padding: 10px 28px;
-  transition: 0.5s;
-  border: 2px solid #fff;
-  color: #fff;
-}
+    #hero .btn-get-started {
+        font-family: "Raleway", sans-serif;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        display: inline-block;
+        padding: 10px 28px;
+        transition: 0.5s;
+        border: 2px solid white;
+        color: white;
+        background-color: transparent;
+    }
 
-#hero .btn-get-started:hover {
-  background: #006600;
-  border-color: #006600;
-}
+        #hero .btn-get-started:hover {
+            background: #006600;
+            border: #006600;
+        }
 
 @media (min-width: 1024px) {
   #hero {
@@ -1016,6 +1017,25 @@ section {
   text-align: center;
 }
 
+.btn-Login {
+    background: #006600;
+    display: inline-block;
+    padding: 10px 40px;
+    color: #fff;
+    transition: none;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    transition: 0.3s;
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    justify-content:center;
+    justify-items: center;
+    justify-self: center;
+}
+
 .pricing .box .btn-buy {
   background: #006600;
   display: inline-block;
@@ -1027,6 +1047,9 @@ section {
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   transition: 0.3s;
+  align-content: center;
+  align-self: center;
+  align-items: center;
 }
 
 .pricing .box .btn-buy:hover {
@@ -1432,3 +1455,392 @@ section {
     margin: -20px 0 30px 0;
   }
 }
+
+/*This is the css of the login page*/
+
+.sign-in-body {
+    margin: 0;
+    color: #b3b3b3;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: radial-gradient(circle, #1f1d17, transparent ), url("../img/Movies.jpg");
+    background-repeat: no-repeat;
+    position: relative;
+    font: 600 16px/18px 'Open Sans',sans-serif;
+}
+
+*, :after, :before {
+    box-sizing: border-box
+}
+
+.clearfix:after, .clearfix:before {
+    content: '';
+    display: table
+}
+
+.clearfix:after {
+    clear: both;
+    display: block
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+.login-wrap {
+    width: 100%;
+    margin: auto;
+    margin-top: 50px;
+    max-width: 525px;
+    min-height: 670px;
+    position: relative;
+    background-color: rgba(25, 25, 25, 0.95);
+    background: no-repeat center;
+}
+
+.login-html {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 90px 70px 50px 70px;
+    background: rgba(25, 25, 25, 0.95);
+    
+}
+
+    .login-html .sign-in-htm,
+    .login-html .sign-up-htm {
+        overflow: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+        transition: all .4s linear;
+    }
+
+    .login-html .sign-in,
+    .login-html .sign-up,
+    .login-form .group .check {
+        display: none;
+    }
+
+    .login-html .tab,
+    .login-form .group .label,
+    .login-form .group .button {
+        text-transform: uppercase;
+    }
+
+    .login-html .tab {
+        font-size: 22px;
+        margin-right: 15px;
+        padding-bottom: 5px;
+        margin: 0 15px 10px 0;
+        display: inline-block;
+        border-bottom: 2px solid transparent;
+    }
+
+    .login-html .sign-in:checked + .tab,
+    .login-html .sign-up:checked + .tab {
+        color: #fff;
+        border-color: #006600;
+    }
+
+.login-form {
+    min-height: 345px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+    .login-form .group {
+        margin-bottom: 15px;
+    }
+
+        .login-form .group .label,
+        .login-form .group .input,
+        .login-form .group .button {
+            width: 100%;
+            color: #fff;
+            display: block;
+        }
+
+        .login-form .group .input {
+            border: none;
+            padding: 15px 20px;
+            background: rgba(255,255,255,.1);
+        }
+
+        .login-form .group input[data-type="password"] {
+            text-security: circle;
+            -webkit-text-security: circle;
+        }
+
+        .login-form .group .label {
+            color: #aaa;
+            font-size: 12px;
+        }
+
+        .login-form .group .button {
+            font-family: "Raleway", sans-serif;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            padding: 10px 28px;
+            transition: 0.5s;
+            border: 2px solid white;
+            color: white;
+
+            background-color: transparent;
+        }
+
+            .login-form .group .button:hover {
+                background-color: #006600;
+                border: 2px solid;
+                border-color: #006600;
+            }
+
+        .login-form .group label .icon {
+            width: 15px;
+            height: 15px;
+            border-radius: 2px;
+            position: relative;
+            display: inline-block;
+            background: rgba(255,255,255,.1);
+        }
+
+            .login-form .group label .icon:before,
+            .login-form .group label .icon:after {
+                content: '';
+                width: 10px;
+                height: 2px;
+                background: #fff;
+                position: absolute;
+                transition: all .2s ease-in-out 0s;
+            }
+
+            .login-form .group label .icon:before {
+                left: 3px;
+                width: 5px;
+                bottom: 6px;
+                transform: scale(0) rotate(0);
+            }
+
+            .login-form .group label .icon:after {
+                top: 6px;
+                right: 0;
+                transform: scale(0) rotate(0);
+            }
+
+        .login-form .group .check:checked + label {
+            color: #fff;
+        }
+
+            .login-form .group .check:checked + label .icon {
+                background: #1161ee;
+            }
+
+                .login-form .group .check:checked + label .icon:before {
+                    transform: scale(1) rotate(45deg);
+                }
+
+                .login-form .group .check:checked + label .icon:after {
+                    transform: scale(1) rotate(-45deg);
+                }
+
+.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm {
+    transform: rotate(0);
+}
+
+.login-html .sign-up:checked + .tab + .login-form .sign-up-htm {
+    transform: rotate(0);
+}
+
+.hr {
+    height: 2px;
+    margin: 60px 0 50px 0;
+    background: rgba(255,255,255,.2);
+}
+
+.foot-lnk {
+    text-align: center;
+}
+
+.drop-down-container {
+    position: relative;
+    display: inline-block;
+}
+
+.drop-down {
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    display: block;
+    padding: 10px 28px;
+    transition: 0.5s;
+    border: 2px solid white;
+    color: white;
+    background-color: transparent;
+    width: 100%;
+}
+
+    .drop-down:hover {
+        background-color: #006600;
+        border: 2px solid;
+        border-color: #006600;
+        cursor: pointer;
+        display: block;
+
+    }
+
+.drop-down option {
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    padding: 10px 28px;
+    transition: 0.5s;
+    border: 2px solid white;
+    color: white;
+    background-color: transparent;
+    width: 100%;
+}
+
+        .drop-down option:hover{
+            background-color: #006600;
+            border: 2px solid;
+            border-color: #006600;
+            cursor: pointer;
+        }
+
+
+/*===========Scroll Bar =========*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #006600;
+
+}
+
+/* card styles*/
+.movie-card-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+}
+
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+    min-width: 300px;
+    margin-right: 10px;
+}
+
+    .card img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+    }
+
+.card-content {
+    padding: 10px;
+}
+
+.card-title {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.card-description {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* search bar*/
+.top-bar {
+    background-color: #1a1a1a;
+    color: #fff;
+    height: 60px;
+    padding: 0 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-box form {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input[type="search"] {
+    background-color: #fff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+    width: 300px;
+}
+
+.search-box button[type="submit"] {
+    background-color: #fff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/*===============labels===========*/
+.labels {
+    margin-top: 100px;
+    margin-bottom: 5px;
+    color: white;
+    font-size: 1em; /* adjust the font size as needed */
+    font-weight: bold; /* or adjust the font weight as needed */
+    /* add any other desired styling properties here */
+}
+
+
