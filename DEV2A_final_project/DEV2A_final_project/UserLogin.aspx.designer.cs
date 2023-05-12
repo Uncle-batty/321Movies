@@ -33,13 +33,13 @@ namespace DEV2A_final_project
         protected global::System.Web.UI.WebControls.TextBox tb_Lname;
 
         /// <summary>
-        /// TextBox1 control.
+        /// tb_DOB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox tb_DOB;
 
         /// <summary>
         /// tb_Email control.
@@ -78,6 +78,15 @@ namespace DEV2A_final_project
         protected global::System.Web.UI.WebControls.Button btn_PersonalInfoSubmit;
 
         /// <summary>
+        /// lbl_personalInfoState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_personalInfoState;
+
+        /// <summary>
         /// dd_Pricing control.
         /// </summary>
         /// <remarks>
@@ -87,13 +96,13 @@ namespace DEV2A_final_project
         protected global::System.Web.UI.WebControls.DropDownList dd_Pricing;
 
         /// <summary>
-        /// tb_AdminPassword control.
+        /// tb_CardNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_AdminPassword;
+        protected global::System.Web.UI.WebControls.TextBox tb_CardNumber;
 
         /// <summary>
         /// tb_expDate control.
@@ -121,5 +130,14 @@ namespace DEV2A_final_project
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_CompleteLogin;
+
+        /// <summary>
+        /// lbl_paymentInfoState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_paymentInfoState;
     }
 }
