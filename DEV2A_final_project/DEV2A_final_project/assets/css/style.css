@@ -1751,16 +1751,21 @@ a {
 .card-container {
     display: flex;
     justify-content: space-between;
-    overflow-x: scroll;
+    overflow-x: scroll;   
+    transition: transform 0.2s ease-in-out;
 }
 
+
 .card {
+    margin-top: 20px;
     margin-bottom: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
     overflow: hidden;
     min-width: 300px;
     margin-right: 10px;
+    transition: transform 0.2s ease-in-out;
+    background-color: #4d4d4d;
 }
 
     .card img {
@@ -1777,12 +1782,25 @@ a {
     margin-top: 0;
     margin-bottom: 5px;
     font-size: 18px;
+    color:#fff;
+    
+    opacity: 1;
+    
 }
 
 .card-description {
     margin: 0;
     font-size: 14px;
     line-height: 1.5;
+    color: #fff;
+    opacity: 1;
+}
+.card:hover .card-description {
+    opacity: 0;
+}
+
+.card:hover .card-title {
+    opacity: 0;
 }
 
 /* search bar*/
@@ -1813,19 +1831,20 @@ a {
 }
 
 .search-box input[type="search"] {
-    background-color: #fff;
-    color: #fff;
+    background-color: #595959;
+    color: #595959;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 16px;
     margin-right: 10px;
     width: 300px;
+    
 }
 
 .search-box button[type="submit"] {
-    background-color: #fff;
-    color: #fff;
+    background-color: #595959;
+    color: #595959;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -1842,5 +1861,46 @@ a {
     font-weight: bold; /* or adjust the font weight as needed */
     /* add any other desired styling properties here */
 }
+/*homepage body*/
+.Home_body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #333333;
+}
 
+
+#search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: #1a1a1a;
+    padding: 10px;
+    color: #fff;
+}
+
+    #search-container input[type="text"] {
+        padding: 7px;
+        margin-right: 10px;
+        border: none;
+        font-size: 17px;
+        width: 500px;
+        color: #fff;
+        background-color: #333333;
+    }
+        #search-container input[type="text"]::placeholder {
+            color: #a6a6a6; /* added color for placeholder */
+        }
+
+    #search-container button {
+        padding: 7px;
+        background-color: #006600;
+        color: #cccccc;
+        border: none;
+        font-size: 17px;
+        cursor: pointer;
+    }
+
+        #search-container button:hover {
+            background-color: #3e8e41;
+        }
 

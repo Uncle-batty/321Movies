@@ -38,41 +38,84 @@
   ======================================================== -->
 </head>
 
-<body>
+<body class="Home_body" >
     <header class="top-bar">
   <div class="container">
     <div class="logo">
       <a href="#">321 Movies</a>
     </div>
-    <div class="search-box">
-      <form action="#" method="get">
-        <input type="search" name="q" placeholder="Search..."/>
-        <button type="submit"><i class="fas fa-search"></i></button>
-      </form>
+    <div id="search-container">
+      <input type="text" placeholder="Search...">
+      <button type="submit">Search</button>
     </div>
-  </div>
 </header>
    
 
 
- <div class ="body">
+ <div>
      <div class="labels">
          <asp:Label ID="Label1" runat="server">Comedy</asp:Label> 
      </div>
-     
-    <div class ="card-container" >
+
+     <style>
+
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+         .card-buttons {
+             display: none;
+             position: absolute;
+             bottom: 10px;
+             left: 0;
+             right: 0;
+             text-align: center;
+         }
+
+         .card:hover .card-buttons {
+             display: block;
+         }
+  .card-button {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background-color: #006600;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.card-button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+}
+</style>
+
+<div >
+     <div class ="card-container" >
         
         <asp:Repeater ID="rptCards1" runat="server">
     <ItemTemplate>
         <div class ="card">
             <img class="card img" src="<%# Eval("ImageUrl") %>" />
             <h2 class ="card-title"><%# Eval("Title") %></h2>  
-            <p class ="card-description"><%# Eval("Description") %></p>
-        </div>
+            <p class ="card-description"><%# Eval("Description") %></p>  
+            <div class="card-buttons">
+    <a href="#" class="card-button">More Info</a>
+    <a href="#" class="card-button">Watch</a>
+  </div>
+        </div>        
     </ItemTemplate>
-</asp:Repeater>
-    </div>
+</asp:Repeater>        
  </div>
+    
+</div>
+     
+
+   
 
     <div class="labels">
          <asp:Label ID="Label2" runat="server">Action</asp:Label> 
@@ -84,6 +127,10 @@
             <img class="card img" src="<%# Eval("ImageUrl") %>" />
             <h2 class ="card-title"><%# Eval("Title") %></h2>  
             <p class ="card-description"><%# Eval("Description") %></p>
+            <div class="card-buttons">
+    <a href="#" class="card-button">More Info</a>
+    <a href="#" class="card-button">Watch</a>
+  </div>
         </div>
     </ItemTemplate>
 </asp:Repeater>

@@ -93,6 +93,12 @@
     <Content Include="assets\js\main.js" />
     <Content Include="assets\js\owl.carousel.min.js" />
     <Content Include="assets\js\popper.min.js" />
+    <Content Include="assets\Movies\movie1.jpg" />
+    <Content Include="assets\Movies\movie2.jpg" />
+    <Content Include="assets\Movies\movie3.jpg" />
+    <Content Include="assets\Movies\movie4.jpg" />
+    <Content Include="assets\Movies\movie5.jpg" />
+    <Content Include="assets\Movies\movie6.jpg" />
     <Content Include="assets\scss\Readme.txt" />
     <Content Include="assets\vendor\aos\aos.css" />
     <Content Include="assets\vendor\aos\aos.js" />
@@ -233,9 +239,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="assets\Movies\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
