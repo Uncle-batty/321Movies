@@ -45,7 +45,7 @@
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">321 Movies</a></h1>
+      <h1 class="logo"><a href="LandingPage.aspx">321 Movies</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
     </div>
@@ -59,8 +59,8 @@
       <form id="heroForm" runat="server">
       <h1>Welcome to 321 Movies</h1>
       <h2>This is the Template for the DEV project</h2>
-      <asp:Button ID="Login" Text ="Login"  class="btn-get-started" OnClick ="btn_UserLogin" runat="server" />
-      <asp:Button ID="Signin" Text ="Sign In" class="btn-get-started" OnClick ="btn_UserSignIn" runat="server" />
+      <asp:Button ID="Sign Up" Text ="Login"  class="btn-get-started" OnClick ="btn_UserLogin" runat="server" />
+      <asp:Button ID="Login" Text ="Sign In" class="btn-get-started" OnClick ="btn_UserSignIn" runat="server" />
           </form>
     </div>
   </section><!-- End Hero -->

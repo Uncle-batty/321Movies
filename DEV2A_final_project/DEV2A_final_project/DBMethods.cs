@@ -4,67 +4,49 @@ using System.Linq;
 using System.Web;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Web.Services.Description;
+using System.Diagnostics;
+using System.Net.Mail;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace DEV2A_final_project
 {
     public class DBMethods
     {
         public string connectionString = "Data Source=TADIC;Initial Catalog=Movies321;Integrated Security=True";
-        string userID = "";
+        public static string userID = "";
         public bool addUser(string firstName, string lastName, string email, string password, string userDOB)
         {
             bool registered = false;
-            SqlConnection conn = new SqlConnection(connectionString);
-            string storedProcedure = "userSignUp_st";
-            var userIdGuid = new Guid();
-            Console.WriteLine(userIdGuid.ToString());
-            SqlCommand cmd = new SqlCommand(storedProcedure, conn);
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@UserId", userIdGuid.ToString());
-            cmd.Parameters.AddWithValue("@Fname", firstName);
-            cmd.Parameters.AddWithValue("@Lname", lastName);
-            cmd.Parameters.AddWithValue("@SubId", 1);
-            cmd.Parameters.AddWithValue("@Email", email);
-            cmd.Parameters.AddWithValue("@Password", password);
-            cmd.Parameters.AddWithValue("@User_DOB", userDOB);
-            cmd.Parameters.AddWithValue("@Datelastpaid", DateTime.Now);
-            conn.Open();
-            int execution = cmd.ExecuteNonQuery();
-            if (execution > 0)
-            {
-                registered = true;
-                userID = userIdGuid.ToString();
-            }
-            else
-            {
-                registered = false;
-            }
-            conn.Close();
+            
 
             try
             {
-                //var userIdGuid = new Guid();
-                //Console.WriteLine(userIdGuid.ToString());
-                //SqlCommand cmd = new SqlCommand(storedProcedure, conn);
-                //cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@UserId", userIdGuid.ToString());
-                //cmd.Parameters.AddWithValue("@Fname", firstName);
-                //cmd.Parameters.AddWithValue("@Lname", lastName);
-                //cmd.Parameters.AddWithValue("@Email", email);
-                //cmd.Parameters.AddWithValue("@Password", password);
-                //cmd.Parameters.AddWithValue("@User_DOB", userDOB);
-                //conn.Open();
-                //int execution = cmd.ExecuteNonQuery();
-                //if (execution > 0)
-                //{
-                //    registered = true;
-                //    userID = userIdGuid.ToString();
-                //}
-                //else
-                //{
-                //    registered = false;
-                //}
-                //conn.Close();
+                SqlConnection conn = new SqlConnection(connectionString);
+                string storedProcedure = "userSignUp_st";
+                userID = GenerateUnique4DigitNumber();
+                SqlCommand cmd = new SqlCommand(storedProcedure, conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@UserId", userID);
+                cmd.Parameters.AddWithValue("@Fname", firstName);
+                cmd.Parameters.AddWithValue("@Lname", lastName);
+                cmd.Parameters.AddWithValue("@SubId", 1);
+                cmd.Parameters.AddWithValue("@Email", email);
+                cmd.Parameters.AddWithValue("@Password", password);
+                cmd.Parameters.AddWithValue("@User_DOB", userDOB);
+                cmd.Parameters.AddWithValue("@Datelastpaid", DateTime.Now);
+                conn.Open();
+                int execution = cmd.ExecuteNonQuery();
+                if (execution > 0)
+                {
+                    registered = true;
+                }
+                else
+                {
+                    registered = false;
+                }
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -72,26 +54,27 @@ namespace DEV2A_final_project
             }
             return registered;
         }
-        public bool addUserPayments( string cardNumber, string ExpDate, string CVV, int substriptionlevel)
+        public bool addUserPayments( string cardNumber, string ExpDate, string CVV, int subscriptionLevel)
         {
             bool paymentAdded = false;
             SqlConnection conn = new SqlConnection(connectionString);
             string storedProcedure = "AddUserPayments_st";
-            string commmandText = $"update Users set SubID = {substriptionlevel} where UserId = {userID}";
+            string cmdText = "update Users set SubID = " + 1 + " where UserId = " + userID + "";
+
 
             //Adds Users payment information
-            try 
+            try
             {
-                var guid = new Guid();
+                conn.Open();
                 SqlCommand cmd = new SqlCommand(storedProcedure, conn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@PaymentId", guid.ToString());
+                cmd.Parameters.AddWithValue("@PaymentId", GenerateUnique4DigitNumber());
                 cmd.Parameters.AddWithValue("@cardNumber", cardNumber);
                 cmd.Parameters.AddWithValue("@ExpDate", ExpDate);
                 cmd.Parameters.AddWithValue("@CVV", CVV);
                 cmd.Parameters.AddWithValue("@UserID", userID);
                 int execution = cmd.ExecuteNonQuery();
-                if (execution == 1)
+                if (execution > 0)
                 {
                     paymentAdded = true;
 
@@ -107,15 +90,15 @@ namespace DEV2A_final_project
                 paymentAdded = false;
             }
 
-            //Updates the Users subscription level
-            try 
+            try
             {
-                SqlCommand cmd = new SqlCommand(commmandText, conn);
-                int execution = cmd.ExecuteNonQuery();
-                if (execution == 1)
+                SqlCommand cmdUpdate = new SqlCommand(cmdText, conn);
+                conn.Open();
+                int executionUpdate = cmdUpdate.ExecuteNonQuery();
+
+                if (executionUpdate > 0)
                 {
                     paymentAdded = true;
-
                 }
                 else
                 {
@@ -123,11 +106,11 @@ namespace DEV2A_final_project
                 }
                 conn.Close();
             }
-            catch (Exception ex)
+            catch
             {
-                paymentAdded= false;
-            }
+                paymentAdded = false;
 
+            }
 
             return paymentAdded;
         }
@@ -135,18 +118,18 @@ namespace DEV2A_final_project
         {
             bool userSignedIn = false;
             SqlConnection conn = new SqlConnection(connectionString);
-            string commandText = $"select * from Users where Email = {email} and Password = {password}";           
+            string commandText = $"select * from Users where Email = '{email}' and Password = {password}";
+            SqlDataReader dataReader;
             try
             {
-                SqlDataReader dataReader;
+               
                 using (SqlCommand cmd = new SqlCommand(commandText, conn))
                 {
                     conn.Open();
-                    dataReader = cmd.ExecuteReader();
+                    dataReader = cmd.ExecuteReader();                
                     if (dataReader.Read())
                     {
                         userSignedIn = true;
-                        dataReader.Close();
                     }
                     else
                     {
@@ -160,13 +143,14 @@ namespace DEV2A_final_project
             {
                 userSignedIn=false;
             }  
+
             return userSignedIn;
         }
         public bool adminSignIn(string email, string password)
         {
             bool userSignedIn = false;
             SqlConnection conn = new SqlConnection(connectionString);
-            string commandText = $"select * from Admin where email = {email} and Password = {password}";
+            string commandText = $"select * from Admin where email = '{email}' and Password = {password}";
             try
             {
                 SqlDataReader dataReader;
@@ -176,9 +160,7 @@ namespace DEV2A_final_project
                     dataReader = cmd.ExecuteReader();
                     if (dataReader.Read())
                     {
-                        userSignedIn = true;
-                        dataReader.Close();
-                    }
+                        userSignedIn = true;                    }
                     else
                     {
                         userSignedIn = false;
@@ -193,5 +175,66 @@ namespace DEV2A_final_project
             }
             return userSignedIn;
         }
+
+        public static string GenerateUnique4DigitNumber()
+        {
+            Random rand = new Random();
+            string number = rand.Next(1000, 10000).ToString();
+
+            // Check if the number has already been used
+            while (IsNumberUsed(number))
+            {
+                number = rand.Next(1000, 10000).ToString();
+            }
+
+            // Save the number as used
+            SaveNumber(number);
+
+            return number;
+        }
+
+        private static bool IsNumberUsed(string number)
+        {
+            // Implement your own logic here to check if the number has already been used
+            // This could involve checking a database or file to see if the number exists
+            // You could also store the used numbers in a HashSet or other data structure
+            // In this example, we'll always return false to simulate a new number being generated every time
+            return false;
+        }
+
+        private static void SaveNumber(string number)
+        {
+            // Implement your own logic here to save the number as used
+            // This could involve writing the number to a database or file, or adding it to a HashSet or other data structure
+            // In this example, we'll just write the number to the console to simulate saving it
+            Console.WriteLine($"Saving number {number}");
+        }
+
+        public static bool validEmail(string email)
+        {
+            var valid = true;
+
+            try
+            {
+                var emailAddress = new MailAddress(email);
+            }
+            catch
+            {
+                valid = false;
+            }
+            return valid;
+        }
+
+        public static string encrypt(string password)
+        {
+            using (MD5CryptoServiceProvider mD5 = new MD5CryptoServiceProvider())
+            {
+                UTF8Encoding uTF8 = new UTF8Encoding();
+                byte[] data = mD5.ComputeHash(uTF8.GetBytes(password));
+                return Convert.ToBase64String(data);
+            }
+        }
+
+
     }
 }

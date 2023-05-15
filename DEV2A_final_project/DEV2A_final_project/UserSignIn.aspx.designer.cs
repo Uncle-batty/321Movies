@@ -15,13 +15,13 @@ namespace DEV2A_final_project
     {
 
         /// <summary>
-        /// tb_UserName control.
+        /// tb_UserEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_UserName;
+        protected global::System.Web.UI.WebControls.TextBox tb_UserEmail;
 
         /// <summary>
         /// tb_UserPassword control.
@@ -58,5 +58,23 @@ namespace DEV2A_final_project
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_AdminPassword;
+
+        /// <summary>
+        /// btn_AdminSignIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_AdminSignIn;
+
+        /// <summary>
+        /// lbl_SignInState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_SignInState;
     }
 }

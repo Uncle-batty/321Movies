@@ -40,14 +40,14 @@ namespace DEV2A_final_project
 
             bool state = newUser.addUser(FirstName, LastName, Email, Password, DateOfBirth);
             if (state)
-            {               
+            {
                 lbl_personalInfoState.ForeColor = System.Drawing.Color.Green;
-                lbl_personalInfoState.Text = "Registration Successful";
+                lbl_personalInfoState.Text = "Registeration successful";
             }
             else
             {               
                 lbl_personalInfoState.ForeColor = System.Drawing.Color.Red;
-                lbl_personalInfoState.Text = DateOfBirth ;
+                lbl_personalInfoState.Text = "Registeration failed";
             }
 
 
@@ -57,23 +57,22 @@ namespace DEV2A_final_project
         {
             //validaters 
             DBMethods newUserPayments = new DBMethods();
-            subsriptionLevel = Convert.ToInt32(dd_Pricing.SelectedValue);
-            Debug.WriteLine(subsriptionLevel);
-            if (subsriptionLevel != 1 || subsriptionLevel != 2 || subsriptionLevel != 3)
-            {
-                return;
-            }
+            //subsriptionLevel = Convert.ToInt32(dd_Pricing.SelectedValue);
+            
+            
             
 
             cardNumber = tb_CardNumber.Text;
             ExpiryDate = tb_expDate.Text;
             CVV = tb_CVV.Text;
+            subsriptionLevel = Convert.ToUInt16(dd_Pricing.SelectedItem.Text);
 
-            bool state = newUserPayments.addUserPayments(cardNumber, ExpiryDate, CVV, subsriptionLevel);
-            if (state) 
+            bool PaymentDetailsState = newUserPayments.addUserPayments(cardNumber, ExpiryDate, CVV, subsriptionLevel);
+            if (PaymentDetailsState) 
             {
                 lbl_personalInfoState.ForeColor = System.Drawing.Color.Green;
                 lbl_personalInfoState.Text = "Payment info updated";
+                Response.Redirect("UserSignIn.aspx");
             }
             else
             {

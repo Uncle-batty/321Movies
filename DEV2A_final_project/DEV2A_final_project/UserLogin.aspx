@@ -45,7 +45,18 @@
 </head>
 
 <body class="sign-in-body">
-    <!-- ======= Header ======= -->
+	<!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="LandingPage.aspx">321 Movies</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+
+
+    </div>
+  </header><!-- End Header -->
 <form runat="server">
 <div class="login-wrap">
 	<div class="login-html">
@@ -88,9 +99,9 @@
 				<div class="hr"></div>
 				<div class="foot-lnk">
 					<a href="UserSignIn.aspx">Already a member?</a>
-				</div>
-				<asp:Label ID="lbl_personalInfoState" runat="server" Text="**************"/>
+				</div>				
 			</div>
+			<asp:Label ID="lbl_personalInfoState" runat="server" Text="**************"/>
 			<div class="sign-up-htm">
 				<div class="group">
 					<label for="user" class="Subscription Level"></label>
@@ -120,8 +131,7 @@
 				<div class="hr"></div>
 				<div class="foot-lnk">
 					<a href="UserLogin.aspx">Skip This step ></a>
-				</div>
-				<asp:Label ID="lbl_paymentInfoState" runat="server" Text="*************"/>
+				</div>				
 			</div>
 		</div>		
 	</div>
