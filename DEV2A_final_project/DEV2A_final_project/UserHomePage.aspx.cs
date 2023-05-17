@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,6 +13,8 @@ namespace DEV2A_final_project
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            DBMethods dBMethods = new DBMethods();
+            //SqlDataReader DR = dBMethods.
             if (!IsPostBack)
             {
                 // Create a list of 100 cards with similar content
