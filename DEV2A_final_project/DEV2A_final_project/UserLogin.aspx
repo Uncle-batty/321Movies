@@ -101,14 +101,14 @@
 					<a href="UserSignIn.aspx">Already a member?</a>
 				</div>				
 			</div>
-			<asp:Label ID="lbl_personalInfoState" runat="server" Text="**************"/>
+			<asp:Label ID="lbl_personalInfoState" CssClass="align-bottom" runat="server" Text="**************"/>
 			<div class="sign-up-htm">
 				<div class="group">
 					<label for="user" class="Subscription Level"></label>
 					<div class="drop-down-container">
 					<asp:DropDownList runat="server" ID="dd_Pricing" class="drop-down">
 						<asp:ListItem value="1" Text="Free" ></asp:ListItem> 
-						<asp:ListItem value="2" Text="Sandard" ></asp:ListItem>
+						<asp:ListItem value="2" Text="Standard" ></asp:ListItem>
 						<asp:ListItem value="3" Text="Premium" ></asp:ListItem>
 					</asp:DropDownList>
 					</div>

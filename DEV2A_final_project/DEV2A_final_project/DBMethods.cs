@@ -15,7 +15,7 @@ namespace DEV2A_final_project
     public class DBMethods
     {
         public string connectionString = "Data Source=TADIC;Initial Catalog=Movies321;Integrated Security=True";
-        public static string userID = "";
+        public static Guid userID;
         public bool addUser(string firstName, string lastName, string email, string password, string userDOB)
         {
             bool registered = false;
@@ -25,10 +25,10 @@ namespace DEV2A_final_project
             {
                 SqlConnection conn = new SqlConnection(connectionString);
                 string storedProcedure = "userSignUp_st";
-                userID = GenerateUnique4DigitNumber();
+                userID = Guid.NewGuid();
                 SqlCommand cmd = new SqlCommand(storedProcedure, conn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@UserId", userID);
+                cmd.Parameters.AddWithValue("@UserId", userID.ToString());
                 cmd.Parameters.AddWithValue("@Fname", firstName);
                 cmd.Parameters.AddWithValue("@Lname", lastName);
                 cmd.Parameters.AddWithValue("@SubId", 1);
@@ -59,7 +59,7 @@ namespace DEV2A_final_project
             bool paymentAdded = false;
             SqlConnection conn = new SqlConnection(connectionString);
             string storedProcedure = "AddUserPayments_st";
-            string cmdText = "update Users set SubID = " + 1 + " where UserId = " + userID + "";
+            string cmdText = "update Users set SubID = " + 1 + " where UserId = " + userID.ToString() + "";
 
 
             //Adds Users payment information
@@ -67,12 +67,13 @@ namespace DEV2A_final_project
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(storedProcedure, conn);
+                Guid paymentID = new Guid();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@PaymentId", GenerateUnique4DigitNumber());
+                cmd.Parameters.AddWithValue("@PaymentId",paymentID.ToString());
                 cmd.Parameters.AddWithValue("@cardNumber", cardNumber);
                 cmd.Parameters.AddWithValue("@ExpDate", ExpDate);
                 cmd.Parameters.AddWithValue("@CVV", CVV);
-                cmd.Parameters.AddWithValue("@UserID", userID);
+                cmd.Parameters.AddWithValue("@UserID", userID.ToString());
                 int execution = cmd.ExecuteNonQuery();
                 if (execution > 0)
                 {

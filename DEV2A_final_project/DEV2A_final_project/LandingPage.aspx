@@ -59,7 +59,7 @@
       <form id="heroForm" runat="server">
       <h1>Welcome to 321 Movies</h1>
       <h2>This is the Template for the DEV project</h2>
-      <asp:Button ID="Sign Up" Text ="Login"  class="btn-get-started" OnClick ="btn_UserLogin" runat="server" />
+      <asp:Button ID="SignUp" Text ="Login"  class="btn-get-started" OnClick ="btn_UserLogin" runat="server" />
       <asp:Button ID="Login" Text ="Sign In" class="btn-get-started" OnClick ="btn_UserSignIn" runat="server" />
           </form>
     </div>

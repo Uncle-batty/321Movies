@@ -65,7 +65,7 @@ namespace DEV2A_final_project
             cardNumber = tb_CardNumber.Text;
             ExpiryDate = tb_expDate.Text;
             CVV = tb_CVV.Text;
-            subsriptionLevel = Convert.ToUInt16(dd_Pricing.SelectedItem.Text);
+            subsriptionLevel = Convert.ToInt32(dd_Pricing.SelectedValue);
 
             bool PaymentDetailsState = newUserPayments.addUserPayments(cardNumber, ExpiryDate, CVV, subsriptionLevel);
             if (PaymentDetailsState) 

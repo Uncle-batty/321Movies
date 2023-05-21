@@ -30,7 +30,7 @@ namespace DEV2A_final_project
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Sign Up;
+        protected global::System.Web.UI.WebControls.Button SignUp;
         
         /// <summary>
         /// Login control.
