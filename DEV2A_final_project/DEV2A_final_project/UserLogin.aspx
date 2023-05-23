@@ -45,7 +45,18 @@
 </head>
 
 <body class="sign-in-body">
-    <!-- ======= Header ======= -->
+	<!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="LandingPage.aspx">321 Movies</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+
+
+    </div>
+  </header><!-- End Header -->
 <form runat="server">
 <div class="login-wrap">
 	<div class="login-html">
@@ -66,7 +77,7 @@
 				</div>
 				<div class="group">
 					<label for="user" class="label">Date Of Birth</label>
-					<asp:TextBox id="TextBox1" runat="server" type="date" class="input" />
+					<asp:TextBox id="tb_DOB" runat="server" type="date" class="input" />
 				</div>
 
 				<div class="group">
@@ -83,43 +94,44 @@
 					<asp:TextBox id="tb_UserPassword2" runat="server" class="input" data-type="password"/>
 				</div>
 				<div class="group">
-					<asp:Button id="btn_PersonalInfoSubmit" runat="server" class="button" Text="Next >"/>
+					<asp:Button id="btn_PersonalInfoSubmit" runat="server" class="button" Text="Next >" OnClick="btn_NextClick"/>
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
 					<a href="UserSignIn.aspx">Already a member?</a>
-				</div>
+				</div>				
 			</div>
+			<asp:Label ID="lbl_personalInfoState" CssClass="align-bottom" runat="server" Text="**************"/>
 			<div class="sign-up-htm">
 				<div class="group">
 					<label for="user" class="Subscription Level"></label>
 					<div class="drop-down-container">
 					<asp:DropDownList runat="server" ID="dd_Pricing" class="drop-down">
-						<asp:ListItem value="Free" Text="Free" ></asp:ListItem> 
-						<asp:ListItem value="Standard" Text="Sandard" ></asp:ListItem>
-						<asp:ListItem value="Premium" Text="Premium" ></asp:ListItem>
+						<asp:ListItem value="1" Text="Free" ></asp:ListItem> 
+						<asp:ListItem value="2" Text="Standard" ></asp:ListItem>
+						<asp:ListItem value="3" Text="Premium" ></asp:ListItem>
 					</asp:DropDownList>
 					</div>
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Card Number</label>
-					<asp:TextBox id="tb_AdminPassword" runat="server" type="password" class="input" />
+					<asp:TextBox id="tb_CardNumber" runat="server" type="text" class="input" />
 				</div>
 				<div class="group">
-					<label for="pass" class="label">Expirery date</label>
-					<asp:TextBox id="tb_expDate" runat="server" type="password" class="input" />
+					<label for="pass" class="label">Expiry date</label>
+					<asp:TextBox id="tb_expDate" runat="server" type="text" class="input" />
 				</div>
 				<div class="group">
 					<label for="pass" class="label">CVV</label>
-					<asp:TextBox id="tb_CVV" runat="server" type="password" class="input" />
+					<asp:TextBox id="tb_CVV" runat="server" type="text" class="input" />
 				</div>
 				<div class="group">
-					<asp:Button ID="btn_CompleteLogin" runat="server" class="button" Text="Complete"/>
+					<asp:Button ID="btn_CompleteLogin" runat="server" class="button" Text="Complete" OnClick="btn_NewPaymentsClick"/>
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
 					<a href="UserLogin.aspx">Skip This step ></a>
-				</div>
+				</div>				
 			</div>
 		</div>		
 	</div>

@@ -45,7 +45,18 @@
 </head>
 
 <body class="sign-in-body">
-    <!-- ======= Header ======= -->
+	<!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="LandingPage.aspx">321 Movies</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+
+
+    </div>
+  </header><!-- End Header -->
 <form runat="server">
 <div class="login-wrap">
 	<div class="login-html">
@@ -56,14 +67,14 @@
 			<div class="sign-in-htm">
 				<div class="group">
 					<label for="user" class="label">Username</label>
-					<asp:TextBox id="tb_UserName" runat="server" type="text" class="input"/>
+					<asp:TextBox id="tb_UserEmail" runat="server" type="text" class="input"/>
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Password</label>
 					<asp:TextBox id="tb_UserPassword" runat="server" class="input" data-type="password"/>
 				</div>
 				<div class="group">
-					<asp:Button id="btn_UserSignIn" runat="server" class="button" Text="Sign In"/>
+					<asp:Button id="btn_UserSignIn" runat="server" class="button" Text="Sign In" OnClick="btn_UserSignIn_Click"/>
 				</div>
 				<div class="foot-lnk">
 					<a href="UserLogin.aspx">Create an account</a>
@@ -72,6 +83,7 @@
 				<div class="foot-lnk">
 					<a href="#forgot">Forgot Password?</a>
 				</div>
+
 			</div>
 			<div class="sign-up-htm">
 				<div class="group">
@@ -83,14 +95,16 @@
 					<asp:TextBox id="tb_AdminPassword" runat="server" type="password" class="input" data-type="password" />
 				</div>
 				<div class="group">
-					<asp:Button runat="server" class="button" Text="Sign In"/>
+					<asp:Button ID="btn_AdminSignIn" runat="server" class="button" Text="Sign In" OnClick="btn_AdminSignIn_Click"/>
 				</div>
 <%--				<div class="hr"></div>
 				<div class="foot-lnk">
 					<label for="tab-1">Already Member?</a>
 				</div>--%>
 			</div>
-		</div>		
+		</div>
+					<asp:Label ID="lbl_SignInState" runat="server" Text="**************"/>
+
 	</div>
 </div>
 	</form>
