@@ -88,6 +88,7 @@
     <Content Include="assets\img\team\team-1.jpg" />
     <Content Include="assets\img\team\team-2.jpg" />
     <Content Include="assets\img\team\team-3.jpg" />
+    <Content Include="assets\img\User_Icon.png" />
     <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\jquery-3.3.1.min.js" />
     <Content Include="assets\js\main.js" />
@@ -147,6 +148,7 @@
     <Content Include="inner-page.html" />
     <Content Include="LandingPage.aspx" />
     <Content Include="portfolio-details.html" />
+    <Content Include="User Profile.aspx" />
     <Content Include="UserHomePage.aspx" />
     <Content Include="UserLogin.aspx" />
     <Content Include="UserSignIn.aspx" />
@@ -176,6 +178,13 @@
       <DependentUpon>LandingPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User Profile.aspx.cs">
+      <DependentUpon>User Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User Profile.aspx.designer.cs">
+      <DependentUpon>User Profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserHomePage.aspx.cs">
       <DependentUpon>UserHomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

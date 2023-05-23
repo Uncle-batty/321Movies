@@ -16,7 +16,7 @@ namespace DEV2A_final_project
             {
                 // Create a list of 100 cards with similar content
                 List<Card> cards = new List<Card>();
-                for (int i = 1; i <= 10; i++)
+                for (int i = 1; i <= 20; i++)
                 {
                     cards.Add(new Card
                     {
@@ -35,7 +35,7 @@ namespace DEV2A_final_project
             {
                 // Create a list of 100 cards with similar content
                 List<Card> cards = new List<Card>();
-                for (int i = 1; i <= 6; i++)
+                for (int i = 1; i <= 10; i++)
                 {
                     cards.Add(new Card
                     {

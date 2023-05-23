@@ -42,14 +42,18 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <h1 class="logo"><a href="index.html">321 Movies</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+<header class="top-bar">
+  <div class="Search_container1">
+    <div class="logo">
+      <a href="#">321 Movies</a>
     </div>
-  </header><!-- End Header -->
+    <div class="nav-links">
+      <a style="color:#05ab05;text-decoration:underline" href="LandingPage.aspx">Landing</a>
+      <a href="UserHomePage.aspx">Home Page</a>
+    </div>
+  </div>
+</header>
+
 
 
   

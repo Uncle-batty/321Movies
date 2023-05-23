@@ -36,65 +36,55 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cardContainer = document.querySelector(".card-container");
+            const previousArrow = document.querySelector(".arrow.previous");
+            const nextArrow = document.querySelector(".arrow.next");
+
+            const cardWidth = 320; // Adjust the width to match the card width in CSS
+            const scrollAmount = cardWidth * 5; // Adjust the number of cards to scroll
+
+            previousArrow.addEventListener("click", function () {
+                cardContainer.scrollBy(-scrollAmount, 0);
+            });
+
+            nextArrow.addEventListener("click", function () {
+                cardContainer.scrollBy(scrollAmount, 0);
+            });
+        });
+    </script>
 </head>
 
 <body class="Home_body" >
-    <header class="top-bar">
-  <div class="container">
+<header class="top-bar">
+  <div class="Search_container1">
     <div class="logo">
       <a href="#">321 Movies</a>
     </div>
-    <div id="search-container">
+    <div class="nav-links">
+      <a href="LandingPage.aspx">Landing</a>
+      <a style="margin-right:50px;color:#05ab05;text-decoration:underline" href="UserHomePage.aspx">Home Page</a>
+    </div>
+    <div class="search-bar">
       <input type="text" placeholder="Search...">
       <button type="submit">Search</button>
     </div>
+    <a href="User Profile.aspx" class="profile-button">
+      <img src="assets/img/User_Icon.png" alt="Profile Image">
+    </a>
+  </div>
 </header>
+
+
+
    
-
-
- <div>
      <div class="labels">
          <asp:Label ID="Label1" runat="server">Comedy</asp:Label> 
      </div>
 
-     <style>
-
-
-.card:hover {
-  transform: scale(1.1);
-}
-
-         .card-buttons {
-             display: none;
-             position: absolute;
-             bottom: 10px;
-             left: 0;
-             right: 0;
-             text-align: center;
-         }
-
-         .card:hover .card-buttons {
-             display: block;
-         }
-  .card-button {
-  display: inline-block;
-  margin: 0 5px;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  background-color: #006600;
-  color: #fff;
-  font-size: 14px;
-  text-decoration: none;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.card-button:hover {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-}
-</style>
-
-<div >
+     
+<div>
      <div class ="card-container" >
         
         <asp:Repeater ID="rptCards1" runat="server">
@@ -111,6 +101,8 @@
     </ItemTemplate>
 </asp:Repeater>        
  </div>
+    <div class="arrow previous">&lt;</div>
+    <div class="arrow next">&gt;</div>
     
 </div>
      
@@ -133,8 +125,10 @@
   </div>
         </div>
     </ItemTemplate>
-</asp:Repeater>
+</asp:Repeater> 
     </div>
+     
+
 </body>
 </html>
 

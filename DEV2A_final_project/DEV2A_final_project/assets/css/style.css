@@ -1751,7 +1751,8 @@ a {
 .card-container {
     display: flex;
     justify-content: space-between;
-    overflow-x: scroll;   
+    overflow-x:hidden;
+    overflow-y:hidden;
     transition: transform 0.2s ease-in-out;
 }
 
@@ -1759,18 +1760,20 @@ a {
 .card {
     margin-top: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
+   /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;*/
     overflow: hidden;
     min-width: 300px;
     margin-right: 10px;
     transition: transform 0.2s ease-in-out;
-    background-color: #4d4d4d;
+    background-color: #333333;
+    border-color:transparent;
+    
 }
 
     .card img {
         width: 100%;
-        height: 350px;
+        height: 100%;
         object-fit: cover;
     }
 
@@ -1803,6 +1806,39 @@ a {
     opacity: 0;
 }
 
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card-buttons {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.card:hover .card-buttons {
+    display: block;
+}
+
+.card-button {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background-color: #006600;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+}
+
+    .card-button:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
 /* search bar*/
 .top-bar {
     background-color: #1a1a1a;
@@ -1811,46 +1847,66 @@ a {
     padding: 0 20px;
 }
 
-.container {
+.Search_container1 {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 7px;
 }
 
-.logo a {
+.logo {
+    flex-grow: 1;
     color: #fff;
     font-size: 24px;
     font-weight: bold;
 }
 
-.search-box form {
+.nav-links {
     display: flex;
     align-items: center;
+    gap: 30px;
+    margin-right: 20px;
 }
 
-.search-box input[type="search"] {
-    background-color: #595959;
-    color: #595959;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-right: 10px;
-    width: 300px;
-    
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.search-box button[type="submit"] {
-    background-color: #595959;
-    color: #595959;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+    .search-bar input[type="text"] {
+        background-color: #595959;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .search-bar button[type="submit"] {
+        background-color: #006600;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+.profile-button {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
 }
+
+    .profile-button img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
 
 /*===============labels===========*/
 .labels {
@@ -1903,4 +1959,79 @@ a {
         #search-container button:hover {
             background-color: #3e8e41;
         }
+
+/* arrows*/
+.arrow {
+    position: absolute;
+    /*top: 50%;*/
+    transform: translateY(-50%);
+    width: 30px;
+    height: 455px;
+    opacity: 0;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 5%;
+    background-color: #006600;
+    transition: opacity 0.3s ease;
+}
+
+    .arrow:hover {
+        opacity: 0.8; 
+    }
+
+
+
+
+    .arrow.previous {
+        left: 0;
+    }
+
+    .arrow.next {
+        right: 0;
+    }
+    /*profile*/
+     .profile-button {
+      display: inline-block;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .profile-button img {
+      width: 55px;
+      height: 55px;
+      object-fit: cover;
+    }
+    /*nav*/
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+    gap: 30px;
+    
+}
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+    }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+            color: #05ab05;
+        }
+
+
+
+  
+
+
+
 
