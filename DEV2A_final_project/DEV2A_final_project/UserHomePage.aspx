@@ -38,22 +38,29 @@
   ======================================================== -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const cardContainer = document.querySelector(".card-container");
-            const previousArrow = document.querySelector(".arrow.previous");
-            const nextArrow = document.querySelector(".arrow.next");
+            const cardContainers = document.querySelectorAll(".card-container");
+            const previousArrows = document.querySelectorAll(".arrow.previous");
+            const nextArrows = document.querySelectorAll(".arrow.next");
 
             const cardWidth = 320; // Adjust the width to match the card width in CSS
             const scrollAmount = cardWidth * 5; // Adjust the number of cards to scroll
 
-            previousArrow.addEventListener("click", function () {
-                cardContainer.scrollBy(-scrollAmount, 0);
+            previousArrows.forEach(function (previousArrow, index) {
+                previousArrow.addEventListener("click", function () {
+                    cardContainers[index].scrollBy(-scrollAmount, 0);
+                });
             });
 
-            nextArrow.addEventListener("click", function () {
-                cardContainer.scrollBy(scrollAmount, 0);
+            nextArrows.forEach(function (nextArrow, index) {
+                nextArrow.addEventListener("click", function () {
+                    cardContainers[index].scrollBy(scrollAmount, 0);
+                });
             });
         });
+
     </script>
+    
+   
 </head>
 
 <body class="Home_body" >
@@ -76,8 +83,17 @@
   </div>
 </header>
 
+<div class="vcontainer">
+    <iframe src="https://www.youtube.com/embed/Y274jZs5s7s" frameborder="0" allowfullscreen autoplay></iframe>
+    <div class="vbutton-container">
+      <a href="#" class="vbutton">More Info</a>
+      <a href="#" class="vbutton">Watch Now</a>
+    </div>
+  </div>
+       
 
 
+<%-- first card container --%>
    
      <div class="labels">
          <asp:Label ID="Label1" runat="server">Comedy</asp:Label> 
@@ -99,34 +115,64 @@
   </div>
         </div>        
     </ItemTemplate>
-</asp:Repeater>        
- </div>
-    <div class="arrow previous">&lt;</div>
+</asp:Repeater>   
+         <div class="arrow previous">&lt;</div>
     <div class="arrow next">&gt;</div>
+ </div>
+    
     
 </div>
      
 
-   
+ <%-- second card container --%>  
 
-    <div class="labels">
-         <asp:Label ID="Label2" runat="server">Action</asp:Label> 
-     </div>
-    <div class ="card-container" >
-        <asp:Repeater ID="rptCards2" runat="server">
-    <ItemTemplate>
-        <div class ="card">
-            <img class="card img" src="<%# Eval("ImageUrl") %>" />
-            <h2 class ="card-title"><%# Eval("Title") %></h2>  
-            <p class ="card-description"><%# Eval("Description") %></p>
-            <div class="card-buttons">
-    <a href="#" class="card-button">More Info</a>
-    <a href="#" class="card-button">Watch</a>
-  </div>
-        </div>
-    </ItemTemplate>
-</asp:Repeater> 
-    </div>
+    <%-- second card container --%>  
+<div class="labels">
+     <asp:Label ID="Label2" runat="server">Action</asp:Label> 
+ </div>
+<div class="card-container">
+    <asp:Repeater ID="rptCards2" runat="server">
+        <ItemTemplate>
+            <div class="card">
+                <img class="card img" src="<%# Eval("ImageUrl") %>" />
+                <h2 class="card-title"><%# Eval("Title") %></h2>  
+                <p class="card-description"><%# Eval("Description") %></p>
+                <div class="card-buttons">
+                    <a href="#" class="card-button">More Info</a>
+                    <a href="#" class="card-button">Watch</a>
+                </div>
+            </div>
+        </ItemTemplate>
+    </asp:Repeater> 
+    <div class="arrow previous">&lt;</div>
+    <div class="arrow next">&gt;</div>
+</div>
+
+
+
+    <%-- third card container --%>  
+<div class="labels">
+     <asp:Label ID="Label3" runat="server">Romance</asp:Label> 
+ </div>
+<div class="card-container">
+    <asp:Repeater ID="rptCards3" runat="server">
+        <ItemTemplate>
+            <div class="card">
+                <img class="card img" src="<%# Eval("ImageUrl") %>" />
+                <h2 class="card-title"><%# Eval("Title") %></h2>  
+                <p class="card-description"><%# Eval("Description") %></p>
+                <div class="card-buttons">
+                    <a href="#" class="card-button">More Info</a>
+                    <a href="#" class="card-button">Watch</a>
+                </div>
+            </div>
+        </ItemTemplate>
+    </asp:Repeater> 
+    <div class="arrow previous">&lt;</div>
+    <div class="arrow next">&gt;</div>
+</div>
+
+    
      
 
 </body>

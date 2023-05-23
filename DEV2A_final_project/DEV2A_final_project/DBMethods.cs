@@ -14,7 +14,7 @@ namespace DEV2A_final_project
 {
     public class DBMethods
     {
-        public string connectionString = "Data Source=TADIC;Initial Catalog=Movies321;Integrated Security=True";
+        public string connectionString = "Data Source=KEVSLAPTOP;Initial Catalog=Movies321;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
         public static Guid userID;
         public static Guid paymentID;
         public bool addUser(string firstName, string lastName, string email, string password, string userDOB)

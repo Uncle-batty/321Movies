@@ -24,15 +24,6 @@ namespace DEV2A_final_project
         protected global::System.Web.UI.HtmlControls.HtmlForm heroForm;
 
         /// <summary>
-        /// Sign Up control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SignUp;
-        
-        /// <summary>
         /// Login control.
         /// </summary>
         /// <remarks>
@@ -40,5 +31,14 @@ namespace DEV2A_final_project
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Login;
+
+        /// <summary>
+        /// Signin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Signin;
     }
 }

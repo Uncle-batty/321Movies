@@ -96,11 +96,15 @@
     <Content Include="assets\js\owl.carousel.min.js" />
     <Content Include="assets\js\popper.min.js" />
     <Content Include="assets\Movies\movie1.jpg" />
+    <Content Include="assets\Movies\movie10.jpg" />
     <Content Include="assets\Movies\movie2.jpg" />
     <Content Include="assets\Movies\movie3.jpg" />
     <Content Include="assets\Movies\movie4.jpg" />
     <Content Include="assets\Movies\movie5.jpg" />
     <Content Include="assets\Movies\movie6.jpg" />
+    <Content Include="assets\Movies\movie7.jpg" />
+    <Content Include="assets\Movies\movie8.jpg" />
+    <Content Include="assets\Movies\movie9.jpg" />
     <Content Include="assets\scss\Readme.txt" />
     <Content Include="assets\vendor\aos\aos.css" />
     <Content Include="assets\vendor\aos\aos.js" />
