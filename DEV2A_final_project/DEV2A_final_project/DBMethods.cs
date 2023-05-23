@@ -16,6 +16,7 @@ namespace DEV2A_final_project
     {
         public string connectionString = "Data Source=TADIC;Initial Catalog=Movies321;Integrated Security=True";
         public static Guid userID;
+        public static Guid paymentID;
         public bool addUser(string firstName, string lastName, string email, string password, string userDOB)
         {
             bool registered = false;
@@ -54,12 +55,43 @@ namespace DEV2A_final_project
             }
             return registered;
         }
+
+        public bool emailExists(string email)
+        {
+            bool exists = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+            string cmdText = $"Select * from Users where Email = '{email}' ";
+
+            try
+            {
+                SqlDataReader dataReader;
+                using (SqlCommand cmd = new SqlCommand(cmdText, conn))
+                {
+                    conn.Open();
+                    dataReader = cmd.ExecuteReader();
+                    if (dataReader.Read())
+                    {
+                        exists = true;
+                    }
+                    else
+                    {
+                        exists = false;
+                        dataReader.Close();
+                    }
+                    conn.Close();
+                }
+            }
+            catch { }
+            return exists;
+        }
         public bool addUserPayments( string cardNumber, string ExpDate, string CVV, int subscriptionLevel)
         {
             bool paymentAdded = false;
             SqlConnection conn = new SqlConnection(connectionString);
             string storedProcedure = "AddUserPayments_st";
-            string cmdText = "update Users set SubID = " + 1 + " where UserId = " + userID.ToString() + "";
+            string cmdText = "update Users set SubID = " + subscriptionLevel + " where UserId = " + userID.ToString() + "";
+            
+
 
 
             //Adds Users payment information
@@ -67,7 +99,7 @@ namespace DEV2A_final_project
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(storedProcedure, conn);
-                Guid paymentID = new Guid();
+                paymentID = Guid.NewGuid();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@PaymentId",paymentID.ToString());
                 cmd.Parameters.AddWithValue("@cardNumber", cardNumber);
@@ -89,28 +121,6 @@ namespace DEV2A_final_project
             catch (Exception ex)
             {
                 paymentAdded = false;
-            }
-
-            try
-            {
-                SqlCommand cmdUpdate = new SqlCommand(cmdText, conn);
-                conn.Open();
-                int executionUpdate = cmdUpdate.ExecuteNonQuery();
-
-                if (executionUpdate > 0)
-                {
-                    paymentAdded = true;
-                }
-                else
-                {
-                    paymentAdded = false;
-                }
-                conn.Close();
-            }
-            catch
-            {
-                paymentAdded = false;
-
             }
 
             return paymentAdded;
