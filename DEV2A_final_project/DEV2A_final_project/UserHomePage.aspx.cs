@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 namespace DEV2A_final_project
 {
@@ -20,14 +21,16 @@ namespace DEV2A_final_project
             if (!IsPostBack)
             {
                 // Create a list of 100 cards with similar content
+                DBMethods db = new DBMethods();
+                SqlDataReader dr = db.MovieListbyCat(2);
                 List<Card> cards = new List<Card>();
-                for (int i = 1; i <= 20; i++)
+                while(dr.Read())
                 {
                     cards.Add(new Card
                     {
-                        Title = "movie" + i,
-                        ImageUrl = "assets/Movies/movie" + i + ".jpg",
-                        Description = "discription"
+                        Title = dr[1].ToString() ,
+                        ImageUrl = "assets/Movies/movie" + 1.ToString() + ".jpg",
+                        Description = dr[7].ToString(),
                         
                     });
                 }
@@ -41,14 +44,16 @@ namespace DEV2A_final_project
             if (!IsPostBack)
             {
                 // Create a list of 100 cards with similar content
+                DBMethods db = new DBMethods();
+                SqlDataReader dr = db.MovieListbyCat(1);
                 List<Card> cards = new List<Card>();
-                for (int i = 1; i <= 10; i++)
+                while (dr.Read())
                 {
                     cards.Add(new Card
                     {
-                        Title = "movie" + i,
-                        ImageUrl = "assets/Movies/movie" + i + ".jpg",
-                        Description = "discription"
+                        Title = dr[1].ToString(),
+                        ImageUrl = "assets/Movies/movie" + 1.ToString() + ".jpg",
+                        Description = dr[7].ToString()
 
                     });
                 }
@@ -63,14 +68,16 @@ namespace DEV2A_final_project
             if (!IsPostBack)
             {
                 // Create a list of 100 cards with similar content
+                DBMethods db = new DBMethods();
+                SqlDataReader dr = db.MovieListbyCat(6);
                 List<Card> cards = new List<Card>();
-                for (int i = 1; i <= 10; i++)
+                while (dr.Read())
                 {
                     cards.Add(new Card
                     {
-                        Title = "movie" + i,
-                        ImageUrl = "assets/Movies/movie" + i + ".jpg",
-                        Description = "discription"
+                        Title = dr[1].ToString(),
+                        ImageUrl = "assets/Movies/movie" + 1.ToString() + ".jpg",
+                        Description = dr[7].ToString()
 
                     });
                 }

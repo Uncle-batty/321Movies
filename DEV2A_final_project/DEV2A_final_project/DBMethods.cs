@@ -14,7 +14,7 @@ namespace DEV2A_final_project
 {
     public class DBMethods
     {
-        public string connectionString = "Data Source=KEVSLAPTOP;Initial Catalog=Movies321;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+        public string connectionString = "Data Source=.;Initial Catalog=Movies321;Integrated Security=True";
         public static Guid userID;
         public static Guid paymentID;
         public bool addUser(string firstName, string lastName, string email, string password, string userDOB)
@@ -246,6 +246,19 @@ namespace DEV2A_final_project
             }
         }
 
+        public  SqlDataReader MovieListbyCat(int catagory)
+        {
+            SqlDataReader reader = null;
+            SqlConnection conn = new SqlConnection(connectionString);
+            SqlCommand cmd;
 
+            conn.Open();
+            string SQL = "SELECT * FROM Movies where CatergoryID = '" + catagory + "';";
+            cmd = new SqlCommand(SQL, conn);
+
+            reader = cmd.ExecuteReader();
+
+            return reader;
+        }
     }
 }
