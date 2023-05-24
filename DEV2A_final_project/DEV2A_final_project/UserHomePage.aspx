@@ -8,7 +8,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>321Movies</title>
-  <meta content="" name="description">
+  <meta content="" name="homepage for 321 movies">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
@@ -172,7 +172,35 @@
     <div class="arrow next">&gt;</div>
 </div>
 
+<%-- 4th card container --%>
+   
+     <div class="labels">
+         <asp:Label ID="Label4" runat="server">Horror</asp:Label> 
+     </div>
+
+     
+<div>
+     <div class ="card-container" >
+        
+        <asp:Repeater ID="rptCards4" runat="server">
+    <ItemTemplate>
+        <div class ="card">
+            <img class="card img" src="<%# Eval("ImageUrl") %>" />
+            <h2 class ="card-title"><%# Eval("Title") %></h2>  
+            <p class ="card-description"><%# Eval("Description") %></p>  
+            <div class="card-buttons">
+    <a href="#" class="card-button">More Info</a>
+    <a href="#" class="card-button">Watch</a>
+  </div>
+        </div>        
+    </ItemTemplate>
+</asp:Repeater>   
+         <div class="arrow previous">&lt;</div>
+    <div class="arrow next">&gt;</div>
+ </div>
     
+    
+</div>
      
 
 </body>

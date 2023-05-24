@@ -86,6 +86,30 @@ namespace DEV2A_final_project
                 rptCards3.DataSource = cards;
                 rptCards3.DataBind();
             }
+
+            //card 4 
+
+            if (!IsPostBack)
+            {
+                // Create a list of 100 cards with similar content
+                DBMethods db = new DBMethods();
+                SqlDataReader dr = db.MovieListbyCat(5);
+                List<Card> cards = new List<Card>();
+                while (dr.Read())
+                {
+                    cards.Add(new Card
+                    {
+                        Title = dr[1].ToString(),
+                        ImageUrl = "assets/Movies/movie" + 1.ToString() + ".jpg",
+                        Description = dr[7].ToString()
+
+                    });
+                }
+
+                // Bind the list of cards to the Repeater control
+                rptCards4.DataSource = cards;
+                rptCards4.DataBind();
+            }
         }
 
         // Data model for each card
