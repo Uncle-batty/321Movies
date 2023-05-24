@@ -258,7 +258,27 @@ namespace DEV2A_final_project
 
             reader = cmd.ExecuteReader();
 
+            
             return reader;
+            
+        }
+
+        public SqlDataReader GetUser(int ID )
+        {
+            SqlDataReader reader = null;
+            SqlConnection conn = new SqlConnection(connectionString );
+
+            SqlCommand cmd;
+
+            conn.Open();
+            string SQL = "SELECT * FROM User where UserID = '" + ID + "';";
+            cmd = new SqlCommand(SQL, conn);
+
+            reader = cmd.ExecuteReader();
+
+            
+            return reader;
+            
         }
     }
 }
