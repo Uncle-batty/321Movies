@@ -157,6 +157,7 @@
     <Content Include="UserHomePage.aspx" />
     <Content Include="UserLogin.aspx" />
     <Content Include="UserSignIn.aspx" />
+    <Content Include="WatchMovie.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -210,6 +211,13 @@
     </Compile>
     <Compile Include="UserSignIn.aspx.designer.cs">
       <DependentUpon>UserSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WatchMovie.aspx.cs">
+      <DependentUpon>WatchMovie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WatchMovie.aspx.designer.cs">
+      <DependentUpon>WatchMovie.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

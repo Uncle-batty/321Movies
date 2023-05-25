@@ -11,6 +11,7 @@ namespace DEV2A_final_project
 {
     public partial class UserHomePage : System.Web.UI.Page
     {
+        public static string descrip = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,15 +25,25 @@ namespace DEV2A_final_project
                 DBMethods db = new DBMethods();
                 SqlDataReader dr = db.MovieListbyCat(2);
                 List<Card> cards = new List<Card>();
-                while(dr.Read())
+               
+                while (dr.Read())
                 {
+                    descrip = dr[7].ToString();
+
+                    if (descrip.Count() > 105)
+                    {
+                        descrip = descrip.Insert(97, "...");
+                        descrip = descrip.Remove(100, descrip.Count() - 101);
+                    }
                     cards.Add(new Card
                     {
-                        Title = dr[1].ToString() ,
-                        ImageUrl = "assets/Movies/movie" + 1.ToString() + ".jpg",
-                        Description = dr[7].ToString(),
-                        
+                        Title = dr[1].ToString(),
+                        ImageUrl = "assets/Movies/movie" + 4.ToString() + ".jpg",
+                        Description = descrip,
+
                     });
+
+
                 }
 
                 // Bind the list of cards to the Repeater control
@@ -49,11 +60,18 @@ namespace DEV2A_final_project
                 List<Card> cards = new List<Card>();
                 while (dr.Read())
                 {
+                    descrip = dr[7].ToString();
+
+                    if (descrip.Count() > 105)
+                    {
+                        descrip = descrip.Insert(97, "...");
+                        descrip = descrip.Remove(100, descrip.Count() - 101);
+                    }
                     cards.Add(new Card
                     {
                         Title = dr[1].ToString(),
-                        ImageUrl = "assets/Movies/movie" + 1.ToString() + ".jpg",
-                        Description = dr[7].ToString()
+                        ImageUrl = "assets/Movies/movie" + 10.ToString() + ".jpg",
+                        Description = descrip,
 
                     });
                 }
@@ -73,11 +91,18 @@ namespace DEV2A_final_project
                 List<Card> cards = new List<Card>();
                 while (dr.Read())
                 {
+                    descrip = dr[7].ToString();
+
+                    if (descrip.Count() > 105)
+                    {
+                        descrip = descrip.Insert(97, "...");
+                        descrip = descrip.Remove(100, descrip.Count() - 101);
+                    }
                     cards.Add(new Card
                     {
                         Title = dr[1].ToString(),
-                        ImageUrl = "assets/Movies/movie" + 1.ToString() + ".jpg",
-                        Description = dr[7].ToString()
+                        ImageUrl = "assets/Movies/movie" + 3.ToString() + ".jpg",
+                        Description = descrip,
 
                     });
                 }
@@ -97,13 +122,22 @@ namespace DEV2A_final_project
                 List<Card> cards = new List<Card>();
                 while (dr.Read())
                 {
+                    descrip = dr[7].ToString();
+
+                    if (descrip.Count() > 105)
+                    {
+                        descrip = descrip.Insert(97, "...");
+                        descrip = descrip.Remove(100, descrip.Count() - 101);
+                    }
                     cards.Add(new Card
                     {
                         Title = dr[1].ToString(),
                         ImageUrl = "assets/Movies/movie" + 1.ToString() + ".jpg",
-                        Description = dr[7].ToString()
+                        Description = descrip,
 
                     });
+
+
                 }
 
                 // Bind the list of cards to the Repeater control
