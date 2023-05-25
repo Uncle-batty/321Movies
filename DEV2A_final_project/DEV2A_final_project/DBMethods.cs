@@ -271,7 +271,7 @@ namespace DEV2A_final_project
             SqlCommand cmd;
 
             conn.Open();
-            string SQL = "SELECT * FROM User where UserID = '" + ID + "';";
+            string SQL = "SELECT * FROM Users where UserId = '" + ID + "';";
             cmd = new SqlCommand(SQL, conn);
 
             reader = cmd.ExecuteReader();
