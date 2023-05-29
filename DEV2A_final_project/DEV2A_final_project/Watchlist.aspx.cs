@@ -21,17 +21,17 @@ namespace DEV2A_final_project
             //SqlDataReader DR = dBMethods.
 
             //card 1
-            if (!IsPostBack)
-            {
+            
                 // Create a list of 100 cards with similar content
                 DBMethods db = new DBMethods();
-                SqlDataReader dr = db.seeWatchlist(Request.QueryString["userID"]);
+
+                SqlDataReader dr = db.seeWatchlist(db.getuserid(Request.QueryString["username"]));
                 List<Card> cards = new List<Card>();
                 
                 while (dr.Read())
                 {
                     descrip = dr[2].ToString();
-                    Label1.Text = dr[0].ToString();
+                    Label1.Text = dr[0].ToString() + "'s Watchlist";
                     if (descrip.Count() > 105)
                     {
                         descrip = descrip.Insert(97, "...");
@@ -52,7 +52,7 @@ namespace DEV2A_final_project
                 // Bind the list of cards to the Repeater control
                 rptCards1.DataSource = cards;
                 rptCards1.DataBind();
-            }
+            
 
 
         }

@@ -346,6 +346,27 @@ namespace DEV2A_final_project
             return reader;
         }
 
+        public string getuserid(string userId) 
+        {
+            string res = "";
+            SqlDataReader reader = null;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            SqlCommand cmd;
+
+            conn.Open();
+            string SQL = "SELECT UserId FROM Users where Email = '" + userId + "';";
+            cmd = new SqlCommand(SQL, conn);
+
+            reader = cmd.ExecuteReader();
+            while (reader.Read()) 
+            {
+                res = reader[0].ToString();    
+            }
+
+            return res;
+        }
+
 
     }
 }
