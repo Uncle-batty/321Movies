@@ -163,7 +163,11 @@ namespace DEV2A_final_project
             movietitle = title;
 
         }
-      
+      public void btnwatch(object sender, EventArgs e)
+        {
+            string movie = ht.Value;
+            Response.Redirect("WatchMovie.aspx?Title=" + movie);
+        }
         // Data model for each card
         public class Card
         {

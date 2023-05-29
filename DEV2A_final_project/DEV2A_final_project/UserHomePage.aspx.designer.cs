@@ -51,6 +51,15 @@ namespace DEV2A_final_project
         protected global::System.Web.UI.WebControls.Repeater rptCards2;
 
         /// <summary>
+        /// ht control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField ht;
+
+        /// <summary>
         /// Label3 control.
         /// </summary>
         /// <remarks>

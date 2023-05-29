@@ -14,8 +14,9 @@ namespace DEV2A_final_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string title = Request.QueryString["title"];
             DBMethods db = new DBMethods();
-            SqlDataReader dr = db.MoreInfo(movietitle);
+            SqlDataReader dr = db.MoreInfo(title);
             while (dr.Read())
             {
                 lbltitle.Text = dr[0].ToString();

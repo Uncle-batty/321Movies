@@ -14,7 +14,7 @@ namespace DEV2A_final_project
 {
     public class DBMethods
     {
-        public static string connectionString = "Data Source=KEVSLAPTOP;Initial Catalog=movies321;Integrated Security=True";
+        public static string connectionString = "Data Source=.;Initial Catalog=Movies321;Integrated Security=True";
         public static Guid userID;
         public static Guid paymentID;
         public bool addUser(string firstName, string lastName, string email, string password, string userDOB)

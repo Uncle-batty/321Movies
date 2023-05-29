@@ -66,7 +66,7 @@
         $('.watch-button').click(function (event) {
             var cardTitle = $(this).closest('.card').find('.card-title').text();
             console.log(cardTitle); // You can use the title as per your requirement
-
+            document.getElementById('ht').value = cardTitle;
             // Send the title to the server using an AJAX request
             $.ajax({
                 type: 'POST',
@@ -136,7 +136,7 @@
                 <p class="card-description"><%# Eval("Description") %></p>
                 <div class="card-buttons">
                     <a href="#" class="card-button">More Info</a>
-                    <a href="WatchMovie.aspx" class="card-button watch-button">Watch</a>
+                    <a href="WatchMovie.aspx" class="card-button watch-button" runat="server" onserverclick="btnwatch">Watch</a>
 
                 </div>
             </div>
@@ -162,7 +162,7 @@
                 <p class="card-description"><%# Eval("Description") %></p>
                 <div class="card-buttons">
                     <a href="#" class="card-button">More Info</a>
-                    <a href="WatchMovie.aspx" class="card-button watch-button">Watch</a>
+                    <a href="WatchMovie.aspx" class="card-button watch-button" runat="server" onserverclick="btnwatch">Watch</a>
 
                 </div>
             </div>
@@ -171,7 +171,7 @@
     <div class="arrow previous">&lt;</div>
     <div class="arrow next">&gt;</div>
 </div>
-
+<asp:HiddenField runat="server" id="ht"/>
 
 
     <%-- third card container --%>  
@@ -187,7 +187,7 @@
                 <p class="card-description"><%# Eval("Description") %></p>
                 <div class="card-buttons">
                     <a href="#" class="card-button">More Info</a>
-                    <a href="WatchMovie.aspx" class="card-button watch-button">Watch</a>
+                    <a href="WatchMovie.aspx" class="card-button watch-button" runat="server" onserverclick="btnwatch">Watch</a>
 
                 </div>
             </div>
@@ -215,7 +215,7 @@
             <p class ="card-description"><%# Eval("Description") %></p>  
             <div class="card-buttons">
     <a href="#" class="card-button">More Info</a>
-    <a href="WatchMovie.aspx" class="card-button watch-button">Watch</a>
+    <a href="WatchMovie.aspx" class="card-button watch-button" runat="server" onserverclick="btnwatch">Watch</a>
   </div>
         </div>        
     </ItemTemplate>
