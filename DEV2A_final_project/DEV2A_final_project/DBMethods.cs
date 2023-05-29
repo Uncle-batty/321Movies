@@ -297,5 +297,19 @@ namespace DEV2A_final_project
             return reader;
             
         }
+
+        public void updateviews(string title)
+        {
+            SqlConnection conn = new SqlConnection(connectionString );
+            SqlCommand cmd;
+
+            conn.Open();
+            string sql = "EXEC UpdateViews '" + title+ "';";
+
+            cmd = new SqlCommand(sql, conn);
+
+            cmd.ExecuteNonQuery();
+
+        }
     }
 }

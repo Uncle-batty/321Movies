@@ -16,6 +16,7 @@ namespace DEV2A_final_project
         {
             string title = Request.QueryString["title"];
             DBMethods db = new DBMethods();
+            db.updateviews(title);
             SqlDataReader dr = db.MoreInfo(title);
             while (dr.Read())
             {
