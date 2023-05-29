@@ -36,6 +36,7 @@ namespace DEV2A_final_project
                 {
                     descrip = dr[7].ToString();
 
+
                     if (descrip.Count() > 105)
                     {
                         descrip = descrip.Insert(97, "...");
@@ -44,7 +45,7 @@ namespace DEV2A_final_project
                     cards.Add(new Card
                     {
                         Title = dr[1].ToString(),
-                        ImageUrl = "assets/Movies/movie" + 4.ToString() + ".jpg",
+                        ImageUrl = "assets/Movies/" + dr[1].ToString() + ".jpg",
                         Description = descrip,
 
                     });
@@ -78,7 +79,7 @@ namespace DEV2A_final_project
                     cards.Add(new Card
                     {
                         Title = dr[1].ToString(),
-                        ImageUrl = "assets/Movies/movie" + 10.ToString() + ".jpg",
+                        ImageUrl = "assets/Movies/" + dr[1].ToString() + ".jpg",
                         Description = descrip,
 
                     });
@@ -109,7 +110,7 @@ namespace DEV2A_final_project
                     cards.Add(new Card
                     {
                         Title = dr[1].ToString(),
-                        ImageUrl = "assets/Movies/movie" + 3.ToString() + ".jpg",
+                        ImageUrl = "assets/Movies/" + dr[1].ToString() + ".jpg",
                         Description = descrip,
 
                     });
@@ -140,7 +141,7 @@ namespace DEV2A_final_project
                     cards.Add(new Card
                     {
                         Title = dr[1].ToString(),
-                        ImageUrl = "assets/Movies/movie" + 1.ToString() + ".jpg",
+                        ImageUrl = "assets/Movies/" + dr[1].ToString() + ".jpg",
                         Description = descrip,
 
                     });
