@@ -12,16 +12,18 @@ using System.Web.UI.WebControls;
 namespace DEV2A_final_project
 {
     
+    [Serializable]
     public partial class UserHomePage : System.Web.UI.Page
     {
         public string descrip { get; set; }
-        
-       
+        public static string movietitle = "";
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             DBMethods dBMethods = new DBMethods();
             //SqlDataReader DR = dBMethods.
-
+            
             //card 1
             if (!IsPostBack)
             {
@@ -151,11 +153,17 @@ namespace DEV2A_final_project
                 rptCards4.DataBind();
             }
         }
-        public void btnFullview(object sender, EventArgs e)
-        {
-            
-        }
 
+        
+
+        [WebMethod]
+        public static void HandleWatchButtonClick(string title)
+        {
+            System.Diagnostics.Debug.WriteLine("HandleWatchButtonClick called with title: " + title);
+            movietitle = title;
+
+        }
+      
         // Data model for each card
         public class Card
         {

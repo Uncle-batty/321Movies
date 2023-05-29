@@ -66,7 +66,8 @@
         $('.watch-button').click(function (event) {
             var cardTitle = $(this).closest('.card').find('.card-title').text();
             console.log(cardTitle); // You can use the title as per your requirement
-            // You can also send the title to the server using an AJAX request
+
+            // Send the title to the server using an AJAX request
             $.ajax({
                 type: 'POST',
                 url: 'UserHomePage.aspx/HandleWatchButtonClick',
@@ -82,8 +83,8 @@
             });
         });
     });
-
 </script>
+
 
 
     
@@ -135,7 +136,7 @@
                 <p class="card-description"><%# Eval("Description") %></p>
                 <div class="card-buttons">
                     <a href="#" class="card-button">More Info</a>
-                    <a class="card-button watch-button">Watch</a>
+                    <a href="WatchMovie.aspx" class="card-button watch-button">Watch</a>
 
                 </div>
             </div>
@@ -161,7 +162,7 @@
                 <p class="card-description"><%# Eval("Description") %></p>
                 <div class="card-buttons">
                     <a href="#" class="card-button">More Info</a>
-                    <a href="#" class="card-button watch-button">Watch</a>
+                    <a href="WatchMovie.aspx" class="card-button watch-button">Watch</a>
 
                 </div>
             </div>
@@ -186,7 +187,7 @@
                 <p class="card-description"><%# Eval("Description") %></p>
                 <div class="card-buttons">
                     <a href="#" class="card-button">More Info</a>
-                    <a href="#" class="card-button watch-button">Watch</a>
+                    <a href="WatchMovie.aspx" class="card-button watch-button">Watch</a>
 
                 </div>
             </div>
@@ -214,7 +215,7 @@
             <p class ="card-description"><%# Eval("Description") %></p>  
             <div class="card-buttons">
     <a href="#" class="card-button">More Info</a>
-    <a href="#" class="card-button watch-button">Watch</a>
+    <a href="WatchMovie.aspx" class="card-button watch-button">Watch</a>
   </div>
         </div>        
     </ItemTemplate>

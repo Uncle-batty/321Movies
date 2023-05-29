@@ -12,29 +12,20 @@ namespace DEV2A_final_project
 {
     public partial class WatchMovie : System.Web.UI.Page
     {
-
-
-        public string movieTitle;
-
-        [WebMethod]
-        public void HandleWatchButtonClick(string title)
-        {
-            movieTitle = title;
-            
-
-        }
         protected void Page_Load(object sender, EventArgs e)
         {
             DBMethods db = new DBMethods();
-            SqlDataReader dr = db.MoreInfo(movieTitle);
+            SqlDataReader dr = db.MoreInfo(movietitle);
             while (dr.Read())
             {
-                lbltitle.Text = dr[2].ToString();
-
-
-
+                lbltitle.Text = dr[0].ToString();
+                lbldesc.Text = dr[6].ToString();
+                lblrating.Text = dr[4].ToString();
+                lblage.Text = dr[5].ToString();
+                lblruntime.Text = dr[2].ToString();
             }
-            
+
+
         }
     }
 }
