@@ -246,14 +246,14 @@ namespace DEV2A_final_project
             }
         }
 
-        public  SqlDataReader MovieListbyCat(int catagory)
+        public  SqlDataReader MovieListbyCat(int catagory,int sub)
         {
             SqlDataReader reader = null;
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand cmd;
 
             conn.Open();
-            string SQL = "SELECT * FROM Movies where CatergoryID = '" + catagory + "';";
+            string SQL = "SELECT * FROM Movies where CatergoryID = '" + catagory + "' and Subid <= '" +sub + "';";
             cmd = new SqlCommand(SQL, conn);
 
             reader = cmd.ExecuteReader();
@@ -328,5 +328,24 @@ namespace DEV2A_final_project
 
             return reader;
         }
+
+        public SqlDataReader getuserSubid(string useremail)
+        {
+            SqlDataReader reader = null;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            SqlCommand cmd;
+
+            conn.Open();
+            string SQL = "EXEC Getusersubid @Username = '" + useremail + "';";
+            cmd = new SqlCommand(SQL, conn);
+
+            reader = cmd.ExecuteReader();
+
+
+            return reader;
+        }
+
+
     }
 }

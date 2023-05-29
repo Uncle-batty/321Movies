@@ -28,8 +28,15 @@ namespace DEV2A_final_project
             if (!IsPostBack)
             {
                 // Create a list of 100 cards with similar content
+                int subid = 0;
                 DBMethods db = new DBMethods();
-                SqlDataReader dr = db.MovieListbyCat(2);
+                SqlDataReader dr0 = db.getuserSubid(Request.QueryString["Username"]);
+                while(dr0.Read())
+                {
+                    subid = int.Parse(dr0[0].ToString());
+                    
+                }
+                SqlDataReader dr = db.MovieListbyCat(2,subid );
                 List<Card> cards = new List<Card>();
                
                 while (dr.Read())
@@ -64,8 +71,15 @@ namespace DEV2A_final_project
             {
 
                 // Create a list of 100 cards with similar content
+                int subid = 0;
                 DBMethods db = new DBMethods();
-                SqlDataReader dr = db.MovieListbyCat(1);
+                SqlDataReader dr0 = db.getuserSubid(Request.QueryString["Username"]);
+                while (dr0.Read())
+                {
+                    subid = int.Parse(dr0[0].ToString());
+                    
+                }
+                SqlDataReader dr = db.MovieListbyCat(1, subid);
                 List<Card> cards = new List<Card>();
                 while (dr.Read())
                 {
@@ -95,8 +109,15 @@ namespace DEV2A_final_project
             if (!IsPostBack)
             {
                 // Create a list of 100 cards with similar content
+                int subid = 0;
                 DBMethods db = new DBMethods();
-                SqlDataReader dr = db.MovieListbyCat(6);
+                SqlDataReader dr0 = db.getuserSubid(Request.QueryString["Username"]);
+                while (dr0.Read())
+                {
+                    subid = int.Parse(dr0[0].ToString());
+                   
+                }
+                SqlDataReader dr = db.MovieListbyCat(6, subid);
                 List<Card> cards = new List<Card>();
                 while (dr.Read())
                 {
@@ -126,8 +147,15 @@ namespace DEV2A_final_project
             if (!IsPostBack)
             {
                 // Create a list of 100 cards with similar content
+                int subid = 0;
                 DBMethods db = new DBMethods();
-                SqlDataReader dr = db.MovieListbyCat(5);
+                SqlDataReader dr0 = db.getuserSubid(Request.QueryString["Username"]);
+                while (dr0.Read())
+                {
+                    subid = int.Parse(dr0[0].ToString());
+                   
+                }
+                SqlDataReader dr = db.MovieListbyCat(5, subid);
                 List<Card> cards = new List<Card>();
                 while (dr.Read())
                 {
@@ -167,7 +195,7 @@ namespace DEV2A_final_project
       public void btnwatch(object sender, EventArgs e)
         {
             string movie = ht.Value;
-            Response.Redirect("WatchMovie.aspx?Title=" + movie);
+            Response.Redirect("WatchMovie.aspx?Title=" + movie+"&Username=" + Request.QueryString["Username"]);
         }
         // Data model for each card
         public class Card

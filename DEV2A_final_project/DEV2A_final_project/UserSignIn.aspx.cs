@@ -31,6 +31,7 @@ namespace DEV2A_final_project
                     flag = true;
                 }
                 
+
             }
             else
             {
@@ -46,7 +47,7 @@ namespace DEV2A_final_project
 
                 if (userSingIn.userSignIn(userEmail, userPassword))
                 {
-                    Response.Redirect("UserHomePage.aspx");
+                    Response.Redirect("UserHomePage.aspx?Username=" + userEmail); 
                 }
                 else
                 {
