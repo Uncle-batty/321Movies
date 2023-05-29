@@ -243,6 +243,7 @@
     <Content Include="UserHomePage.aspx" />
     <Content Include="UserLogin.aspx" />
     <Content Include="UserSignIn.aspx" />
+    <Content Include="Watchlist.aspx" />
     <Content Include="WatchMovie.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -297,6 +298,13 @@
     </Compile>
     <Compile Include="UserSignIn.aspx.designer.cs">
       <DependentUpon>UserSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Watchlist.aspx.cs">
+      <DependentUpon>Watchlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Watchlist.aspx.designer.cs">
+      <DependentUpon>Watchlist.aspx</DependentUpon>
     </Compile>
     <Compile Include="WatchMovie.aspx.cs">
       <DependentUpon>WatchMovie.aspx</DependentUpon>
