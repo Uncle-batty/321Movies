@@ -1774,24 +1774,30 @@ a {
     text-align: center;
     margin-bottom: 5px;
     color: white;
-    font-size: 2em; /* adjust the font size as needed */
-    font-weight: bold; /* or adjust the font weight as needed */
-    /* add any other desired styling properties here */
+    font-size: 2em;
+    font-weight: bold;
+    /* add any other desired styling properties here */
+
+    word-wrap: break-word; /* Wrap long words onto the next line */
+    word-break: break-all; /* Break words at any character if necessary */
 }
+
 .labelContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left:200px;
+    padding: 20px 20px;
+    margin-left: 75px;
 }
+
 .info {
     margin-top: 5px;
     text-align: center;
     margin-bottom: 5px;
     color: white;
-    font-size: 15px; /* adjust the font size as needed */
-  
+    font-size: 15px;
 }
+
 
 
 .card-buttons {
