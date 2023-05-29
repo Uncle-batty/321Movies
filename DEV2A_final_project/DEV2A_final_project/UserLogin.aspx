@@ -33,6 +33,23 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
+
+	<style>
+		.validatorLabel{
+			bottom: 5%;
+			justify-content: center;
+		}
+	</style>
+
+	<script type="text/javascript">
+    function AutoSelectTab2() {
+        // Get the reference to the "tab-2" radio button
+        var tab2RadioButton = document.getElementById("tab-2");
+
+        // Check the "tab-2" radio button
+        tab2RadioButton.checked = true;
+    }
+    </script>
     
 
   <!-- =======================================================
@@ -96,12 +113,13 @@
 				<div class="group">
 					<asp:Button id="btn_PersonalInfoSubmit" runat="server" class="button" Text="Next >" OnClick="btn_NextClick"/>
 				</div>
-				<div class="hr"></div>
 				<div class="foot-lnk">
 					<a href="UserSignIn.aspx">Already a member?</a>
-				</div>				
+				</div>	
+				<div class="hr"></div>
+							
 			</div>
-			<asp:Label ID="lbl_personalInfoState" CssClass="align-bottom" runat="server" Text="**************"/>
+			
 			<div class="sign-up-htm">
 				<div class="group">
 					<label for="user" class="Subscription Level"></label>
@@ -128,12 +146,19 @@
 				<div class="group">
 					<asp:Button ID="btn_CompleteLogin" runat="server" class="button" Text="Complete" OnClick="btn_NewPaymentsClick"/>
 				</div>
-				<div class="hr"></div>
 				<div class="foot-lnk">
-					<a href="UserLogin.aspx">Skip This step ></a>
+					<a href="UserSignIn">Skip This step ></a>
+					
+				<div class="hr"></div>
+				
 				</div>				
 			</div>
-		</div>		
+			
+		</div>	
+		<div class="validatorLabel">
+			<asp:Label ID="lbl_personalInfoState" style="justify-self:center; " runat="server" Text=""/>
+		</div>
+		
 	</div>
 </div>
 	</form>

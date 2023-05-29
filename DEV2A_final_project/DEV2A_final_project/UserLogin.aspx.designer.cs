@@ -78,15 +78,6 @@ namespace DEV2A_final_project
         protected global::System.Web.UI.WebControls.Button btn_PersonalInfoSubmit;
 
         /// <summary>
-        /// lbl_personalInfoState control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_personalInfoState;
-
-        /// <summary>
         /// dd_Pricing control.
         /// </summary>
         /// <remarks>
@@ -130,5 +121,14 @@ namespace DEV2A_final_project
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_CompleteLogin;
+
+        /// <summary>
+        /// lbl_personalInfoState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_personalInfoState;
     }
 }

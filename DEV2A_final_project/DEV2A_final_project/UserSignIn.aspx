@@ -33,6 +33,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
+
+
     
 
   <!-- =======================================================
@@ -103,7 +105,7 @@
 				</div>--%>
 			</div>
 		</div>
-					<asp:Label ID="lbl_SignInState" runat="server" Text="**************"/>
+					<asp:Label ID="lbl_SignInState" runat="server" Text=""/>
 
 	</div>
 </div>

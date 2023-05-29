@@ -37,30 +37,19 @@ namespace DEV2A_final_project
 
             if (tb_Fname.Text != "" && tb_Lname.Text != "" && tb_Email.Text != "" && tb_UserPassword.Text != "" && tb_UserPassword2.Text != "" && tb_DOB.Text != "")
             {
-                if (tb_Fname.Text.All(char.IsLetter) || tb_Lname.Text.All(char.IsLetter))
+                if (!tb_Fname.Text.All(char.IsLetter) || !tb_Lname.Text.All(char.IsLetter))
                 {
                     lbl_personalInfoState.ForeColor = System.Drawing.Color.Red;
                     lbl_personalInfoState.Text = "First name and last name should only contain letters!";
                     flag = true;
                 }
-                else if ( tb_UserPassword != tb_UserPassword2)
+                else if ( tb_UserPassword.Text != tb_UserPassword2.Text)
                 {
                     lbl_personalInfoState.ForeColor = System.Drawing.Color.Red;
                     lbl_personalInfoState.Text = "Please make sure passwords are the same!";
                     flag = true;
                 }
-                else if ( tb_UserPassword.Text.Length < 8)
-                {
-                    lbl_personalInfoState.ForeColor = System.Drawing.Color.Red;
-                    lbl_personalInfoState.Text = "Password too short, it must be have 8 characters or more!";
-                    flag = true;
-                }
-                else if (!tb_UserPassword.Text.Any(char.IsDigit) || !tb_UserPassword.Text.Any(char.IsLetter) || !tb_UserPassword.Text.Any(char.IsUpper) || !tb_UserPassword.Text.Any(char.IsSymbol))
-                {
-                    lbl_personalInfoState.ForeColor = System.Drawing.Color.Red;
-                    lbl_personalInfoState.Text = "Password should contain at least 1 Capital letter, 1 Number ,1 small letter and 1 Special character";
-                    flag = true;
-                }
+                
                 else if (!DBMethods.validEmail(tb_Email.Text))
                 {
                     lbl_personalInfoState.ForeColor = System.Drawing.Color.Red;
@@ -81,11 +70,6 @@ namespace DEV2A_final_project
                 flag = true;
             }
             
-            if (tb_UserPassword.Text.ToLower().Contains(FirstName.ToLower()) || tb_UserPassword.Text.ToLower().Contains(LastName.ToLower()))
-            {
-                lbl_personalInfoState.ForeColor = System.Drawing.Color.Yellow;
-                lbl_personalInfoState.Text = "Warning. Your password contain your name or surname, this may affect security";
-            }
 
 
             if (!flag)
@@ -101,6 +85,7 @@ namespace DEV2A_final_project
                 {
                     lbl_personalInfoState.ForeColor = System.Drawing.Color.Green;
                     lbl_personalInfoState.Text = "Registeration successful";
+                    ClientScript.RegisterStartupScript(this.GetType(), "AutoSelectTab2", "AutoSelectTab2();", true);
                 }
                 else
                 {

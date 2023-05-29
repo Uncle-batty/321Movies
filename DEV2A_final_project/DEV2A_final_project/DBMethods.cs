@@ -129,7 +129,7 @@ namespace DEV2A_final_project
         {
             bool userSignedIn = false;
             SqlConnection conn = new SqlConnection(connectionString);
-            string commandText = $"select * from Users where Email = '{email}' and Password = {password}";
+            string commandText = $"select * from Users where Email = '{email}' and Password = '{password}'";
             SqlDataReader dataReader;
             try
             {
