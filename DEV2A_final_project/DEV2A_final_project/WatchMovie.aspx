@@ -55,7 +55,7 @@
      </div>
             <div class="bottomContainer">
                 <div class ="card">
-                    <img class="card img" src="assets/Movies/movie1.jpg" />
+                    <img id="img" runat="server" class="card img" src="assets/Movies/movie1.jpg" />
                 </div>
            
                 <div class="labelContainer">

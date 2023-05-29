@@ -311,5 +311,22 @@ namespace DEV2A_final_project
             cmd.ExecuteNonQuery();
 
         }
+
+        public SqlDataReader seeWatchlist(string userId)
+        {
+            SqlDataReader reader = null;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            SqlCommand cmd;
+
+            conn.Open();
+            string SQL = "EXEC seeWatchlist @UserId = '" + userId + "';";
+            cmd = new SqlCommand(SQL, conn);
+
+            reader = cmd.ExecuteReader();
+
+
+            return reader;
+        }
     }
 }

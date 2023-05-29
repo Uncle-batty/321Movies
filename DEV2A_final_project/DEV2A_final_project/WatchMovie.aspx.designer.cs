@@ -33,6 +33,15 @@ namespace DEV2A_final_project
         protected global::System.Web.UI.HtmlControls.HtmlIframe Moviescr;
 
         /// <summary>
+        /// img control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage img;
+
+        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
