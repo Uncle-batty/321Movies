@@ -24,6 +24,7 @@ namespace DEV2A_final_project
                 lblrating.Text = dr[4].ToString();
                 lblage.Text = dr[5].ToString();
                 lblruntime.Text = dr[2].ToString();
+                Moviescr.Src = dr[3].ToString();    
             }
 
 
