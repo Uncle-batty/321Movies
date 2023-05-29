@@ -197,6 +197,11 @@ namespace DEV2A_final_project
             string movie = ht.Value;
             Response.Redirect("WatchMovie.aspx?Title=" + movie+"&Username=" + Request.QueryString["Username"]);
         }
+        public void btnwatchlist(object sender, EventArgs e)
+        {
+            
+            Response.Redirect("Watchlist.aspx?Username=" + Request.QueryString["Username"]);
+        }
         // Data model for each card
         public class Card
         {
