@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.SqlClient;
+
+
 
 namespace DEV2A_final_project
 {
+    
     public partial class UserHomePage : System.Web.UI.Page
     {
-        public static string descrip = "";
-
+        public string descrip { get; set; }
+        
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             DBMethods dBMethods = new DBMethods();
@@ -42,7 +46,8 @@ namespace DEV2A_final_project
                         Description = descrip,
 
                     });
-
+                
+                    
 
                 }
 
@@ -54,6 +59,7 @@ namespace DEV2A_final_project
             //card 2
             if (!IsPostBack)
             {
+
                 // Create a list of 100 cards with similar content
                 DBMethods db = new DBMethods();
                 SqlDataReader dr = db.MovieListbyCat(1);
@@ -145,6 +151,10 @@ namespace DEV2A_final_project
                 rptCards4.DataBind();
             }
         }
+        public void btnFullview(object sender, EventArgs e)
+        {
+            
+        }
 
         // Data model for each card
         public class Card
@@ -152,6 +162,7 @@ namespace DEV2A_final_project
             public string Title { get; set; }
             public string ImageUrl { get; set; }
             public string Description { get; set; }
+            
         }
 
     }

@@ -27,12 +27,68 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/WatchMovie.css" rel="stylesheet">
 </head>
-<body>
+<body class="Home_body">
+    <header class="top-bar">
+  <div class="Search_container1">
+    <div class="logo">
+      <a href="#">321 Movies</a>
+    </div>
+    <div class="nav-links">
+      <a href="LandingPage.aspx">Landing</a>
+      <a href="UserHomePage.aspx">Home Page</a>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search...">
+      <button type="submit">Search</button>
+    </div>
+    <a href="User Profile.aspx" class="profile-button">
+      <img src="assets/img/User_Icon.png" alt="Profile Image">
+    </a>
+  </div>
+</header>
     <form id="form1" runat="server">
         <div>
+            <div class="vcontainer">
+    <iframe id="movie" src="https://www.youtube.com/embed/Y274jZs5s7s" frameborder="0" allowfullscreen autoplay></iframe>
+     </div>
+            <div class="bottomContainer">
+                <div class ="card">
+                    <img class="card img" src="assets/Movies/movie1.jpg" />
+                </div>
+           
+                <div class="labelContainer">
+                <div class="labels">
+                    <asp:Label ID="Label1" runat="server">Title</asp:Label> 
+                </div>
+                <asp:Label CssClass="info" ID="lbltitle" runat="server"></asp:Label>  
 
+
+                <div class="labels">
+                    <asp:Label ID="Label2" runat="server">Description</asp:Label> 
+                </div>
+                    <asp:Label CssClass="info" ID="lbldesc" runat="server"></asp:Label>
+
+                <div class="labels">
+                    <asp:Label ID="Label3" runat="server">Rating</asp:Label> 
+                </div>
+                    <asp:Label CssClass="info" ID="lblrating" runat="server"></asp:Label>
+                    </div>
+                <div class ="labelContainer">
+                     <div class="labels">
+                    <asp:Label ID="Label4" runat="server">Age rating</asp:Label> 
+                </div>
+                    <asp:Label CssClass="info" ID="lblage" runat="server"></asp:Label>
+
+                <div class="labels">
+                    <asp:Label ID="Label5" runat="server">Run Time</asp:Label> 
+                </div>
+                    <asp:Label CssClass="info" ID="lblruntime" runat="server"></asp:Label>
+                </div>
+
+                </div>
+  
 
         </div>
     </form>

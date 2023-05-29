@@ -59,11 +59,39 @@
         });
 
     </script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.watch-button').click(function (event) {
+            var cardTitle = $(this).closest('.card').find('.card-title').text();
+            console.log(cardTitle); // You can use the title as per your requirement
+            // You can also send the title to the server using an AJAX request
+            $.ajax({
+                type: 'POST',
+                url: 'UserHomePage.aspx/HandleWatchButtonClick',
+                data: JSON.stringify({ title: cardTitle }),
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                success: function (response) {
+                    // Handle the server response if needed
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    // Handle the error if needed
+                }
+            });
+        });
+    });
+
+</script>
+
+
     
    
 </head>
 
 <body class="Home_body" >
+    <form runat="server">
 <header class="top-bar">
   <div class="Search_container1">
     <div class="logo">
@@ -95,32 +123,26 @@
 
 <%-- first card container --%>
    
-     <div class="labels">
-         <asp:Label ID="Label1" runat="server">Comedy</asp:Label> 
-     </div>
-
-     
-<div>
-     <div class ="card-container" >
-        
-        <asp:Repeater ID="rptCards1" runat="server">
-    <ItemTemplate>
-        <div class ="card">
-            <img class="card img" src="<%# Eval("ImageUrl") %>" />
-            <h2 class ="card-title"><%# Eval("Title") %></h2>  
-            <p class ="card-description"><%# Eval("Description") %></p>  
-            <div class="card-buttons">
-    <a href="#" class="card-button">More Info</a>
-    <a href="#" class="card-button">Watch</a>
-  </div>
-        </div>        
-    </ItemTemplate>
-</asp:Repeater>   
-         <div class="arrow previous">&lt;</div>
-    <div class="arrow next">&gt;</div>
+<div class="labels">
+     <asp:Label ID="Label1" runat="server">Action</asp:Label> 
  </div>
-    
-    
+<div class="card-container">
+    <asp:Repeater ID="rptCards1" runat="server">
+        <ItemTemplate>
+            <div class="card">
+                <img class="card img" src="<%# Eval("ImageUrl") %>" />
+                <h2 class="card-title"><%# Eval("Title") %></h2>  
+                <p class="card-description"><%# Eval("Description") %></p>
+                <div class="card-buttons">
+                    <a href="#" class="card-button">More Info</a>
+                    <a class="card-button watch-button">Watch</a>
+
+                </div>
+            </div>
+        </ItemTemplate>
+    </asp:Repeater> 
+    <div class="arrow previous">&lt;</div>
+    <div class="arrow next">&gt;</div>
 </div>
      
 
@@ -139,7 +161,8 @@
                 <p class="card-description"><%# Eval("Description") %></p>
                 <div class="card-buttons">
                     <a href="#" class="card-button">More Info</a>
-                    <a href="#" class="card-button">Watch</a>
+                    <a href="#" class="card-button watch-button">Watch</a>
+
                 </div>
             </div>
         </ItemTemplate>
@@ -163,7 +186,8 @@
                 <p class="card-description"><%# Eval("Description") %></p>
                 <div class="card-buttons">
                     <a href="#" class="card-button">More Info</a>
-                    <a href="#" class="card-button">Watch</a>
+                    <a href="#" class="card-button watch-button">Watch</a>
+
                 </div>
             </div>
         </ItemTemplate>
@@ -190,7 +214,7 @@
             <p class ="card-description"><%# Eval("Description") %></p>  
             <div class="card-buttons">
     <a href="#" class="card-button">More Info</a>
-    <a href="#" class="card-button">Watch</a>
+    <a href="#" class="card-button watch-button">Watch</a>
   </div>
         </div>        
     </ItemTemplate>
@@ -202,7 +226,7 @@
     
 </div>
      
-
+</form>
 </body>
 </html>
 

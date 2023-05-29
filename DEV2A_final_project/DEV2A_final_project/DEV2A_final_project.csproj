@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="AdminHomePage.aspx" />
     <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\WatchMovie.css" />
     <Content Include="assets\img\321MoviesLogo.png" />
     <Content Include="assets\img\about.jpg" />
     <Content Include="assets\img\apple-touch-icon.png" />

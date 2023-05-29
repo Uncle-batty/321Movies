@@ -14,7 +14,7 @@ namespace DEV2A_final_project
 {
     public class DBMethods
     {
-        public string connectionString = "Data Source=KEVSLAPTOP;Initial Catalog=movies321;Integrated Security=True";
+        public static string connectionString = "Data Source=KEVSLAPTOP;Initial Catalog=movies321;Integrated Security=True";
         public static Guid userID;
         public static Guid paymentID;
         public bool addUser(string firstName, string lastName, string email, string password, string userDOB)
@@ -261,6 +261,23 @@ namespace DEV2A_final_project
             
             return reader;
             
+        }
+
+        public SqlDataReader MoreInfo(string name)
+        {
+            SqlDataReader reader = null;
+            SqlConnection conn = new SqlConnection(connectionString);
+            SqlCommand cmd;
+
+            conn.Open();
+            string SQL = "SELECT MovieTitle,RunTime,Release_Year,TrailerLink,Ratings,AgeRating,ShortDiscription,ImageName FROM Movies where MovieTitle = '" + name + "';";
+            cmd = new SqlCommand(SQL, conn);
+
+            reader = cmd.ExecuteReader();
+
+
+            return reader;
+
         }
 
         public SqlDataReader GetUser(int ID )
