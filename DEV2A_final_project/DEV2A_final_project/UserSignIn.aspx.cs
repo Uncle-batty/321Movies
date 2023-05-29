@@ -21,31 +21,58 @@ namespace DEV2A_final_project
         public void btn_UserSignIn_Click(object sender, EventArgs e)
         {
             DBMethods userSingIn = new DBMethods();
-            //Validators
-            userEmail = tb_UserEmail.Text;
-            userPassword = tb_UserPassword.Text;
-
-            if (userSingIn.userSignIn(userEmail, userPassword))
+            bool flag = false;
+            if (tb_UserEmail.Text != "" && tb_UserPassword.Text != "")
             {
-                Response.Redirect("UserHomePage.aspx");
+                if (!DBMethods.validEmail(tb_UserEmail.Text))
+                {
+                    lbl_SignInState.ForeColor = System.Drawing.Color.Red;
+                    lbl_SignInState.Text = "Please enter a valid email";
+                    flag = true;
+                }
+                
             }
             else
             {
+                flag = true;
                 lbl_SignInState.ForeColor = System.Drawing.Color.Red;
-                lbl_SignInState.Text = "Failed to Sign in";
+                lbl_SignInState.Text = "Please fill in all the fields";
             }
+
+            if (!flag)
+            {
+                userEmail = tb_UserEmail.Text;
+                userPassword = DBMethods.encrypt(tb_UserPassword.Text);
+
+                if (userSingIn.userSignIn(userEmail, userPassword))
+                {
+                    Response.Redirect("UserHomePage.aspx");
+                }
+                else
+                {
+                    lbl_SignInState.ForeColor = System.Drawing.Color.Red;
+                    lbl_SignInState.Text = "Failed to Sign in";
+                }
+            }
+            
         }
 
         public void btn_AdminSignIn_Click(object sender, EventArgs e)
         {
             DBMethods adminSingIn = new DBMethods();
-            //Validators
+            bool flag = false;
+            if (tb_AdminUsername.Text == "" && tb_AdminPassword.Text == "")
+            {
+                lbl_SignInState.ForeColor = System.Drawing.Color.Red;
+                lbl_SignInState.Text = "Please enter all fields";
+            }
+            
             adminEmail = tb_AdminUsername.Text;
             adminPassword = tb_AdminPassword.Text;
 
             if (adminSingIn.adminSignIn(adminEmail, adminPassword))
             {
-                Response.Redirect("UserHomePage.aspx");
+                Response.Redirect("AdminHomePage.aspx");
             }
             else
             {

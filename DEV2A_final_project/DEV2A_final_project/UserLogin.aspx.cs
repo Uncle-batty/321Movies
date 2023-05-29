@@ -78,7 +78,7 @@ namespace DEV2A_final_project
                 LastName = tb_Lname.Text;
                 DateOfBirth = Convert.ToString(tb_DOB.Text);
                 Email = tb_Email.Text;
-                Password = tb_UserPassword.Text;
+                Password =DBMethods.encrypt(tb_UserPassword.Text);
 
                 bool state = newUser.addUser(FirstName, LastName, Email, Password, DateOfBirth);
                 if (state)

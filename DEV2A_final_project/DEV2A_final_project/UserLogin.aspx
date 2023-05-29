@@ -37,7 +37,7 @@
 	<style>
 		.validatorLabel{
 			bottom: 5%;
-			justify-content: center;
+			justify-items: center;
 		}
 	</style>
 
