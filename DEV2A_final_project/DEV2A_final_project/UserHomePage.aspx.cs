@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 
 
@@ -43,6 +44,7 @@ namespace DEV2A_final_project
                 {
                     descrip = dr[7].ToString();
 
+                    string imagePath = "assets/Movies/" + dr[1].ToString() + ".jpg";
 
                     if (descrip.Count() > 105)
                     {
@@ -52,7 +54,7 @@ namespace DEV2A_final_project
                     cards.Add(new Card
                     {
                         Title = dr[1].ToString(),
-                        ImageUrl = "assets/Movies/" + dr[1].ToString() + ".jpg",
+                        ImageUrl = imagePath,
                         Description = descrip,
 
                     });
@@ -85,6 +87,9 @@ namespace DEV2A_final_project
                 {
                     descrip = dr[7].ToString();
 
+                    string imagePath = "assets/Movies/" + dr[1].ToString() + ".jpg";
+
+              
                     if (descrip.Count() > 105)
                     {
                         descrip = descrip.Insert(97, "...");
@@ -93,7 +98,7 @@ namespace DEV2A_final_project
                     cards.Add(new Card
                     {
                         Title = dr[1].ToString(),
-                        ImageUrl = "assets/Movies/" + dr[1].ToString() + ".jpg",
+                        ImageUrl = imagePath,
                         Description = descrip,
 
                     });
@@ -123,6 +128,8 @@ namespace DEV2A_final_project
                 {
                     descrip = dr[7].ToString();
 
+                    string imagePath = "assets/Movies/" + dr[1].ToString() + ".jpg";
+
                     if (descrip.Count() > 105)
                     {
                         descrip = descrip.Insert(97, "...");
@@ -131,7 +138,7 @@ namespace DEV2A_final_project
                     cards.Add(new Card
                     {
                         Title = dr[1].ToString(),
-                        ImageUrl = "assets/Movies/" + dr[1].ToString() + ".jpg",
+                        ImageUrl = imagePath,
                         Description = descrip,
 
                     });
@@ -161,6 +168,8 @@ namespace DEV2A_final_project
                 {
                     descrip = dr[7].ToString();
 
+                    string imagePath = "assets/Movies/" + dr[1].ToString() + ".jpg";
+
                     if (descrip.Count() > 105)
                     {
                         descrip = descrip.Insert(97, "...");
@@ -169,7 +178,7 @@ namespace DEV2A_final_project
                     cards.Add(new Card
                     {
                         Title = dr[1].ToString(),
-                        ImageUrl = "assets/Movies/" + dr[1].ToString() + ".jpg",
+                        ImageUrl = imagePath,
                         Description = descrip,
 
                     });

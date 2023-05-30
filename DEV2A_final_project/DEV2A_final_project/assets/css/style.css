@@ -1748,6 +1748,7 @@ a {
     overflow-x: hidden;
     overflow-y: hidden;
     transition: transform 0.2s ease-in-out;
+
 }
 
 .card {
@@ -1755,6 +1756,7 @@ a {
     margin-bottom: 16px;
     /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     border-radius: 5px; */
+
     overflow: hidden;
     min-width: 240px;
     margin-right: 8px;
@@ -1764,8 +1766,10 @@ a {
 }
 
     .card img {
-        width: 100%;
-        height: auto;
+        max-width: 240px;
+        max-height: 359px;
+        min-height: 359px;
+        min-width: 240px;
         object-fit: cover;
     }
 

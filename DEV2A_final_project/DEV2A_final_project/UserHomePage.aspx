@@ -126,7 +126,7 @@
 <%-- first card container --%>
    
 <div class="labels">
-     <asp:Label ID="Label1" runat="server">Action</asp:Label> 
+     <asp:Label ID="Label1" runat="server">Comedy</asp:Label> 
  </div>
 <div class="card-container">
     <asp:Repeater ID="rptCards1" runat="server">

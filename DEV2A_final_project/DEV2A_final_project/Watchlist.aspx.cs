@@ -40,7 +40,7 @@ namespace DEV2A_final_project
                     cards.Add(new Card
                     {
                         Title = dr[1].ToString(),
-                        ImageUrl = "assets/Movies/movie" + dr[1].ToString() + ".jpg",
+                        ImageUrl = "assets/Movies/" + dr[1].ToString() + ".jpg",
                         Description = descrip,
 
                     });
