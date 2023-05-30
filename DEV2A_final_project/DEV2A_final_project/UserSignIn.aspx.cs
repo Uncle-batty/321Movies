@@ -47,6 +47,7 @@ namespace DEV2A_final_project
 
                 if (userSingIn.userSignIn(userEmail, userPassword))
                 {
+                    userSingIn.setUserEmail(userEmail);
                     Response.Redirect("UserHomePage.aspx?Username=" + userEmail); 
                 }
                 else
