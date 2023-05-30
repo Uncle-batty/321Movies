@@ -89,7 +89,7 @@ namespace DEV2A_final_project
             bool paymentAdded = false;
             SqlConnection conn = new SqlConnection(connectionString);
             string storedProcedure = "AddUserPayments_st";
-            string cmdText = "update Users set SubID = " + subscriptionLevel + " where UserId = " + userID.ToString() + "";
+            string cmdText = "update Users set SubID = " + subscriptionLevel + " where UserId = '" + userID.ToString() + "'";
             
 
 
@@ -117,11 +117,31 @@ namespace DEV2A_final_project
                     paymentAdded = false;
                 }
                 conn.Close();
+
+
+
             }
             catch (Exception ex)
             {
                 paymentAdded = false;
             }
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmdUpdate = new SqlCommand(cmdText, conn);
+                int updateExecution = cmdUpdate.ExecuteNonQuery();
+                if (updateExecution > 0)
+                {
+                    paymentAdded = true;
+                }
+                else
+                {
+                    paymentAdded = false;
+                }
+                conn.Close();
+            }
+            catch { paymentAdded = false; }
 
             return paymentAdded;
         }

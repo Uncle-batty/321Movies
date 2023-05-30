@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,6 +14,7 @@ namespace DEV2A_final_project
         {
             DBMethods db = new DBMethods();
             db.GetUser(1);
+            SqlDataReader dr0 = db.getuserSubid(Request.QueryString["Username"]);
 
 
         }
