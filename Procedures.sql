@@ -96,11 +96,21 @@ begin
  --Add to watch list
  Create procedure AddtoWatchList
  @userid varchar(50),
- @movieId varchar(50),
+ @movieId varchar(50)
  AS
+ Insert into Watchlist (Userid,MovieID) Values(@userid,@movieid)
 
  --Update raiting 
+ CREATE PROCEDURE Updaterating
+ @movieid varchar(50),
+ @Rateing int
+ AS
+ Update Movies
+ set Ratings = ((Ratings * Views) + @Rateing)/Views
+ where MovieTitle = @movieid;
 
+
+ --Get user subscription id
  Create procedure Getusersubid
  @username varchar(50)
  AS
