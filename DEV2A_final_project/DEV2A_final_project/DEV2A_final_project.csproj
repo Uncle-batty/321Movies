@@ -223,6 +223,7 @@
     <Content Include="assets\vendor\swiper\swiper-bundle.min.css" />
     <Content Include="assets\vendor\swiper\swiper-bundle.min.js" />
     <Content Include="EditPaymentDetails.aspx" />
+    <Content Include="EditUserProfile.aspx" />
     <Content Include="ErrorPage.aspx" />
     <Content Include="forms\Readme.txt" />
     <Content Include="LandingPage.aspx" />
@@ -249,6 +250,13 @@
     </Compile>
     <Compile Include="EditPaymentDetails.aspx.designer.cs">
       <DependentUpon>EditPaymentDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditUserProfile.aspx.cs">
+      <DependentUpon>EditUserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditUserProfile.aspx.designer.cs">
+      <DependentUpon>EditUserProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="ErrorPage.aspx.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>

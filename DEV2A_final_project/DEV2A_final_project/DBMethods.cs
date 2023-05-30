@@ -14,12 +14,15 @@ namespace DEV2A_final_project
 {
     public class DBMethods
     {
-        public static string connectionString = "Data Source=KEVSLAPTOP;Initial Catalog=movies321;Integrated Security=True";
+        public static string connectionString = "Data Source=TADI-C;Initial Catalog=Movies321;Integrated Security=True";
         public static Guid userID;
         public static Guid paymentID;
 
         //Public variables 
         public static string userEmail = "";
+        public static string UserFname = "";
+        public static string UserLname = "";
+        public static int userSubId = 0;
        
 
         public bool addUser(string firstName, string lastName, string email, string password, string userDOB)
@@ -140,6 +143,7 @@ namespace DEV2A_final_project
                 if (updateExecution > 0)
                 {
                     paymentAdded = true;
+                    userSubId = subscriptionLevel;
                 }
                 else
                 {
@@ -366,6 +370,58 @@ namespace DEV2A_final_project
         }
 
         public string getUserEmail() { return userEmail;} 
+
+        public void setUserProfile(string UserEmail)
+        {
+            
+            SqlDataReader reader = null;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            SqlCommand cmd;
+
+            conn.Open();
+            string SQL = "SELECT Fname, Lname, SubID  FROM Users where Email = '" + UserEmail + "';";
+            cmd = new SqlCommand(SQL, conn);
+
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                UserFname = reader[0].ToString();
+                UserLname = reader[1].ToString();
+                userSubId =Convert.ToInt32(reader[2]);
+                
+            }            
+        }
+
+
+        public bool updateUserProfile(string fname, string lname, string email)
+        {
+            bool success = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+            
+            string cmdText = "update Users set Fname = '" + fname + "', Lname = "+ lname +"', Email = '"+ email +"' where Email = '" + userEmail + "';";
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(cmdText, conn);
+                int execution = cmd.ExecuteNonQuery();  
+                if (execution > 0) 
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            catch { success = false; }
+
+            return success;
+
+
+
+        }
 
 
     }

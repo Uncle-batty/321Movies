@@ -14,7 +14,24 @@ namespace DEV2A_final_project
         {
             DBMethods db = new DBMethods();
             db.GetUser(1);
-            
+            db.setUserProfile(db.getUserEmail());
+
+            lbl_Name.Text = DBMethods.UserFname;
+            lbl_Surname.Text = DBMethods.UserLname;
+            lbl_Email.Text = DBMethods.userEmail;
+            int subLevel = DBMethods.userSubId;
+            if (subLevel == 1)
+            {
+                lbl_Subscription.Text = "Free";
+            }
+            else if (subLevel == 2)
+            {
+                lbl_Subscription.Text = "Standard";
+            }
+            else if (subLevel == 3)
+            {
+                lbl_Subscription.Text = "Premium";
+            }
 
 
         }

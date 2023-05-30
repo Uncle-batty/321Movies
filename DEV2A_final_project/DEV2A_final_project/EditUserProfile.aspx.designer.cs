@@ -11,7 +11,7 @@ namespace DEV2A_final_project
 {
 
 
-    public partial class User_Profile
+    public partial class EditUserProfile
     {
 
         /// <summary>
@@ -24,48 +24,48 @@ namespace DEV2A_final_project
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lbl_Name control.
+        /// tb_Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Name;
+        protected global::System.Web.UI.WebControls.TextBox tb_Name;
 
         /// <summary>
-        /// lbl_Surname control.
+        /// tb_Surname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Surname;
+        protected global::System.Web.UI.WebControls.TextBox tb_Surname;
 
         /// <summary>
-        /// lbl_Email control.
+        /// tb_Email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Email;
+        protected global::System.Web.UI.WebControls.TextBox tb_Email;
 
         /// <summary>
-        /// lbl_Subscription control.
+        /// btn_Save control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Subscription;
+        protected global::System.Web.UI.WebControls.Button btn_Save;
 
         /// <summary>
-        /// btn_editPayment control.
+        /// lbl_personalInfoState control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_editPayment;
+        protected global::System.Web.UI.WebControls.Label lbl_personalInfoState;
     }
 }

@@ -31,7 +31,7 @@ namespace DEV2A_final_project
                 // Create a list of 100 cards with similar content
                 int subid = 0;
                 DBMethods db = new DBMethods();
-                SqlDataReader dr0 = db.getuserSubid(Request.QueryString["Username"]);
+                SqlDataReader dr0 = db.getuserSubid(db.getUserEmail());
                 while(dr0.Read())
                 {
                     subid = int.Parse(dr0[0].ToString());
@@ -75,7 +75,7 @@ namespace DEV2A_final_project
                 // Create a list of 100 cards with similar content
                 int subid = 0;
                 DBMethods db = new DBMethods();
-                SqlDataReader dr0 = db.getuserSubid(Request.QueryString["Username"]);
+                SqlDataReader dr0 = db.getuserSubid(db.getUserEmail());
                 while (dr0.Read())
                 {
                     subid = int.Parse(dr0[0].ToString());
@@ -116,7 +116,7 @@ namespace DEV2A_final_project
                 // Create a list of 100 cards with similar content
                 int subid = 0;
                 DBMethods db = new DBMethods();
-                SqlDataReader dr0 = db.getuserSubid(Request.QueryString["Username"]);
+                SqlDataReader dr0 = db.getuserSubid(db.getUserEmail());
                 while (dr0.Read())
                 {
                     subid = int.Parse(dr0[0].ToString());
@@ -156,7 +156,7 @@ namespace DEV2A_final_project
                 // Create a list of 100 cards with similar content
                 int subid = 0;
                 DBMethods db = new DBMethods();
-                SqlDataReader dr0 = db.getuserSubid(Request.QueryString["Username"]);
+                SqlDataReader dr0 = db.getuserSubid(db.getUserEmail());
                 while (dr0.Read())
                 {
                     subid = int.Parse(dr0[0].ToString());

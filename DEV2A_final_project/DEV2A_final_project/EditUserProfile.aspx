@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="User Profile.aspx.cs" Inherits="DEV2A_final_project.User_Profile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditUserProfile.aspx.cs" Inherits="DEV2A_final_project.EditUserProfile" %>
 
 <!DOCTYPE html>
 
@@ -71,6 +71,15 @@
       font-size: 16px;
     }
 
+    .textBox{
+        width: 100%;
+      padding: 12px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
     select{
       appearance: none;
       -webkit-appearance: none;
@@ -126,29 +135,26 @@
  <img class="user-icon" src="assets/img/User_Icon.png" alt="User Icon">
       <div class="form-group">
         <label for="name">Name</label>
-          <asp:Label ID="lbl_Name" runat="server" Text="Name"></asp:Label>
+          <asp:TextBox ID="tb_Name" CssClass="textBox" runat="server"></asp:TextBox>
       </div>
 
       <div class="form-group">
         <label for="surname">Surname</label>
-        <asp:Label ID="lbl_Surname" runat="server" Text="Surname"></asp:Label>
+         <asp:TextBox ID="tb_Surname" CssClass="textBox" runat="server"></asp:TextBox>
       </div>
 
       <div class="form-group">
         <label for="email">Email</label>
-        <asp:Label ID="lbl_Email" runat="server" Text="Email"></asp:Label>
+         <asp:TextBox ID="tb_Email" CssClass="textBox" runat="server"></asp:TextBox>
       </div>
 
-      <div class="form-group">
-        <label for="subscription">Subscription Type</label>
-        <asp:Label ID="lbl_Subscription" runat="server" Text="Subscription"></asp:Label>
-      </div>
 
-      <a href="EditUserProfile.aspx" class="button1" type="submit">Edit Personal Info</a>
         <div style="margin-top:20px;">
-             <asp:Button ID="btn_editPayment" CssClass="button1" runat="server" Text="Edit Payment Info" OnClick="btn_payment_click" />
+             <asp:Button ID="btn_Save" CssClass="button1" runat="server" Text="Save" OnClick="btn_SaveClick" />
         </div>
-       
+       <div class="validatorLabel">
+			<asp:Label ID="lbl_personalInfoState" style="justify-self:center; " runat="server" Text=""/>
+		</div>
   </div>
     </form>
 </body>
