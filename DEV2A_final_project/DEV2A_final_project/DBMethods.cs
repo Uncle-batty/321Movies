@@ -14,7 +14,7 @@ namespace DEV2A_final_project
 {
     public class DBMethods
     {
-        public static string connectionString = "Data Source=TADI-C;Initial Catalog=Movies321;Integrated Security=True";
+        public static string connectionString = "Data Source=KEVSLAPTOP;Initial Catalog=movies321;Integrated Security=True";
         public static Guid userID;
         public static Guid paymentID;
 
@@ -364,12 +364,15 @@ namespace DEV2A_final_project
             return res;
         }
 
+        
+
         public void setUserEmail(string email)
         {
             userEmail = email;
         }
 
         public string getUserEmail() { return userEmail;} 
+
 
         public void setUserProfile(string UserEmail)
         {
@@ -422,7 +425,37 @@ namespace DEV2A_final_project
 
 
         }
+        public void addtowatchlist(string userid, string Movieid)
+        {
+            SqlConnection cnn = new SqlConnection(connectionString);
 
+            string Sql = "EXEC AddtoWatchList @userid = '" + userid + "', @movieid = '" + Movieid + "';";
 
+            cnn.Open();
+
+            SqlCommand cmd = new SqlCommand(Sql, cnn);
+
+            cmd.ExecuteNonQuery();
+        }
+        public string getmovieID(string movietitle)
+        {
+            string res = "";
+            SqlDataReader reader = null;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            SqlCommand cmd;
+
+            conn.Open();
+            string SQL = "SELECT MovieID FROM Movies where MovieTitle = '" + movietitle + "';";
+            cmd = new SqlCommand(SQL, conn);
+
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                res = reader[0].ToString();
+            }
+
+            return res;
+        }
     }
 }
