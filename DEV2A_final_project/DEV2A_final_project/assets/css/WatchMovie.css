@@ -1768,11 +1768,36 @@ a {
     display: flex;
     align-items: center;
 }
+/*bottom view*/
+.container__bottom {
+    display: flex;
+}
 
+.columns {
+    flex: 1;
+    padding: 20px;
+}
 
-
-
-
+.full-width {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.topic {
+    font-size: 2em;
+    font-weight: 600;
+    text-align: center;
+    color:#fff;
+}
+.title__container{
+    margin-bottom:10%;
+}
+.title__content {
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+}
+/*bottom view*/
 /*===============labels===========*/
 .labels {
     margin-top: 60px;
@@ -1792,7 +1817,8 @@ a {
     flex-direction: column;
     justify-content: center;
     padding: 20px 20px;
-    margin-left: 75px;
+   
+    align-content:center;
 }
 
 .info {
@@ -1801,6 +1827,7 @@ a {
     margin-bottom: 5px;
     color: white;
     font-size: 15px;
+    width:50%;
 
 }
 

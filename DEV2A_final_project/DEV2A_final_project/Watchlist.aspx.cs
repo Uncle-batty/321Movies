@@ -25,7 +25,7 @@ namespace DEV2A_final_project
                 // Create a list of 100 cards with similar content
                 DBMethods db = new DBMethods();
 
-                SqlDataReader dr = db.seeWatchlist(db.getuserid(Request.QueryString["username"]));
+                SqlDataReader dr = db.seeWatchlist(db.getuserid(db.getUserEmail()));
                 List<Card> cards = new List<Card>();
                 
                 while (dr.Read())

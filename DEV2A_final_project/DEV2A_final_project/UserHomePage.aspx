@@ -102,7 +102,8 @@
     </div>
     <div class="nav-links">
       <a href="LandingPage.aspx">Landing</a>
-        <a style="margin-right:50px;color:#05ab05;text-decoration:underline" href="#" runat="server" onserverclick="btnwatchlist">Watch List</a>
+        <a href="#" runat="server" onserverclick="btnwatchlist">Watch List</a>
+        <a style="margin-right:50px;color:#05ab05;text-decoration:underline" href="#">Home Page</a>
     </div>
     <div class="search-bar">
       <input type="text" placeholder="Search...">

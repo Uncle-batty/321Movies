@@ -23,6 +23,9 @@ namespace DEV2A_final_project
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
+
             DBMethods dBMethods = new DBMethods();
             //SqlDataReader DR = dBMethods.
             

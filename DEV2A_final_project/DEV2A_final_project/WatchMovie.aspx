@@ -40,11 +40,11 @@
       <a href="UserHomePage.aspx">Home Page</a>
     </div>
     <div class="search-bar">
-      <input type="text" placeholder="Search...">
+      <input type="text" placeholder="Search..."/>
       <button type="submit">Search</button>
     </div>
     <a href="User Profile.aspx" class="profile-button">
-      <img src="assets/img/User_Icon.png" alt="Profile Image">
+      <img src="assets/img/User_Icon.png" alt="Profile Image"/>
     </a>
   </div>
 </header>
@@ -53,7 +53,7 @@
             <div class="vcontainer">
     <iframe runat="server" id="Moviescr" src="https://www.youtube.com/embed/Y274jZs5s7s" frameborder="0" allowfullscreen autoplay></iframe>
      </div>
-            <div class="bottomContainer">
+            <%--<div class="bottomContainer">
                 <div class ="card">
                     <img id="img" runat="server" class="card img" src="assets/Movies/movie1.jpg" />
                 </div>
@@ -90,9 +90,69 @@
                     <asp:Label CssClass="info" ID="lblruntime" runat="server"></asp:Label>
                 </div>
 
-                </div>
+                </div>--%>
   
+            <div class="container__bottom">
+              <div class="columns">
+                <img id="img" runat="server" class="card img full-width" src="assets/Movies/movie1.jpg" />
+              </div>
+              <div class="columns">
+                <div class="title__container">
+                    <div class="topic">
+                        <asp:Label ID="Label1" runat="server">Title</asp:Label> 
+                    </div>
+                    <div class="title__content">
+                        <asp:Label CssClass="info" ID="lbltitle" runat="server">Content</asp:Label> 
+                    </div>
+                </div>
 
+                <div class="title__container">
+                    <div class="topic">
+                        <asp:Label ID="Label2" runat="server">Description</asp:Label> 
+                    </div>
+                    <div class="title__content">
+                        <asp:Label CssClass="info" ID="lbldesc" runat="server">Lorem Ipsum is simply dummy text of the 
+                            printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
+                            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make 
+                            a type specimen book. It has survived not only five centuries, but also the leap into electronic 
+                            typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+                            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+                            like Aldus PageMaker including versions of Lorem Ipsum.</asp:Label>
+                    </div>
+                </div>
+
+                  <div class="title__container">
+                    <div class="topic">
+                        <asp:Label ID="Label3" runat="server">Rating</asp:Label> 
+                    </div>
+                    <div class="title__content">
+                        <asp:Label CssClass="info" ID="lblrating" runat="server">12</asp:Label>
+                    </div>
+                </div>
+
+              </div>
+
+              <div class="columns">
+                  <div class="title__container">
+                    <div class="topic">
+                        <asp:Label ID="Label4" runat="server">Age rating</asp:Label> 
+                    </div>
+                    <div class="title__content">
+                        <asp:Label CssClass="info" ID="lblage" runat="server"></asp:Label>
+                    </div>
+                </div>
+
+                <div class="title__container">
+                    <div class="topic">
+                        <asp:Label ID="Label5" runat="server">Run Time</asp:Label>  
+                    </div>
+                    <div class="title__content">
+                       <asp:Label CssClass="info" ID="lblruntime" runat="server"></asp:Label>
+                    </div>
+                </div>
+              </div>
+            </div>
+            
         </div>
     </form>
 </body>

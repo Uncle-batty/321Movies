@@ -1744,7 +1744,7 @@ a {
 
 .card-container {
     display: flex;
-    justify-content: space-between;
+    justify-content:left;
     overflow-x: hidden;
     overflow-y: hidden;
     transition: transform 0.2s ease-in-out;
@@ -1758,11 +1758,15 @@ a {
     border-radius: 5px; */
 
     overflow: hidden;
-    min-width: 240px;
+    max-width: 272.22px;
+    max-height: 463.59px;
+    min-height: 463.59px;
+    min-width: 272.22px;
     margin-right: 8px;
     transition: transform 0.2s ease-in-out;
     background-color: #333333;
     border-color: transparent;
+    margin-right:5px;
 }
 
     .card img {
