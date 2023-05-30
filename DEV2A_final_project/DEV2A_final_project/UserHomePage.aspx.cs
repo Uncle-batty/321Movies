@@ -203,10 +203,7 @@ namespace DEV2A_final_project
             Response.Redirect("Watchlist.aspx?Username=" + Request.QueryString["Username"]);
         }
 
-        public void btnUserEmail(object sender, EventArgs e)
-        {
-            Response.Redirect("EditPaymentDetails.aspx?Username=" + Request.QueryString["Username"]);
-        }
+        
         // Data model for each card
         public class Card
         {

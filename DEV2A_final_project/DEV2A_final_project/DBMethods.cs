@@ -17,6 +17,11 @@ namespace DEV2A_final_project
         public static string connectionString = "Data Source=TADI-C;Initial Catalog=Movies321;Integrated Security=True";
         public static Guid userID;
         public static Guid paymentID;
+
+        //Public variables 
+        public static string userEmail = "";
+       
+
         public bool addUser(string firstName, string lastName, string email, string password, string userDOB)
         {
             bool registered = false;
@@ -42,6 +47,7 @@ namespace DEV2A_final_project
                 if (execution > 0)
                 {
                     registered = true;
+                    setUserEmail(email);
                 }
                 else
                 {
@@ -89,7 +95,7 @@ namespace DEV2A_final_project
             bool paymentAdded = false;
             SqlConnection conn = new SqlConnection(connectionString);
             string storedProcedure = "AddUserPayments_st";
-            string cmdText = "update Users set SubID = " + subscriptionLevel + " where UserId = '" + userID.ToString() + "'";
+            string cmdText = "update Users set SubID = " + subscriptionLevel + " where UserId = '" + getuserid(userEmail) + "'";
             
 
 
@@ -161,6 +167,7 @@ namespace DEV2A_final_project
                     if (dataReader.Read())
                     {
                         userSignedIn = true;
+                        setUserEmail(email);
                     }
                     else
                     {
@@ -205,40 +212,6 @@ namespace DEV2A_final_project
                 userSignedIn = false;
             }
             return userSignedIn;
-        }
-
-        public static string GenerateUnique4DigitNumber()
-        {
-            Random rand = new Random();
-            string number = rand.Next(1000, 10000).ToString();
-
-            // Check if the number has already been used
-            while (IsNumberUsed(number))
-            {
-                number = rand.Next(1000, 10000).ToString();
-            }
-
-            // Save the number as used
-            SaveNumber(number);
-
-            return number;
-        }
-
-        private static bool IsNumberUsed(string number)
-        {
-            // Implement your own logic here to check if the number has already been used
-            // This could involve checking a database or file to see if the number exists
-            // You could also store the used numbers in a HashSet or other data structure
-            // In this example, we'll always return false to simulate a new number being generated every time
-            return false;
-        }
-
-        private static void SaveNumber(string number)
-        {
-            // Implement your own logic here to save the number as used
-            // This could involve writing the number to a database or file, or adding it to a HashSet or other data structure
-            // In this example, we'll just write the number to the console to simulate saving it
-            Console.WriteLine($"Saving number {number}");
         }
 
         public static bool validEmail(string email)
@@ -386,6 +359,13 @@ namespace DEV2A_final_project
 
             return res;
         }
+
+        public void setUserEmail(string email)
+        {
+            userEmail = email;
+        }
+
+        public string getUserEmail() { return userEmail;} 
 
 
     }
