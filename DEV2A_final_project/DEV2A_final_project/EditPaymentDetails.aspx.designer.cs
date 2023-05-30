@@ -11,97 +11,79 @@ namespace DEV2A_final_project
 {
 
 
-    public partial class UserHomePage
+    public partial class editPaymentDetails
     {
 
         /// <summary>
-        /// btn_UserProfile control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_UserProfile;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Label1 control.
+        /// ddl_SubscriptionLevel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_SubscriptionLevel;
 
         /// <summary>
-        /// rptCards1 control.
+        /// tb_CardNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptCards1;
+        protected global::System.Web.UI.WebControls.TextBox tb_CardNumber;
 
         /// <summary>
-        /// Label2 control.
+        /// tb_expDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.TextBox tb_expDate;
 
         /// <summary>
-        /// rptCards2 control.
+        /// tb_CVV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptCards2;
+        protected global::System.Web.UI.WebControls.TextBox tb_CVV;
 
         /// <summary>
-        /// ht control.
+        /// btn_SavePaymentDetails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField ht;
+        protected global::System.Web.UI.WebControls.Button btn_SavePaymentDetails;
 
         /// <summary>
-        /// Label3 control.
+        /// btn_cancelSubscription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Button btn_cancelSubscription;
 
         /// <summary>
-        /// rptCards3 control.
+        /// lbl_personalInfoState control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptCards3;
-
-        /// <summary>
-        /// Label4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-
-        /// <summary>
-        /// rptCards4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptCards4;
+        protected global::System.Web.UI.WebControls.Label lbl_personalInfoState;
     }
 }

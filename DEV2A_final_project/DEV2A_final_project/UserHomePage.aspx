@@ -106,7 +106,7 @@
       <input type="text" placeholder="Search...">
       <button type="submit">Search</button>
     </div>
-    <a href="User Profile.aspx" class="profile-button">
+        <asp:Button ID="btn_UserProfile" runat="server" CssClass="profile-button" Text="" />
       <img src="assets/img/User_Icon.png" alt="Profile Image">
     </a>
   </div>

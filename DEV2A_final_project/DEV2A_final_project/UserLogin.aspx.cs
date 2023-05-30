@@ -104,18 +104,13 @@ namespace DEV2A_final_project
 
             if (tb_CardNumber.Text != "" && tb_CVV.Text != "" && tb_expDate.Text != "")
             {
-                if (!tb_expDate.Text.All(char.IsDigit))
+                if (!tb_CardNumber.Text.All(char.IsDigit))
                 {
                     lbl_personalInfoState.ForeColor = System.Drawing.Color.Red;
                     lbl_personalInfoState.Text = "Card number should only contain numbers!";
                     flag = true;
                 }
-                else if (!tb_expDate.Text.All(char.IsDigit))
-                {
-                    lbl_personalInfoState.ForeColor = System.Drawing.Color.Red;
-                    lbl_personalInfoState.Text = "Expriry date should only contain numbers!";
-                    flag = true;
-                }
+                
                 else if (!tb_CVV.Text.All(char.IsDigit))
                 {
                     lbl_personalInfoState.ForeColor = System.Drawing.Color.Red;

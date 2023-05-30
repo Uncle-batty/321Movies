@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="User Profile.aspx.cs" Inherits="DEV2A_final_project.User_Profile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditPaymentDetails.aspx.cs" Inherits="DEV2A_final_project.editPaymentDetails" %>
 
 <!DOCTYPE html>
 
@@ -31,7 +31,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <title>User Profile</title>
+    <title>Edit Payment Details</title>
     <style>
     .card1 {
       width: 400px;
@@ -46,11 +46,11 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin-top: 10%;
+      margin-top: 30px;
     }
 
     .form-group {
-      margin-bottom: 20px;
+      margin-top: 20px;
     }
 
     label{
@@ -103,6 +103,21 @@
       max-height:70px;
       max-width:70px
     }
+
+      .dropDownList{
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+
+      }
+
+    .validatorLabel{
+        margin-top: 10px;
+		bottom: 5%;
+		justify-items: center;
+	}
     </style>
 </head>
 <body class ="sign-in-body">
@@ -124,37 +139,46 @@
 
         <div class="card1">
  <img class="user-icon" src="assets/img/User_Icon.png" alt="User Icon">
-    <form>
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name">
+    
+        
+        <div class="form-group">
+            <label for="pass" class="label">Subscription level</label>
+            <asp:DropDownList runat="server" ID="ddl_SubscriptionLevel" class="dropDownList">
+						<asp:ListItem value="1" Text="Free" ></asp:ListItem> 
+						<asp:ListItem value="2" Text="Standard" ></asp:ListItem>
+						<asp:ListItem value="3" Text="Premium" ></asp:ListItem>
+					</asp:DropDownList>
       </div>
 
       <div class="form-group">
-        <label for="surname">Surname</label>
-        <input type="text" id="surname" name="surname" placeholder="Enter your surname">
+        <label for="pass" class="label">Card Number</label>
+					<asp:TextBox id="tb_CardNumber" runat="server" type="text" class="input" />
       </div>
 
       <div class="form-group">
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email" placeholder="Enter your email">
+        <label for="pass" class="label">Expiry date</label>
+					<asp:TextBox id="tb_expDate" runat="server" type="text" class="input" />
       </div>
 
       <div class="form-group">
-        <label for="subscription">Subscription Type</label>
-        <select id="subscription" name="subscription">
-          <option value="basic">Basic</option>
-          <option value="standard">Standard</option>
-          <option value="premium">Premium</option>
-        </select>
+        <label for="pass" class="label">CVV</label>
+					<asp:TextBox id="tb_CVV" runat="server" type="text" class="input" />
       </div>
 
-      <button class="button1" type="submit">Save</button>
-        <div style="margin-top:20px;">
-             <asp:Button ID="btn_editPayment" CssClass="button1" runat="server" Text="Edit Payment Info" OnClick="btn_payment_click" />
+      
+
+        <div style="margin-top:30px;">
+             <asp:Button ID="btn_SavePaymentDetails" CssClass="button1" runat="server" Text="Save" OnClick="btn_Save_Click" />
         </div>
-       
-    </form>
+            <div style="margin-top:30px;">
+                <asp:Button ID="btn_cancelSubscription" CssClass="button1" runat="server" Text="Cancel Subscription" OnClick="btn_CancelSubscription" />
+            </div>
+
+
+       <div class="validatorLabel">
+			<asp:Label ID="lbl_personalInfoState" style="justify-self:center; " runat="server" Text=""/>
+		</div>
+    
   </div>
     </form>
 </body>

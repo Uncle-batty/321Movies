@@ -233,6 +233,7 @@
     <Content Include="assets\vendor\php-email-form\validate.js" />
     <Content Include="assets\vendor\swiper\swiper-bundle.min.css" />
     <Content Include="assets\vendor\swiper\swiper-bundle.min.js" />
+    <Content Include="EditPaymentDetails.aspx" />
     <Content Include="ErrorPage.aspx" />
     <Content Include="forms\Readme.txt" />
     <Content Include="index.html" />
@@ -256,6 +257,13 @@
       <DependentUpon>AdminHomePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="DBMethods.cs" />
+    <Compile Include="EditPaymentDetails.aspx.cs">
+      <DependentUpon>EditPaymentDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditPaymentDetails.aspx.designer.cs">
+      <DependentUpon>EditPaymentDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ErrorPage.aspx.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

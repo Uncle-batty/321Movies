@@ -16,5 +16,10 @@ namespace DEV2A_final_project
 
 
         }
+
+        protected void btn_payment_click(object sender, EventArgs e)
+        {
+            Response.Redirect("EditPaymentDetails.aspx");
+        }
     }
 }

@@ -147,7 +147,7 @@
 					<asp:Button ID="btn_CompleteLogin" runat="server" class="button" Text="Complete" OnClick="btn_NewPaymentsClick"/>
 				</div>
 				<div class="foot-lnk">
-					<a href="UserSignIn">Skip This step ></a>
+					<a href="UserSignIn.aspx">Skip This step ></a>
 					
 				<div class="hr"></div>
 				
