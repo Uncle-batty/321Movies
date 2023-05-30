@@ -136,6 +136,7 @@
       <div class="form-group">
         <label for="name">Name</label>
           <asp:TextBox ID="tb_Name" CssClass="textBox" runat="server"></asp:TextBox>
+          <asp:Button ID="btn_SaveName" CssClass="button1" runat="server" Text="Change Name" OnClick="btn_FnameSaveClick" />
       </div>
 
       <div class="form-group">

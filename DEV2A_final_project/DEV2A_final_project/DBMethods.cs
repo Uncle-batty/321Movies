@@ -9,12 +9,13 @@ using System.Diagnostics;
 using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
+using System.Xml.Linq;
 
 namespace DEV2A_final_project
 {
     public class DBMethods
     {
-        public static string connectionString = "Data Source=KEVSLAPTOP;Initial Catalog=movies321;Integrated Security=True";
+        public static string connectionString = "Data Source=TADI-C;Initial Catalog=Movies321;Integrated Security=True";
         public static Guid userID;
         public static Guid paymentID;
 
@@ -417,6 +418,7 @@ namespace DEV2A_final_project
                 {
                     success = false;
                 }
+                conn.Close();
             }
             catch { success = false; }
 
@@ -456,6 +458,133 @@ namespace DEV2A_final_project
             }
 
             return res;
+        }
+
+        public bool changeName(string FirstName)
+        {
+            bool success = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+            string cmdText = "update Users set Fname = '" + FirstName + "' where Email = '" + userEmail + "';";
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(cmdText, conn);
+                int execution = cmd.ExecuteNonQuery();
+                if (execution > 0)
+                {
+                    success = true;
+                    
+                }
+                else
+                {
+                    success = false;
+                }
+                conn.Close();
+            }
+            catch { success = false; }
+
+            return success;
+        }
+
+        public bool changeSurname(string Lastname)
+        {
+            bool success = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+            string cmdText = "update Users set Lname = '" + Lastname + "' where Email = '" + userEmail + "';";
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(cmdText, conn);
+                int execution = cmd.ExecuteNonQuery();
+                if (execution > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+                conn.Close();
+            }
+            catch { success = false; }
+
+            return success;
+        }
+
+        public bool changeEmail(string Email)
+        {
+            bool success = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+            string cmdText = "update Users set Fname = '" + Email + "' where Email = '" + userEmail + "';";
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(cmdText, conn);
+                int execution = cmd.ExecuteNonQuery();
+                if (execution > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+                conn.Close();
+            }
+            catch { success = false; }
+
+            return success;
+        }
+
+        public bool changePassword(string password)
+        {
+            bool success = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+            string cmdText = "update Users set Password = '" + encrypt(password) + "' where Email = '" + userEmail + "';";
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(cmdText, conn);
+                int execution = cmd.ExecuteNonQuery();
+                if (execution > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+                conn.Close();
+            }
+            catch { success = false; }
+
+            return success;
+        }
+
+        public string getMovieLink(string movieId)
+        {
+            string movieLink = "";
+            SqlDataReader reader = null;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            SqlCommand cmd;
+
+            conn.Open();
+            string SQL = "select TrailerLInk from Movies where MovieID = '"+ movieId +"'";
+            cmd = new SqlCommand(SQL, conn);
+
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                movieLink = reader[0].ToString();
+
+            }
+
+            return movieLink;
         }
     }
 }

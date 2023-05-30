@@ -9,15 +9,16 @@ namespace DEV2A_final_project
 {
     public partial class EditUserProfile : System.Web.UI.Page
     {
+        DBMethods db = new DBMethods();
         protected void Page_Load(object sender, EventArgs e)
         {
+
             
-           
         }
 
         protected void btn_SaveClick(object sender, EventArgs e)
         {
-            DBMethods db = new DBMethods();
+            
             bool flag = false;
             if (tb_Name.Text != "" && tb_Email.Text != "" && tb_Surname.Text != "")
             {
@@ -41,12 +42,7 @@ namespace DEV2A_final_project
                 }
 
             }
-            else
-            {
-                flag = true;
-                lbl_personalInfoState.ForeColor = System.Drawing.Color.Red;
-                lbl_personalInfoState.Text = "Please fill in all fields!";
-            }
+            
 
             if (!flag)
             {
@@ -60,6 +56,50 @@ namespace DEV2A_final_project
                     lbl_personalInfoState.Text = "Failed to Update";
                     flag = true;
                 }
+            }
+        }
+
+        protected void btn_FnameSaveClick(object sender, EventArgs e)
+        {
+            if (tb_Name.Text != "")
+            {
+                if (db.changeName(tb_Name.Text))
+                {
+                    lbl_personalInfoState.ForeColor = System.Drawing.Color.Green;
+                    lbl_personalInfoState.Text = "Successfully changed name";
+                }
+                else
+                {
+                    lbl_personalInfoState.ForeColor = System.Drawing.Color.Red;
+                    lbl_personalInfoState.Text = "Failed to change Name";
+                }
+            }
+            else 
+            {
+                lbl_personalInfoState.ForeColor = System.Drawing.Color.Red;
+                lbl_personalInfoState.Text = "Please fill in Your Name";
+            }
+        }
+
+        protected void btn_LnameSaveClick(object sender, EventArgs e)
+        {
+            if (tb_Surname.Text != "")
+            {
+                if (db.changeName(tb_Name.Text))
+                {
+                    lbl_personalInfoState.ForeColor = System.Drawing.Color.Green;
+                    lbl_personalInfoState.Text = "Successfully changed name";
+                }
+                else
+                {
+                    lbl_personalInfoState.ForeColor = System.Drawing.Color.Red;
+                    lbl_personalInfoState.Text = "Failed to change Name";
+                }
+            }
+            else
+            {
+                lbl_personalInfoState.ForeColor = System.Drawing.Color.Red;
+                lbl_personalInfoState.Text = "Please fill in Your Name";
             }
         }
     }

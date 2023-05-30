@@ -437,7 +437,7 @@ namespace DEV2A_final_project
         {
             string movie = ht.Value;
             DBMethods DB = new DBMethods();
-            DB.addtowatchlist(DB.getuserid("hymanjose924@gmail.com"), DB.getmovieID(movie));
+            DB.addtowatchlist(DB.getuserid(DBMethods.userEmail), DB.getmovieID(movie));
         }
 
         // Data model for each card
