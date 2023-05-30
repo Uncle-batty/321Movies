@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminDashboard1.aspx.cs" Inherits="DEV2A_final_project.AdminDashBoard.AdminDashboard1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminAddMovie.aspx.cs" Inherits="DEV2A_final_project.AdminDashBoard.AdminAddMovie" %>
 
 <!DOCTYPE html>
 
@@ -20,7 +20,7 @@
   </head>
 
   <body>
-    
+    >
       <form runat="server">
     <!-- top navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -109,18 +109,17 @@
                    <li>
                       <a href="#" class="nav-link px-3 active">
                         <span class="me-2"><i class="bi bi-speedometer2"></i></span>
-                        <span>Dashboard-Movies</span>
+                        <span>Dashboard-Add-Movie</span>
                       </a>
                   </li>
              
                   <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
               
                    <li>
-                      <a class="nav-link px-3 sidebar-link"  data-bs-toggle="collapse"   runat="server" onclick="Movies_Click" >
-                        <span class="me-2"><i class="bi bi-film"></i></span>
-                        <span>Movies</span>
-              
-                      </a>
+                      <asp:HyperLink ID="HyperLink3" class="nav-link px-3 sidebar-link" runat="server" NavigateUrl="~/AdminDashBoard/AdminDashboard1.aspx" onclick="Users_Click">
+                                <span class="me-2"><i class="bi bi-film"></i></span>
+                                <span>Movies</span>
+                       </asp:HyperLink>
                   </li>
               
                     <li>
@@ -132,20 +131,7 @@
                    </li>
                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
      
-                    <li>
-
-                      <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
-                        Addons
-                      </div>
-                    </li>
-             
-                   <li>
-                      <asp:HyperLink ID="HyperLink3" class="nav-link px-3 sidebar-link"  runat="server" NavigateUrl="~/AdminDashBoard/AdminAddMovie.aspx"   >
-                        <span class="me-2"><i class="bi bi-file-earmark-plus-fill"></i></span>
-                        <span>Add-Movies</span>
-                      </asp:HyperLink>
-                    </li>
-         
+                    
               </ul>
         
         </nav>
@@ -156,16 +142,16 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-            <h4>Dashboard </h4>
+            <h4>Dashboard -Movies </h4>
           </div>
         </div>
         <!--cards-->
         <div class="row">
           <div class="col-md-3 mb-3">
             <div class="card bg-primary text-white h-100">
-              <div class="card-body py-5">Action</div>
+              <div class="card-body py-5">Primary Card</div>
               <div class="card-footer d-flex">
-                View 
+                View Details
                 <span class="ms-auto">
                   <i class="bi bi-chevron-right"></i>
                 </span>
@@ -174,9 +160,9 @@
           </div>
           <div class="col-md-3 mb-3">
             <div class="card bg-warning text-dark h-100">
-              <div class="card-body py-5">Romance</div>
+              <div class="card-body py-5">Warning Card</div>
               <div class="card-footer d-flex">
-                View 
+                View Details
                 <span class="ms-auto">
                   <i class="bi bi-chevron-right"></i>
                 </span>
@@ -185,9 +171,9 @@
           </div>
           <div class="col-md-3 mb-3">
             <div class="card bg-success text-white h-100">
-              <div class="card-body py-5">Comedy</div>
+              <div class="card-body py-5">Success Card</div>
               <div class="card-footer d-flex">
-                View 
+                View Details
                 <span class="ms-auto">
                   <i class="bi bi-chevron-right"></i>
                 </span>
@@ -196,35 +182,86 @@
           </div>
           <div class="col-md-3 mb-3">
             <div class="card bg-danger text-white h-100">
-              <div class="card-body py-5">Horror</div>
+              <div class="card-body py-5">Danger Card</div>
               <div class="card-footer d-flex">
-                View 
+                View Details
                 <span class="ms-auto">
                   <i class="bi bi-chevron-right"></i>
                 </span>
               </div>
             </div>
           </div>
-           
         </div>
-       
-        <!--Table-->
-             <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <asp:GridView ID="GridView1" runat="server" CssClass="table table-bordered table-responsive" AllowCustomPaging="False" AllowSorting="False" BorderStyle="Groove" UseAccessibleHeader="True" AutoGenerateSelectButton="True" AutoGenerateDeleteButton="True" AutoGenerateEditButton="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowDeleting="GridView1_RowDeleting" RowStyle-CssClass="selected-row" OnRowEditing="GridView1_RowEditing">
-                    <Columns>
-                        
-                    </Columns>
-                </asp:GridView>
-            </div>
-        </div>
-        </div>
+        <!--Add_Movie_Card -->
+         <div class="container">
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title">Add Movie </h5>
 
-      </div>
+                      <div class="form-group">
+                          <label for="name">Movie Name</label>
+                          <input type="text" class="form-control" id="name" placeholder="Movie Name">
+                      </div>
+                      <div class="form-group">
+                          <label for="Title"> </label>
+                          <input type="text" class="form-control" id="movieTitle" placeholder="Movie Title">
+                      </div>
+                       <div class="form-group">
+                          <label for="Title"></label>
+                          <input type="text" class="form-control" id="runTime" placeholder="RunTime">
+                      </div>
 
+                       <div class="form-group">
+                          <label for="Title"></label>
+                          <input type="text" class="form-control" id="trailerLink" placeholder="RunTime">
+                      </div>
+                      <div class="form-group">
+                          <label for="Title"></label>
+                          <input type="text" class="form-control" id="ratings" placeholder="Ratings">
+                      </div>
+                      <div class="form-group">
+                          <label for="Title"></label>
+                          <input type="text" class="form-control" id="Ageratings" placeholder="Age rating">
+                      </div>
+                      <div class="form-group">
+                          <label for="Description">  </label>
+                          <input type="text" class="form-control" id="MovieDescription" placeholder="Discription">
+                      </div>
+                      <div class="form-group">
+                          <label for="Description"> </label>
+                          <input type="text" class="form-control" id="Catergory" placeholder="Catergory">
+                      </div>
+                       <div class="form-group">
+                          <label for="Description"> </label>
+                          <input type="text" class="form-control" id="Views" placeholder="Views">
+                      </div>
+                       <div class="form-group">
+                          <label for="Description"> </label>
+                          <input type="text" class="form-control" id="ImageName" placeholder="Image name">
+                      </div>
+                       <div class="form-group">
+                          <label for="Description"> </label>
+                          <input type="text" class="form-control" id="directorId" placeholder="Director ID">
+                      </div>
+                      <div class="form-group">
+                          <label for="Description"> </label>
+                          <input type="text" class="form-control" id="directorName" placeholder="Director name">
+                      </div>
+                      <div class="form-group">
+                         <label for="Description"> </label>
+                          <input type="text" class="form-control" id="directorLastName" placeholder="Director lastname">
+                      </div>
+                     <div class="form-group">
+                         <label for="Description"> </label>
+                      
+                      </div>
+                      <asp:Button type="submit" class="btn btn-primary" runat="server" Text="Add Movie"></asp:Button>
+                      <asp:button type="button" class="btn btn-secondary float-right" runat="server" Text="Cancel"></asp:button>
+                  </div>
+              </div>
+          </div>
     </main>
-
+          
   
 
     <script src="./jsAdmin/bootstrap.bundle.min.js"></script>

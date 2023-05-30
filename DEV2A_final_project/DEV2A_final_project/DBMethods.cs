@@ -9,12 +9,14 @@ using System.Diagnostics;
 using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
+using System.Linq.Expressions;
 
 namespace DEV2A_final_project
 {
     public class DBMethods
     {
-        public string connectionString = "Data Source=.;Initial Catalog=Movies321;Integrated Security=True";
+        public string  connectionString = "Data Source=.;Initial Catalog=Movies321;Integrated Security=True";
+        public string  conn2 = "Data Source=DESKTOP-CN5GIIC\\RAPUDI;Initial Catalog=movies321;Integrated Security=True ";
         public static Guid userID;
         public static Guid paymentID;
         public bool addUser(string firstName, string lastName, string email, string password, string userDOB)
@@ -55,8 +57,135 @@ namespace DEV2A_final_project
             }
             return registered;
         }
+        public static void DeleteUser(int UserId)
+        {
+            string connectionString = "Data Source=DESKTOP-CN5GIIC\\RAPUDI;Initial Catalog=movies321;Integrated Security=True ";
 
-        public bool emailExists(string email)
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = "DELETE FROM Movies WHERE MovieId = @MovieId";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MovieId", userID);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            System.Diagnostics.Debug.WriteLine("User deleted successfully.USer ID:"+userID);
+                        }
+                        else
+                        {
+                            System.Diagnostics.Debug.WriteLine("No movie found with the provided ID.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error deleting movie: " + ex.Message);
+                }
+            }
+        }
+        public static void InsertMovie(string movieTitle, string runtime, string releaseYear, string trailerLink, string ratings, string ageRating, string shortDescription)
+       {
+      
+
+        using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-CN5GIIC\\RAPUDI;Initial Catalog=movies321;Integrated Security=True "))
+        {
+            try
+            {
+                connection.Open();
+
+                string query = "INSERT INTO Movies (MovieTitle, Runtime, ReleaseYear, TrailerLink, Ratings, AgeRating, ShortDescription) VALUES (@MovieTitle, @Runtime, @ReleaseYear, @TrailerLink, @Ratings, @AgeRating, @ShortDescription)";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MovieTitle", movieTitle);
+                    command.Parameters.AddWithValue("@Runtime", runtime);
+                    command.Parameters.AddWithValue("@ReleaseYear", releaseYear);
+                    command.Parameters.AddWithValue("@TrailerLink", trailerLink);
+                    command.Parameters.AddWithValue("@Ratings", ratings);
+                    command.Parameters.AddWithValue("@AgeRating", ageRating);
+                    command.Parameters.AddWithValue("@ShortDescription", shortDescription);
+
+                    command.ExecuteNonQuery();
+                    Console.WriteLine("Movie inserted successfully.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error inserting movie: " + ex.Message);
+            }
+        }
+        }
+        public static void InsertDirectors(string DirectorName, string DirectorLastName, string DirectorId, string trailerLink, string ratings, string ageRating, string shortDescription)
+        {
+
+
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-CN5GIIC\\RAPUDI;Initial Catalog=movies321;Integrated Security=True "))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = "INSERT INTO Directors (DirectorID,DirectorFName,DirectorLName) VALUES (@directorID, @directorFName,@directorLName)";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@directorFName", DirectorName);
+                        command.Parameters.AddWithValue("@directorLName",DirectorLastName );
+                        command.Parameters.AddWithValue("@directorID", DirectorId);
+                        command.ExecuteNonQuery();
+                        Debug.WriteLine("User inserted successfully.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine("Error inserting user: " + ex.Message);
+                }
+            }
+        }
+        public static void DeleteMovie(int movieId)
+        {
+        string connectionString = "Data Source=DESKTOP-CN5GIIC\\RAPUDI;Initial Catalog=movies321;Integrated Security=True ";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            try
+            {
+                connection.Open();
+
+                string query = "DELETE FROM Movies WHERE MovieId = @MovieId";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MovieId", movieId);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        System.Diagnostics.Debug.WriteLine("Movie deleted successfully.");
+                    }
+                    else
+                    {
+                        System.Diagnostics.Debug.WriteLine("No movie found with the provided ID.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error deleting movie: " + ex.Message);
+            }
+        }
+    }
+
+
+    public bool emailExists(string email)
         {
             bool exists = false;
             SqlConnection conn = new SqlConnection(connectionString);
@@ -260,5 +389,35 @@ namespace DEV2A_final_project
 
             return reader;
         }
+        public static SqlDataReader readAllMovies()
+        {
+            SqlDataReader reader = null;
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-CN5GIIC\\RAPUDI;Initial Catalog=movies321;Integrated Security=True ");
+            SqlCommand cmd;
+
+            conn.Open();
+            string SQL = "select MovieID,MovieTitle,Release_Year  from Movies;";
+            cmd = new SqlCommand(SQL, conn);
+
+            reader = cmd.ExecuteReader();
+
+            return reader;
+        }
+        public  static SqlDataReader readAllUsers()
+        {
+            SqlDataReader reader = null;
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-CN5GIIC\\RAPUDI;Initial Catalog=movies321;Integrated Security=True ");
+            SqlCommand cmd;
+
+            conn.Open();
+            string SQL = "SELECT * FROM Users;";
+            cmd = new SqlCommand(SQL, conn);
+
+            reader = cmd.ExecuteReader();
+
+            return reader;
+        }
+      
+
     }
 }

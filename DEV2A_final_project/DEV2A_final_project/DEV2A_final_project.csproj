@@ -68,6 +68,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminDashBoard\AdimViewPayments.aspx" />
+    <Content Include="AdminDashBoard\AdminAddMovie.aspx" />
+    <Content Include="AdminDashBoard\AdminAddUser.aspx" />
+    <Content Include="AdminDashBoard\AdminDashboard1.aspx" />
+    <Content Include="AdminDashBoard\AdminDeleteMovies.aspx" />
+    <Content Include="AdminDashBoard\AdminDeleteUsers.aspx" />
+    <Content Include="AdminDashBoard\AdminUsers.aspx" />
+    <Content Include="AdminDashBoard\images\gladiator.jpg" />
     <Content Include="AdminHomePage.aspx" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\img\321MoviesLogo.png" />
@@ -147,6 +155,16 @@
     <Content Include="assets\vendor\php-email-form\validate.js" />
     <Content Include="assets\vendor\swiper\swiper-bundle.min.css" />
     <Content Include="assets\vendor\swiper\swiper-bundle.min.js" />
+    <Content Include="AdminDashBoard\AdminDashBoard.html" />
+    <Content Include="AdminDashBoard\cssAdmin\bootstrap.min.css" />
+    <Content Include="AdminDashBoard\cssAdmin\dataTables.bootstrap5.min.css" />
+    <Content Include="AdminDashBoard\cssAdmin\style.css" />
+    <Content Include="AdminDashBoard\images\preview.PNG" />
+    <Content Include="AdminDashBoard\jsAdmin\bootstrap.bundle.min.js" />
+    <Content Include="AdminDashBoard\jsAdmin\dataTables.bootstrap5.min.js" />
+    <Content Include="AdminDashBoard\jsAdmin\jquery-3.5.1.js" />
+    <Content Include="AdminDashBoard\jsAdmin\jquery.dataTables.min.js" />
+    <Content Include="AdminDashBoard\jsAdmin\script.js" />
     <Content Include="ErrorPage.aspx" />
     <Content Include="forms\Readme.txt" />
     <Content Include="index.html" />
@@ -158,8 +176,58 @@
     <Content Include="UserLogin.aspx" />
     <Content Include="UserSignIn.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminDashBoard\AdimViewPayments.aspx.cs">
+      <DependentUpon>AdimViewPayments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdimViewPayments.aspx.designer.cs">
+      <DependentUpon>AdimViewPayments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminAddMovie.aspx.cs">
+      <DependentUpon>AdminAddMovie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminAddMovie.aspx.designer.cs">
+      <DependentUpon>AdminAddMovie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminAddUser.aspx.cs">
+      <DependentUpon>AdminAddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminAddUser.aspx.designer.cs">
+      <DependentUpon>AdminAddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminDashboard1.aspx.cs">
+      <DependentUpon>AdminDashboard1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminDashboard1.aspx.designer.cs">
+      <DependentUpon>AdminDashboard1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminDeleteMovies.aspx.cs">
+      <DependentUpon>AdminDeleteMovies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminDeleteMovies.aspx.designer.cs">
+      <DependentUpon>AdminDeleteMovies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminDeleteUsers.aspx.cs">
+      <DependentUpon>AdminDeleteUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminDeleteUsers.aspx.designer.cs">
+      <DependentUpon>AdminDeleteUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminUsers.aspx.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminUsers.aspx.designer.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminHomePage.aspx.cs">
       <DependentUpon>AdminHomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -211,6 +279,13 @@
     <Compile Include="UserSignIn.aspx.designer.cs">
       <DependentUpon>UserSignIn.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\vendor\bootstrap-icons\bootstrap-icons.json" />
@@ -245,6 +320,9 @@
     <Content Include="assets\vendor\boxicons\fonts\boxicons.woff2" />
     <Content Include="assets\vendor\swiper\swiper-bundle.min.js.map" />
     <Content Include="forms\contact.php" />
+    <Content Include="AdminDashBoard\cssAdmin\bootstrap.min.css.map" />
+    <Content Include="AdminDashBoard\jsAdmin\bootstrap.bundle.min.js.map" />
+    <Content Include="AdminDashBoard\readme.md" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

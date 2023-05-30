@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminDashboard1.aspx.cs" Inherits="DEV2A_final_project.AdminDashBoard.AdminDashboard1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminDeleteMovies.aspx.cs" Inherits="DEV2A_final_project.AdminDashBoard.AdminDelete" %>
 
 <!DOCTYPE html>
 
@@ -20,7 +20,7 @@
   </head>
 
   <body>
-    
+    >
       <form runat="server">
     <!-- top navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -109,18 +109,17 @@
                    <li>
                       <a href="#" class="nav-link px-3 active">
                         <span class="me-2"><i class="bi bi-speedometer2"></i></span>
-                        <span>Dashboard-Movies</span>
+                        <span>Dashboard-Delete-Movies</span>
                       </a>
                   </li>
              
                   <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
               
                    <li>
-                      <a class="nav-link px-3 sidebar-link"  data-bs-toggle="collapse"   runat="server" onclick="Movies_Click" >
-                        <span class="me-2"><i class="bi bi-film"></i></span>
-                        <span>Movies</span>
-              
-                      </a>
+                       <asp:HyperLink ID="HyperLink3" class="nav-link px-3 sidebar-link" runat="server" NavigateUrl="~/AdminDashBoard/AdminDashboard1.aspx" onclick="Users_Click">
+                                <span class="me-2"><i class="bi bi-film"></i></span>
+                                <span>Movies</span>
+                        </asp:HyperLink>
                   </li>
               
                     <li>
@@ -132,19 +131,7 @@
                    </li>
                    <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
      
-                    <li>
-
-                      <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
-                        Addons
-                      </div>
-                    </li>
-             
-                   <li>
-                      <asp:HyperLink ID="HyperLink3" class="nav-link px-3 sidebar-link"  runat="server" NavigateUrl="~/AdminDashBoard/AdminAddMovie.aspx"   >
-                        <span class="me-2"><i class="bi bi-file-earmark-plus-fill"></i></span>
-                        <span>Add-Movies</span>
-                      </asp:HyperLink>
-                    </li>
+                 
          
               </ul>
         
@@ -156,16 +143,16 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-            <h4>Dashboard </h4>
+            <h4>Dashboard  </h4>
           </div>
         </div>
         <!--cards-->
         <div class="row">
           <div class="col-md-3 mb-3">
             <div class="card bg-primary text-white h-100">
-              <div class="card-body py-5">Action</div>
+              <div class="card-body py-5">Primary Card</div>
               <div class="card-footer d-flex">
-                View 
+                View Details
                 <span class="ms-auto">
                   <i class="bi bi-chevron-right"></i>
                 </span>
@@ -174,9 +161,9 @@
           </div>
           <div class="col-md-3 mb-3">
             <div class="card bg-warning text-dark h-100">
-              <div class="card-body py-5">Romance</div>
+              <div class="card-body py-5">Warning Card</div>
               <div class="card-footer d-flex">
-                View 
+                View Details
                 <span class="ms-auto">
                   <i class="bi bi-chevron-right"></i>
                 </span>
@@ -185,9 +172,9 @@
           </div>
           <div class="col-md-3 mb-3">
             <div class="card bg-success text-white h-100">
-              <div class="card-body py-5">Comedy</div>
+              <div class="card-body py-5">Success Card</div>
               <div class="card-footer d-flex">
-                View 
+                View Details
                 <span class="ms-auto">
                   <i class="bi bi-chevron-right"></i>
                 </span>
@@ -196,33 +183,32 @@
           </div>
           <div class="col-md-3 mb-3">
             <div class="card bg-danger text-white h-100">
-              <div class="card-body py-5">Horror</div>
+              <div class="card-body py-5">Danger Card</div>
               <div class="card-footer d-flex">
-                View 
+                View Details
                 <span class="ms-auto">
                   <i class="bi bi-chevron-right"></i>
                 </span>
               </div>
             </div>
           </div>
-           
         </div>
-       
-        <!--Table-->
-             <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <asp:GridView ID="GridView1" runat="server" CssClass="table table-bordered table-responsive" AllowCustomPaging="False" AllowSorting="False" BorderStyle="Groove" UseAccessibleHeader="True" AutoGenerateSelectButton="True" AutoGenerateDeleteButton="True" AutoGenerateEditButton="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowDeleting="GridView1_RowDeleting" RowStyle-CssClass="selected-row" OnRowEditing="GridView1_RowEditing">
-                    <Columns>
-                        
-                    </Columns>
-                </asp:GridView>
-            </div>
-        </div>
-        </div>
-
-      </div>
-
+       <!--DeleteCard -->
+       <div class="container">
+           <div class="card">
+               <img src="images/gladiator.jpg" class="card-img-top" alt="Card Image">
+               <div class="card-body">
+                   <h5 class="card-title" id="cardtitle" runat="server">Delete Movie :<asp:Label ID="movieTilte" runat="server" Text=""></asp:Label></h5>
+                   <p class="card-text"><span class="ms-auto">
+                 <i class="bi bi-exclamation-triangle"></i>
+                </span>Warning You are about to delete movie with ID no. :<asp:Label ID="movieId" runat="server" Text=""></asp:Label></p>
+                   
+                   <asp:button type="button" class="btn btn-danger float-right ml-2" Text="Delete" runat="server" OnClick="btnDelete_Click"></asp:button>
+                   <asp:button type="button" class="btn btn-secondary float-right" Text="Cancel" runat="server"  OnClick="btnCancel_Click"></asp:button>
+               </div>
+           </div>
+       </div>
+          </div>
     </main>
 
   
