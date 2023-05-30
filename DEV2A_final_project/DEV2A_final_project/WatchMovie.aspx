@@ -75,6 +75,9 @@
                 </div>
                     <asp:Label CssClass="info" ID="lblrating" runat="server"></asp:Label>
                     </div>
+
+
+
                 <div class ="labelContainer">
                      <div class="labels">
                     <asp:Label ID="Label4" runat="server">Age rating</asp:Label> 
