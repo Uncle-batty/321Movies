@@ -1,0 +1,41 @@
+How many movies are available in each category?
+
+SELECT c.Name AS Category, COUNT(*) AS MovieCount
+FROM Catagories c
+JOIN Movies m ON c.CatergoryID = m.CatergoryID
+GROUP BY c.Name;
+
+What are the top-rated movies?
+
+SELECT MovieTitle, Ratings
+FROM Movies
+ORDER BY Ratings DESC;
+
+Which users have a specific subscription level?
+
+SELECT u.UserId, u.Fname, u.Lname, s.Name AS SubscriptionLevel
+FROM Users u
+JOIN Subscription_level s ON u.SubID = s.Sub_ID
+WHERE s.Name = 'YourSubscriptionLevel';
+
+How many movies has each director directed?
+
+SELECT d.DirectorFName, d.DirectorLName, COUNT(*) AS MovieCount
+FROM Directors d
+JOIN Movies m ON d.DirectorID = m.DirectorID
+GROUP BY d.DirectorFName, d.DirectorLName;
+
+What is the total payment made by a specific user?
+
+SELECT u.UserId, u.Fname, u.Lname, SUM(pd.Price) AS TotalPayment
+FROM Users u
+JOIN Payment_details pd ON u.UserId = pd.UserID
+WHERE u.UserId = 'YourUserID'
+GROUP BY u.UserId, u.Fname, u.Lname;
+
+Which movies are in a specific user's watchlist?
+
+SELECT w.ListtID, w.Userid, m.MovieTitle
+FROM Watchlist w
+JOIN Movies m ON w.MovieID = m.MovieID
+WHERE w.Userid = 'YourUserID';
