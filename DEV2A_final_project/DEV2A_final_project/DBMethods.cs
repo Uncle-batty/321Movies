@@ -15,7 +15,7 @@ namespace DEV2A_final_project
 {
     public class DBMethods
     {
-        public static string connectionString = "Data Source=TADI-C;Initial Catalog=Movies321;Integrated Security=True";
+        public static string connectionString = "Data Source=KEVSLAPTOP;Initial Catalog=movies321;Integrated Security=True";
         public static Guid userID;
         public static Guid paymentID;
 
@@ -565,7 +565,7 @@ namespace DEV2A_final_project
             return success;
         }
 
-        public string getMovieLink(string movieId)
+        public string getMovieLink(int movieId)
         {
             string movieLink = "";
             SqlDataReader reader = null;

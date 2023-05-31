@@ -128,7 +128,7 @@
                 <h2 class="card-title"><%# Eval("Title") %></h2>  
                 <p class="card-description"><%# Eval("Description") %></p>
                 <div class="card-buttons">
-                    <a href="#" class="card-button">More Info</a>
+                    <a href="#" class="card-button watch-button" runat="server" onserverclick="btnwatch">Remove</a>
                     <a href="WatchMovie.aspx" class="card-button watch-button" runat="server" onserverclick="btnwatch">Watch</a>
 
                 </div>
