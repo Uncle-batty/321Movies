@@ -28,7 +28,12 @@ namespace DEV2A_final_project
 
             DBMethods dBMethods = new DBMethods();
             //SqlDataReader DR = dBMethods.
+
+            Random random = new Random();
+            int randomNumber = random.Next(1, 96);
             
+            Moviescr.Src = dBMethods.getMovieLink(randomNumber);
+
             //card 1
             if (!IsPostBack)
             {
@@ -442,6 +447,8 @@ namespace DEV2A_final_project
             DBMethods DB = new DBMethods();
             DB.addtowatchlist(DB.getuserid(DBMethods.userEmail), DB.getmovieID(movie));
         }
+
+        
 
         // Data model for each card
         public class Card
