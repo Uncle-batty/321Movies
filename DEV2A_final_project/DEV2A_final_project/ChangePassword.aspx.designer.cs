@@ -11,7 +11,7 @@ namespace DEV2A_final_project
 {
 
 
-    public partial class EditUserProfile
+    public partial class ChangePassword
     {
 
         /// <summary>
@@ -24,42 +24,6 @@ namespace DEV2A_final_project
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// tb_Name control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_Name;
-
-        /// <summary>
-        /// btn_SaveName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_SaveName;
-
-        /// <summary>
-        /// tb_Surname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_Surname;
-
-        /// <summary>
-        /// btn_SaveSurname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_SaveSurname;
-
-        /// <summary>
         /// tb_Email control.
         /// </summary>
         /// <remarks>
@@ -69,22 +33,31 @@ namespace DEV2A_final_project
         protected global::System.Web.UI.WebControls.TextBox tb_Email;
 
         /// <summary>
-        /// btn_SaveEmail control.
+        /// tb_Password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_SaveEmail;
+        protected global::System.Web.UI.WebControls.TextBox tb_Password;
 
         /// <summary>
-        /// btn_Back control.
+        /// tb_Password2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Back;
+        protected global::System.Web.UI.WebControls.TextBox tb_Password2;
+
+        /// <summary>
+        /// btn_Save control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Save;
 
         /// <summary>
         /// lbl_personalInfoState control.

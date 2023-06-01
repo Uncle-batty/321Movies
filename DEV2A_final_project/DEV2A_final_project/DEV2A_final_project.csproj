@@ -87,6 +87,12 @@
     <Content Include="assets\img\favicon.png" />
     <Content Include="assets\img\hero-bg.jpg" />
     <Content Include="assets\img\Movies.jpg" />
+    <Content Include="assets\img\team\AyushImage.jpg" />
+    <Content Include="assets\img\team\BattyImage.jpg" />
+    <Content Include="assets\img\team\EdwinImage.jpg" />
+    <Content Include="assets\img\team\JoseImage.jpg" />
+    <Content Include="assets\img\team\RapudiImage.jpg" />
+    <Content Include="assets\img\team\TadiImage.jpg" />
     <Content Include="assets\img\team\team-1.jpg" />
     <Content Include="assets\img\team\team-2.jpg" />
     <Content Include="assets\img\team\team-3.jpg" />
@@ -222,6 +228,7 @@
     <Content Include="assets\vendor\php-email-form\validate.js" />
     <Content Include="assets\vendor\swiper\swiper-bundle.min.css" />
     <Content Include="assets\vendor\swiper\swiper-bundle.min.js" />
+    <Content Include="ChangePassword.aspx" />
     <Content Include="EditPaymentDetails.aspx" />
     <Content Include="EditUserProfile.aspx" />
     <Content Include="ErrorPage.aspx" />
@@ -242,6 +249,13 @@
     </Compile>
     <Compile Include="AdminHomePage.aspx.designer.cs">
       <DependentUpon>AdminHomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="DBMethods.cs" />
     <Compile Include="EditPaymentDetails.aspx.cs">

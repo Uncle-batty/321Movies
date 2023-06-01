@@ -29,6 +29,14 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet"/>
+    <style >
+        .teamImages{
+           
+            max-width: 60%;
+            border-radius: 20%;
+            margin: 0 0 30px 0;
+        }
+    </style>
 
   <!-- =======================================================
   * Template Name: Day
@@ -62,7 +70,7 @@
     <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
       <form id="heroForm" runat="server">
       <h1>Welcome to 321 Movies</h1>
-      <h2>This is the Template for the DEV project</h2>
+      <h2>Unlimited Entertainment at your fingertips</h2>
       <asp:Button ID="Login" Text ="Sign Up"  class="btn-get-started" OnClick ="btn_UserLogin" runat="server" />
       <asp:Button ID="Signin" Text ="Sign In" class="btn-get-started" OnClick ="btn_UserSignIn" runat="server" />
           </form>
@@ -82,7 +90,7 @@
             <img src="assets/img/about.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
-            <h3>What is 321 Movies?</h3>
+            <h3 style="color:green">What is 321 Movies?</h3>
             <p class="fst-italic">
               321 Movies provides people with movies that anyone can enjoy at affordable subscriptions! Our movies range from comedy to action and everything inbetween. 
                 Movies such as:
@@ -173,7 +181,7 @@
 
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="UserLogin.aspx" class="btn-buy">Buy Now</a>
               </div>
             </div>
           </div>
@@ -189,7 +197,7 @@
                 <li>Limted to 20 movies in watchlist</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="UserLogin.aspx" class="btn-buy">Buy Now</a>
               </div>
             </div>
           </div>
@@ -205,7 +213,7 @@
                   <li>Unlimited movies in watchlist</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="UserLogin.aspx" class="btn-buy">Buy Now</a>
               </div>
             </div>
           </div>
@@ -228,35 +236,35 @@
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">
             <div class="member">
-              <img src="assets/img/team/team-1.jpg" alt="">
+              <img src="assets/img/team/BattyImage.jpg" class="teamImages" alt="">
               <h4>Loius Batty</h4>
               <span>Project Leader</span>
               
               <div class="social">
-                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href="https://www.instagram.com/louis_degen/"><i class="bi bi-instagram"></i></a>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">
             <div class="member">
-              <img src="assets/img/team/team-2.jpg" alt="">
+              <img src="assets/img/team/TadiImage.jpg" class="teamImages" alt="">
               <h4>Tadiwanshe Chingwe</h4>
               <span>Full-Stack Developer</span>
               <div class="social">
-                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href="https://www.instagram.com/tadi_chingwe/"><i class="bi bi-instagram"></i></a>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">
             <div class="member">
-              <img src="assets/img/team/team-3.jpg" alt="">
+              <img src="assets/img/team/JoseImage.jpg" class="teamImages" alt="">
               <h4>Jose Hyman</h4>
               <span>Full-Stack Developer</span>
               <p>
               <div class="social">
-                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href="https://www.instagram.com/jose_hyman/"><i class="bi bi-instagram"></i></a>
               </div>
             </div>
           </div>
@@ -264,34 +272,34 @@
           <div class="row">
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">
               <div class="member">
-                <img src="assets/img/team/team-1.jpg" alt="">
+                <img src="assets/img/team/RapudiImage.jpg" class="teamImages" alt="">
                 <h4>Rapudi Hlakudi</h4>
                 <span>Full-Stack Developer</span>
                 <div class="social">
-                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.instagram.com/jp_hlakudi/"><i class="bi bi-instagram"></i></a>
                 </div>
               </div>
             </div>
   
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">
               <div class="member">
-                <img src="assets/img/team/team-2.jpg" alt="">
+                <img src="assets/img/team/AyushImage.jpg" class="teamImages" alt="">
                 <h4>Ayush Bhadra</h4>
                 <span>Database Designer</span>
 
                 <div class="social">
-                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.instagram.com/bhdr._.a/"><i class="bi bi-instagram"></i></a>
                 </div>
               </div>
             </div>
   
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">
               <div class="member">
-                <img src="assets/img/team/team-3.jpg" alt=""/>
+                <img src="assets/img/team/EdwinImage.jpg" class="teamImages" alt=""/>
                 <h4>Edwin Malaji</h4>
                 <span>Databse Designer</span>
                 <div class="social">
-                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.instagram.com/t._.edwin/"><i class="bi bi-instagram"></i></a>
                 </div>
               </div>
             </div>

@@ -517,7 +517,7 @@ namespace DEV2A_final_project
         {
             bool success = false;
             SqlConnection conn = new SqlConnection(connectionString);
-            string cmdText = "update Users set Fname = '" + Email + "' where Email = '" + userEmail + "';";
+            string cmdText = "update Users set Email = '" + Email + "' where Email = '" + userEmail + "';";
 
             try
             {
@@ -539,11 +539,11 @@ namespace DEV2A_final_project
             return success;
         }
 
-        public bool changePassword(string password)
+        public bool changePassword(string password, string email)
         {
             bool success = false;
             SqlConnection conn = new SqlConnection(connectionString);
-            string cmdText = "update Users set Password = '" + encrypt(password) + "' where Email = '" + userEmail + "';";
+            string cmdText = "update Users set Password = '" + encrypt(password) + "' where Email = '" + email + "';";
 
             try
             {
@@ -586,5 +586,9 @@ namespace DEV2A_final_project
 
             return movieLink;
         }
+
+        
+
+
     }
 }

@@ -83,7 +83,7 @@
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
-					<a href="#forgot">Forgot Password?</a>
+					<a href="ChangePassword.aspx">Forgot/Change Password?</a>
 				</div>
 
 			</div>

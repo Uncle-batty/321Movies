@@ -90,6 +90,7 @@
       border-radius: 4px;
       transition: background-color 0.3s;
       font-size: 18px;
+      margin-top: 20px;
     }
 
     .button1:hover {
@@ -144,7 +145,9 @@
         <asp:Label ID="lbl_Subscription" runat="server" Text="Subscription"></asp:Label>
       </div>
 
+        <a href="ChangePassword.aspx" class="button1" type ="sumbit">Change Password</a>
       <a href="EditUserProfile.aspx" class="button1" type="submit">Edit Personal Info</a>
+    
         <div style="margin-top:20px;">
              <asp:Button ID="btn_editPayment" CssClass="button1" runat="server" Text="Edit Payment Info" OnClick="btn_payment_click" />
         </div>

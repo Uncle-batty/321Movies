@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditUserProfile.aspx.cs" Inherits="DEV2A_final_project.EditUserProfile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ChangePassword.aspx.cs" Inherits="DEV2A_final_project.ChangePassword" %>
 
 <!DOCTYPE html>
 
@@ -80,6 +80,11 @@
       font-size: 16px;
     }
 
+    .textBox[data-type="password"]{
+        text-security: circle;
+            -webkit-text-security: circle;
+    }
+
     select{
       appearance: none;
       -webkit-appearance: none;
@@ -135,26 +140,23 @@
         <div class="card1">
  <img class="user-icon" src="assets/img/User_Icon.png" alt="User Icon">
       <div class="form-group">
-        <label for="name">Name</label>
-          <asp:TextBox ID="tb_Name" CssClass="textBox" runat="server"></asp:TextBox>
-          <asp:Button ID="btn_SaveName" CssClass="button1" runat="server" Text="Change Name" OnClick="btn_FnameSaveClick" />
+        <label for="name">Email</label>
+          <asp:TextBox ID="tb_Email" CssClass="textBox" runat="server"></asp:TextBox>
       </div>
 
       <div class="form-group">
-        <label for="surname">Surname</label>
-         <asp:TextBox ID="tb_Surname" CssClass="textBox" runat="server"></asp:TextBox>
-          <asp:Button ID="btn_SaveSurname" CssClass="button1" runat="server" Text="Change Surname" OnClick="btn_LnameSaveClick" />
+        <label for="surname">New Password</label>
+         <asp:TextBox ID="tb_Password" CssClass="textBox" runat="server"  data-type="password"></asp:TextBox>
       </div>
 
       <div class="form-group">
-        <label for="email">Email</label>
-         <asp:TextBox ID="tb_Email" CssClass="textBox" runat="server"></asp:TextBox>
-          <asp:Button ID="btn_SaveEmail" CssClass="button1" runat="server" Text="Change Email" OnClick="btn_EmailSaveClick" />
+        <label for="email">Re-enter password</label>
+         <asp:TextBox ID="tb_Password2"  CssClass="textBox" runat="server" data-type="password"></asp:TextBox>
       </div>
 
 
         <div style="margin-top:20px;">
-             <asp:Button ID="btn_Back" CssClass="button1" runat="server" Text="Back" OnClick="btn_BackClick" />
+             <asp:Button ID="btn_Save" CssClass="button1" runat="server" Text="Save" OnClick="btn_ChangePasswordClick" />
             
         </div>
        <div class="validatorLabel">
@@ -164,3 +166,4 @@
     </form>
 </body>
 </html>
+
