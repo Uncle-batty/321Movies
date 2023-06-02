@@ -15,7 +15,7 @@ namespace DEV2A_final_project
 {
     public class DBMethods
     {
-        public static string connectionString = "Data Source=KEVSLAPTOP;Initial Catalog=movies321;Integrated Security=True";
+        public static string connectionString = "Data Source=.;Initial Catalog=Movies321;Integrated Security=True";
         public static Guid userID;
         public static Guid paymentID;
 
@@ -193,7 +193,7 @@ namespace DEV2A_final_project
         {
             bool userSignedIn = false;
             SqlConnection conn = new SqlConnection(connectionString);
-            string commandText = $"select * from Admin where email = '{email}' and Password = {password}";
+            string commandText = $"select * from Admin where email = '{email}' and Password = '{password}'";
             try
             {
                 SqlDataReader dataReader;

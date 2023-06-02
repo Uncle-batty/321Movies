@@ -74,7 +74,7 @@ namespace DEV2A_final_project
 
             if (adminSingIn.adminSignIn(adminEmail, adminPassword))
             {
-                Response.Redirect("AdminHomePage.aspx");
+                Response.Redirect("AdminDashBoard\\AdminDashboard1.aspx");
             }
             else
             {

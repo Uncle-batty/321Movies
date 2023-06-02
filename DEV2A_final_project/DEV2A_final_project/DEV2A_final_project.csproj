@@ -68,11 +68,39 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminDashBoard\AdimViewPayments.aspx" />
+    <Content Include="AdminDashBoard\AdminAddMovie.aspx" />
+    <Content Include="AdminDashBoard\AdminBlockUser.aspx" />
+    <Content Include="AdminDashBoard\AdminCatAction.aspx" />
+    <Content Include="AdminDashBoard\AdminCatComedy.aspx" />
+    <Content Include="AdminDashBoard\AdminCatHorror.aspx" />
+    <Content Include="AdminDashBoard\AdminCatRomance.aspx" />
+    <Content Include="AdminDashBoard\AdminDashboard1.aspx" />
+    <Content Include="AdminDashBoard\AdminDeleteMovies.aspx" />
+    <Content Include="AdminDashBoard\AdminDeleteUsers.aspx" />
+    <Content Include="AdminDashBoard\AdminEditMovies.aspx" />
+    <Content Include="AdminDashBoard\AdminPlanFree.aspx" />
+    <Content Include="AdminDashBoard\AdminPlanPremium.aspx" />
+    <Content Include="AdminDashBoard\AdminPlanStandard.aspx" />
+    <Content Include="AdminDashBoard\AdminSuccess.aspx" />
+    <Content Include="AdminDashBoard\AdminUnsucessful.aspx" />
+    <Content Include="AdminDashBoard\AdminUploadInvoices.aspx" />
+    <Content Include="AdminDashBoard\AdminUsers.aspx" />
+    <Content Include="AdminDashBoard\cssAdmin\bootstrap-datepicker.min.css" />
+    <Content Include="AdminDashBoard\cssAdmin\bootstrap.min.css" />
+    <Content Include="AdminDashBoard\cssAdmin\dataTables.bootstrap5.min.css" />
+    <Content Include="AdminDashBoard\cssAdmin\style.css" />
+    <Content Include="AdminDashBoard\images\gladiator.jpg" />
+    <Content Include="AdminDashBoard\images\preview.PNG" />
+    <Content Include="AdminDashBoard\jsAdmin\bootstrap.bundle.min.js" />
+    <Content Include="AdminDashBoard\jsAdmin\dataTables.bootstrap5.min.js" />
+    <Content Include="AdminDashBoard\jsAdmin\jquery-3.5.1.js" />
+    <Content Include="AdminDashBoard\jsAdmin\jquery.dataTables.min.js" />
+    <Content Include="AdminDashBoard\jsAdmin\script.js" />
     <Content Include="AdminHomePage.aspx" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\css\WatchMovie.css" />
     <Content Include="assets\img\321MoviesLogo.png" />
-    <Content Include="assets\img\about.jpg" />
     <Content Include="assets\img\apple-touch-icon.png" />
     <Content Include="assets\img\clients\dc-comics.png" />
     <Content Include="assets\img\clients\DreamWorks.png" />
@@ -87,6 +115,7 @@
     <Content Include="assets\img\favicon.png" />
     <Content Include="assets\img\hero-bg.jpg" />
     <Content Include="assets\img\Movies.jpg" />
+    <Content Include="assets\img\team\about.jpg" />
     <Content Include="assets\img\team\AyushImage.jpg" />
     <Content Include="assets\img\team\BattyImage.jpg" />
     <Content Include="assets\img\team\EdwinImage.jpg" />
@@ -243,6 +272,133 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminDashBoard\AdimViewPayments.aspx.cs">
+      <DependentUpon>AdimViewPayments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdimViewPayments.aspx.designer.cs">
+      <DependentUpon>AdimViewPayments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminAddMovie.aspx.cs">
+      <DependentUpon>AdminAddMovie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminAddMovie.aspx.designer.cs">
+      <DependentUpon>AdminAddMovie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminBlockUser.aspx.cs">
+      <DependentUpon>AdminBlockUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminBlockUser.aspx.designer.cs">
+      <DependentUpon>AdminBlockUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminCatAction.aspx.cs">
+      <DependentUpon>AdminCatAction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminCatAction.aspx.designer.cs">
+      <DependentUpon>AdminCatAction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminCatComedy.aspx.cs">
+      <DependentUpon>AdminCatComedy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminCatComedy.aspx.designer.cs">
+      <DependentUpon>AdminCatComedy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminCatHorror.aspx.cs">
+      <DependentUpon>AdminCatHorror.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminCatHorror.aspx.designer.cs">
+      <DependentUpon>AdminCatHorror.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminCatRomance.aspx.cs">
+      <DependentUpon>AdminCatRomance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminCatRomance.aspx.designer.cs">
+      <DependentUpon>AdminCatRomance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminDashboard1.aspx.cs">
+      <DependentUpon>AdminDashboard1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminDashboard1.aspx.designer.cs">
+      <DependentUpon>AdminDashboard1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminDeleteMovies.aspx.cs">
+      <DependentUpon>AdminDeleteMovies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminDeleteMovies.aspx.designer.cs">
+      <DependentUpon>AdminDeleteMovies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminDeleteUsers.aspx.cs">
+      <DependentUpon>AdminDeleteUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminDeleteUsers.aspx.designer.cs">
+      <DependentUpon>AdminDeleteUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminEditMovies.aspx.cs">
+      <DependentUpon>AdminEditMovies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminEditMovies.aspx.designer.cs">
+      <DependentUpon>AdminEditMovies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminPlanFree.aspx.cs">
+      <DependentUpon>AdminPlanFree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminPlanFree.aspx.designer.cs">
+      <DependentUpon>AdminPlanFree.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminPlanPremium.aspx.cs">
+      <DependentUpon>AdminPlanPremium.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminPlanPremium.aspx.designer.cs">
+      <DependentUpon>AdminPlanPremium.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminPlanStandard.aspx.cs">
+      <DependentUpon>AdminPlanStandard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminPlanStandard.aspx.designer.cs">
+      <DependentUpon>AdminPlanStandard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminSuccess.aspx.cs">
+      <DependentUpon>AdminSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminSuccess.aspx.designer.cs">
+      <DependentUpon>AdminSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminUnsucessful.aspx.cs">
+      <DependentUpon>AdminUnsucessful.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminUnsucessful.aspx.designer.cs">
+      <DependentUpon>AdminUnsucessful.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminUploadInvoices.aspx.cs">
+      <DependentUpon>AdminUploadInvoices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminUploadInvoices.aspx.designer.cs">
+      <DependentUpon>AdminUploadInvoices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminUsers.aspx.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminUsers.aspx.designer.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\DBMethods2.cs" />
     <Compile Include="AdminHomePage.aspx.cs">
       <DependentUpon>AdminHomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -363,6 +519,9 @@
     <Content Include="assets\vendor\boxicons\fonts\boxicons.woff2" />
     <Content Include="assets\vendor\swiper\swiper-bundle.min.js.map" />
     <Content Include="forms\contact.php" />
+    <Content Include="AdminDashBoard\cssAdmin\bootstrap.min.css.map" />
+    <Content Include="AdminDashBoard\jsAdmin\bootstrap.bundle.min.js.map" />
+    <Content Include="AdminDashBoard\readme.md" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
