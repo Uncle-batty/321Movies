@@ -90,6 +90,7 @@
       border-radius: 4px;
       transition: background-color 0.3s;
       font-size: 18px;
+      margin-top: 20px;
     }
 
     .button1:hover {
@@ -124,33 +125,33 @@
 
         <div class="card1">
  <img class="user-icon" src="assets/img/User_Icon.png" alt="User Icon">
-    <form>
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name">
+          <asp:Label ID="lbl_Name" runat="server" Text="Name"></asp:Label>
       </div>
 
       <div class="form-group">
         <label for="surname">Surname</label>
-        <input type="text" id="surname" name="surname" placeholder="Enter your surname">
+        <asp:Label ID="lbl_Surname" runat="server" Text="Surname"></asp:Label>
       </div>
 
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="text" id="email" name="email" placeholder="Enter your email">
+        <asp:Label ID="lbl_Email" runat="server" Text="Email"></asp:Label>
       </div>
 
       <div class="form-group">
         <label for="subscription">Subscription Type</label>
-        <select id="subscription" name="subscription">
-          <option value="basic">Basic</option>
-          <option value="standard">Standard</option>
-          <option value="premium">Premium</option>
-        </select>
+        <asp:Label ID="lbl_Subscription" runat="server" Text="Subscription"></asp:Label>
       </div>
 
-      <button class="button1" type="submit">Save</button>
-    </form>
+        <a href="ChangePassword.aspx" class="button1" type ="sumbit">Change Password</a>
+      <a href="EditUserProfile.aspx" class="button1" type="submit">Edit Personal Info</a>
+    
+        <div style="margin-top:20px;">
+             <asp:Button ID="btn_editPayment" CssClass="button1" runat="server" Text="Edit Payment Info" OnClick="btn_payment_click" />
+        </div>
+       
   </div>
     </form>
 </body>

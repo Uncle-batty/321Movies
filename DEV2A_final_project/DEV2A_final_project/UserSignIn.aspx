@@ -33,6 +33,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
+
+
     
 
   <!-- =======================================================
@@ -81,7 +83,7 @@
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
-					<a href="#forgot">Forgot Password?</a>
+					<a href="ChangePassword.aspx">Forgot/Change Password?</a>
 				</div>
 
 			</div>
@@ -103,7 +105,7 @@
 				</div>--%>
 			</div>
 		</div>
-					<asp:Label ID="lbl_SignInState" runat="server" Text="**************"/>
+					<asp:Label ID="lbl_SignInState" runat="server" Text=""/>
 
 	</div>
 </div>

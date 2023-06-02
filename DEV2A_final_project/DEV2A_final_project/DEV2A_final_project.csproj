@@ -68,10 +68,39 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminDashBoard\AdimViewPayments.aspx" />
+    <Content Include="AdminDashBoard\AdminAddMovie.aspx" />
+    <Content Include="AdminDashBoard\AdminBlockUser.aspx" />
+    <Content Include="AdminDashBoard\AdminCatAction.aspx" />
+    <Content Include="AdminDashBoard\AdminCatComedy.aspx" />
+    <Content Include="AdminDashBoard\AdminCatHorror.aspx" />
+    <Content Include="AdminDashBoard\AdminCatRomance.aspx" />
+    <Content Include="AdminDashBoard\AdminDashboard1.aspx" />
+    <Content Include="AdminDashBoard\AdminDeleteMovies.aspx" />
+    <Content Include="AdminDashBoard\AdminDeleteUsers.aspx" />
+    <Content Include="AdminDashBoard\AdminEditMovies.aspx" />
+    <Content Include="AdminDashBoard\AdminPlanFree.aspx" />
+    <Content Include="AdminDashBoard\AdminPlanPremium.aspx" />
+    <Content Include="AdminDashBoard\AdminPlanStandard.aspx" />
+    <Content Include="AdminDashBoard\AdminSuccess.aspx" />
+    <Content Include="AdminDashBoard\AdminUnsucessful.aspx" />
+    <Content Include="AdminDashBoard\AdminUploadInvoices.aspx" />
+    <Content Include="AdminDashBoard\AdminUsers.aspx" />
+    <Content Include="AdminDashBoard\cssAdmin\bootstrap-datepicker.min.css" />
+    <Content Include="AdminDashBoard\cssAdmin\bootstrap.min.css" />
+    <Content Include="AdminDashBoard\cssAdmin\dataTables.bootstrap5.min.css" />
+    <Content Include="AdminDashBoard\cssAdmin\style.css" />
+    <Content Include="AdminDashBoard\images\gladiator.jpg" />
+    <Content Include="AdminDashBoard\images\preview.PNG" />
+    <Content Include="AdminDashBoard\jsAdmin\bootstrap.bundle.min.js" />
+    <Content Include="AdminDashBoard\jsAdmin\dataTables.bootstrap5.min.js" />
+    <Content Include="AdminDashBoard\jsAdmin\jquery-3.5.1.js" />
+    <Content Include="AdminDashBoard\jsAdmin\jquery.dataTables.min.js" />
+    <Content Include="AdminDashBoard\jsAdmin\script.js" />
     <Content Include="AdminHomePage.aspx" />
     <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\WatchMovie.css" />
     <Content Include="assets\img\321MoviesLogo.png" />
-    <Content Include="assets\img\about.jpg" />
     <Content Include="assets\img\apple-touch-icon.png" />
     <Content Include="assets\img\clients\dc-comics.png" />
     <Content Include="assets\img\clients\DreamWorks.png" />
@@ -86,6 +115,13 @@
     <Content Include="assets\img\favicon.png" />
     <Content Include="assets\img\hero-bg.jpg" />
     <Content Include="assets\img\Movies.jpg" />
+    <Content Include="assets\img\team\about.jpg" />
+    <Content Include="assets\img\team\AyushImage.jpg" />
+    <Content Include="assets\img\team\BattyImage.jpg" />
+    <Content Include="assets\img\team\EdwinImage.jpg" />
+    <Content Include="assets\img\team\JoseImage.jpg" />
+    <Content Include="assets\img\team\RapudiImage.jpg" />
+    <Content Include="assets\img\team\TadiImage.jpg" />
     <Content Include="assets\img\team\team-1.jpg" />
     <Content Include="assets\img\team\team-2.jpg" />
     <Content Include="assets\img\team\team-3.jpg" />
@@ -95,16 +131,90 @@
     <Content Include="assets\js\main.js" />
     <Content Include="assets\js\owl.carousel.min.js" />
     <Content Include="assets\js\popper.min.js" />
-    <Content Include="assets\Movies\movie1.jpg" />
-    <Content Include="assets\Movies\movie10.jpg" />
-    <Content Include="assets\Movies\movie2.jpg" />
-    <Content Include="assets\Movies\movie3.jpg" />
-    <Content Include="assets\Movies\movie4.jpg" />
-    <Content Include="assets\Movies\movie5.jpg" />
-    <Content Include="assets\Movies\movie6.jpg" />
-    <Content Include="assets\Movies\movie7.jpg" />
-    <Content Include="assets\Movies\movie8.jpg" />
-    <Content Include="assets\Movies\movie9.jpg" />
+    <Content Include="assets\Movies\%27111%27, %27The Choice%27, .jpg" />
+    <Content Include="assets\Movies\500 Days of Summer.jpg" />
+    <Content Include="assets\Movies\A Walk to Remember.jpg" />
+    <Content Include="assets\Movies\Alien.jpg" />
+    <Content Include="assets\Movies\American Beauty.jpg" />
+    <Content Include="assets\Movies\Avatar.jpg" />
+    <Content Include="assets\Movies\Back to the Future.jpg" />
+    <Content Include="assets\Movies\Birdman.jpg" />
+    <Content Include="assets\Movies\Black Swan.jpg" />
+    <Content Include="assets\Movies\Blackfis.jpg" />
+    <Content Include="assets\Movies\Blade Runner.jpg" />
+    <Content Include="assets\Movies\Braveheart.jpg" />
+    <Content Include="assets\Movies\Casino Royale.jpg" />
+    <Content Include="assets\Movies\Coco.jpg" />
+    <Content Include="assets\Movies\Crazy Rich Asians.jpg" />
+    <Content Include="assets\Movies\Despicable Me.jpg" />
+    <Content Include="assets\Movies\Die Hard.jpg" />
+    <Content Include="assets\Movies\E.T. the Extra-Terrestrial.jpg" />
+    <Content Include="assets\Movies\Eternal Sunshine of the Spotless Mind.jpg" />
+    <Content Include="assets\Movies\Exit Through the Gift Shop.jpg" />
+    <Content Include="assets\Movies\Fargo.jpg" />
+    <Content Include="assets\Movies\Fight Club.jpg" />
+    <Content Include="assets\Movies\Finding Nemo.jpg" />
+    <Content Include="assets\Movies\Forrest Gump.jpeg" />
+    <Content Include="assets\Movies\Forrest Gump.jpg" />
+    <Content Include="assets\Movies\Frozen.jpg" />
+    <Content Include="assets\Movies\Get Out.jpg" />
+    <Content Include="assets\Movies\Gladiator.jpg" />
+    <Content Include="assets\Movies\Goodfellas.jpeg" />
+    <Content Include="assets\Movies\Goodfellas.jpg" />
+    <Content Include="assets\Movies\Hereditary.jpg" />
+    <Content Include="assets\Movies\Inception.jpg" />
+    <Content Include="assets\Movies\Interstellar.jpeg" />
+    <Content Include="assets\Movies\Interstellar.jpg" />
+    <Content Include="assets\Movies\Jaws.jpg" />
+    <Content Include="assets\Movies\Jiro Dreams of Sushi.jpg" />
+    <Content Include="assets\Movies\Jurassic Park.jpg" />
+    <Content Include="assets\Movies\La La Land.jpg" />
+    <Content Include="assets\Movies\Love, Rosie.jpg" />
+    <Content Include="assets\Movies\Man on Wire.jpg" />
+    <Content Include="assets\Movies\Mission Impossible - Fallout.jpg" />
+    <Content Include="assets\Movies\Moana.jpg" />
+    <Content Include="assets\Movies\Mr. &amp; Mrs. Smith.jpg" />
+    <Content Include="assets\Movies\One Day.jpg" />
+    <Content Include="assets\Movies\Paranormal Activity.jpg" />
+    <Content Include="assets\Movies\Pulp Fiction.jpeg" />
+    <Content Include="assets\Movies\Pulp Fiction.jpg" />
+    <Content Include="assets\Movies\Romeo + Juliet.jpg" />
+    <Content Include="assets\Movies\Schindler%27%27s List.jpg" />
+    <Content Include="assets\Movies\Searching for Sugar Man.jpg" />
+    <Content Include="assets\Movies\Shrek.jpg" />
+    <Content Include="assets\Movies\Silver Linings Playbook.jpg" />
+    <Content Include="assets\Movies\Snatch.jpg" />
+    <Content Include="assets\Movies\The Avengers.jpg" />
+    <Content Include="assets\Movies\The Conjuring.jpg" />
+    <Content Include="assets\Movies\The Cove.jpg" />
+    <Content Include="assets\Movies\The Dark Knight Rises.jpg" />
+    <Content Include="assets\Movies\The Dark Knight.jpg" />
+    <Content Include="assets\Movies\The Departed.jpg" />
+    <Content Include="assets\Movies\The Fault in Our Stars.jpg" />
+    <Content Include="assets\Movies\The Godfather.jpg" />
+    <Content Include="assets\Movies\The Great Gatsby.jpg" />
+    <Content Include="assets\Movies\The Incredibles.jpg" />
+    <Content Include="assets\Movies\The Lion King cartoon.jpg" />
+    <Content Include="assets\Movies\The Lion King.jpg" />
+    <Content Include="assets\Movies\The Lord of the Rings The Fellowship of the Ring.jpg" />
+    <Content Include="assets\Movies\The Matrix.jpg" />
+    <Content Include="assets\Movies\The Notebook.jpeg" />
+    <Content Include="assets\Movies\The Notebook.jpg" />
+    <Content Include="assets\Movies\The Prestige.jpg" />
+    <Content Include="assets\Movies\The Proposal.jpg" />
+    <Content Include="assets\Movies\The Pursuit of Happyness.jpg" />
+    <Content Include="assets\Movies\The Shawshank Redemption.jpeg" />
+    <Content Include="assets\Movies\The Shawshank Redemption.jpg" />
+    <Content Include="assets\Movies\The Silence of the Lambs.jpg" />
+    <Content Include="assets\Movies\The Sixth Sense.jpg" />
+    <Content Include="assets\Movies\The Social Network.jpeg" />
+    <Content Include="assets\Movies\The Social Network.jpg" />
+    <Content Include="assets\Movies\The Texas Chain Saw Massacre.jpg" />
+    <Content Include="assets\Movies\The Thin Blue Line.jpg" />
+    <Content Include="assets\Movies\The Time Traveler.jpg" />
+    <Content Include="assets\Movies\The Usual Suspects.jpg" />
+    <Content Include="assets\Movies\Titanic.jpg" />
+    <Content Include="assets\Movies\Toy Story.jpg" />
     <Content Include="assets\scss\Readme.txt" />
     <Content Include="assets\vendor\aos\aos.css" />
     <Content Include="assets\vendor\aos\aos.js" />
@@ -147,19 +257,148 @@
     <Content Include="assets\vendor\php-email-form\validate.js" />
     <Content Include="assets\vendor\swiper\swiper-bundle.min.css" />
     <Content Include="assets\vendor\swiper\swiper-bundle.min.js" />
+    <Content Include="ChangePassword.aspx" />
+    <Content Include="EditPaymentDetails.aspx" />
+    <Content Include="EditUserProfile.aspx" />
     <Content Include="ErrorPage.aspx" />
     <Content Include="forms\Readme.txt" />
-    <Content Include="index.html" />
-    <Content Include="inner-page.html" />
     <Content Include="LandingPage.aspx" />
-    <Content Include="portfolio-details.html" />
     <Content Include="User Profile.aspx" />
     <Content Include="UserHomePage.aspx" />
     <Content Include="UserLogin.aspx" />
     <Content Include="UserSignIn.aspx" />
+    <Content Include="Watchlist.aspx" />
+    <Content Include="WatchMovie.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminDashBoard\AdimViewPayments.aspx.cs">
+      <DependentUpon>AdimViewPayments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdimViewPayments.aspx.designer.cs">
+      <DependentUpon>AdimViewPayments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminAddMovie.aspx.cs">
+      <DependentUpon>AdminAddMovie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminAddMovie.aspx.designer.cs">
+      <DependentUpon>AdminAddMovie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminBlockUser.aspx.cs">
+      <DependentUpon>AdminBlockUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminBlockUser.aspx.designer.cs">
+      <DependentUpon>AdminBlockUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminCatAction.aspx.cs">
+      <DependentUpon>AdminCatAction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminCatAction.aspx.designer.cs">
+      <DependentUpon>AdminCatAction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminCatComedy.aspx.cs">
+      <DependentUpon>AdminCatComedy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminCatComedy.aspx.designer.cs">
+      <DependentUpon>AdminCatComedy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminCatHorror.aspx.cs">
+      <DependentUpon>AdminCatHorror.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminCatHorror.aspx.designer.cs">
+      <DependentUpon>AdminCatHorror.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminCatRomance.aspx.cs">
+      <DependentUpon>AdminCatRomance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminCatRomance.aspx.designer.cs">
+      <DependentUpon>AdminCatRomance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminDashboard1.aspx.cs">
+      <DependentUpon>AdminDashboard1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminDashboard1.aspx.designer.cs">
+      <DependentUpon>AdminDashboard1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminDeleteMovies.aspx.cs">
+      <DependentUpon>AdminDeleteMovies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminDeleteMovies.aspx.designer.cs">
+      <DependentUpon>AdminDeleteMovies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminDeleteUsers.aspx.cs">
+      <DependentUpon>AdminDeleteUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminDeleteUsers.aspx.designer.cs">
+      <DependentUpon>AdminDeleteUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminEditMovies.aspx.cs">
+      <DependentUpon>AdminEditMovies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminEditMovies.aspx.designer.cs">
+      <DependentUpon>AdminEditMovies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminPlanFree.aspx.cs">
+      <DependentUpon>AdminPlanFree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminPlanFree.aspx.designer.cs">
+      <DependentUpon>AdminPlanFree.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminPlanPremium.aspx.cs">
+      <DependentUpon>AdminPlanPremium.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminPlanPremium.aspx.designer.cs">
+      <DependentUpon>AdminPlanPremium.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminPlanStandard.aspx.cs">
+      <DependentUpon>AdminPlanStandard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminPlanStandard.aspx.designer.cs">
+      <DependentUpon>AdminPlanStandard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminSuccess.aspx.cs">
+      <DependentUpon>AdminSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminSuccess.aspx.designer.cs">
+      <DependentUpon>AdminSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminUnsucessful.aspx.cs">
+      <DependentUpon>AdminUnsucessful.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminUnsucessful.aspx.designer.cs">
+      <DependentUpon>AdminUnsucessful.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminUploadInvoices.aspx.cs">
+      <DependentUpon>AdminUploadInvoices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminUploadInvoices.aspx.designer.cs">
+      <DependentUpon>AdminUploadInvoices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminUsers.aspx.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashBoard\AdminUsers.aspx.designer.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashBoard\DBMethods2.cs" />
     <Compile Include="AdminHomePage.aspx.cs">
       <DependentUpon>AdminHomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -167,7 +406,28 @@
     <Compile Include="AdminHomePage.aspx.designer.cs">
       <DependentUpon>AdminHomePage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DBMethods.cs" />
+    <Compile Include="EditPaymentDetails.aspx.cs">
+      <DependentUpon>EditPaymentDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditPaymentDetails.aspx.designer.cs">
+      <DependentUpon>EditPaymentDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditUserProfile.aspx.cs">
+      <DependentUpon>EditUserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditUserProfile.aspx.designer.cs">
+      <DependentUpon>EditUserProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ErrorPage.aspx.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -211,6 +471,20 @@
     <Compile Include="UserSignIn.aspx.designer.cs">
       <DependentUpon>UserSignIn.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Watchlist.aspx.cs">
+      <DependentUpon>Watchlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Watchlist.aspx.designer.cs">
+      <DependentUpon>Watchlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WatchMovie.aspx.cs">
+      <DependentUpon>WatchMovie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WatchMovie.aspx.designer.cs">
+      <DependentUpon>WatchMovie.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\vendor\bootstrap-icons\bootstrap-icons.json" />
@@ -245,6 +519,9 @@
     <Content Include="assets\vendor\boxicons\fonts\boxicons.woff2" />
     <Content Include="assets\vendor\swiper\swiper-bundle.min.js.map" />
     <Content Include="forms\contact.php" />
+    <Content Include="AdminDashBoard\cssAdmin\bootstrap.min.css.map" />
+    <Content Include="AdminDashBoard\jsAdmin\bootstrap.bundle.min.js.map" />
+    <Content Include="AdminDashBoard\readme.md" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -9,14 +9,23 @@ using System.Diagnostics;
 using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
+using System.Xml.Linq;
 
 namespace DEV2A_final_project
 {
     public class DBMethods
     {
-        public string connectionString = "Data Source=.;Initial Catalog=Movies321;Integrated Security=True";
+        public static string connectionString = "Data Source=.;Initial Catalog=Movies321;Integrated Security=True";
         public static Guid userID;
         public static Guid paymentID;
+
+        //Public variables 
+        public static string userEmail = "";
+        public static string UserFname = "";
+        public static string UserLname = "";
+        public static int userSubId = 0;
+       
+
         public bool addUser(string firstName, string lastName, string email, string password, string userDOB)
         {
             bool registered = false;
@@ -42,6 +51,7 @@ namespace DEV2A_final_project
                 if (execution > 0)
                 {
                     registered = true;
+                    setUserEmail(email);
                 }
                 else
                 {
@@ -89,7 +99,7 @@ namespace DEV2A_final_project
             bool paymentAdded = false;
             SqlConnection conn = new SqlConnection(connectionString);
             string storedProcedure = "AddUserPayments_st";
-            string cmdText = "update Users set SubID = " + subscriptionLevel + " where UserId = " + userID.ToString() + "";
+            string cmdText = "update Users set SubID = " + subscriptionLevel + " where UserId = '" + getuserid(userEmail) + "'";
             
 
 
@@ -117,11 +127,32 @@ namespace DEV2A_final_project
                     paymentAdded = false;
                 }
                 conn.Close();
+
+
+
             }
             catch (Exception ex)
             {
                 paymentAdded = false;
             }
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmdUpdate = new SqlCommand(cmdText, conn);
+                int updateExecution = cmdUpdate.ExecuteNonQuery();
+                if (updateExecution > 0)
+                {
+                    paymentAdded = true;
+                    userSubId = subscriptionLevel;
+                }
+                else
+                {
+                    paymentAdded = false;
+                }
+                conn.Close();
+            }
+            catch { paymentAdded = false; }
 
             return paymentAdded;
         }
@@ -129,7 +160,7 @@ namespace DEV2A_final_project
         {
             bool userSignedIn = false;
             SqlConnection conn = new SqlConnection(connectionString);
-            string commandText = $"select * from Users where Email = '{email}' and Password = {password}";
+            string commandText = $"select * from Users where Email = '{email}' and Password = '{password}'";
             SqlDataReader dataReader;
             try
             {
@@ -141,6 +172,7 @@ namespace DEV2A_final_project
                     if (dataReader.Read())
                     {
                         userSignedIn = true;
+                        setUserEmail(email);
                     }
                     else
                     {
@@ -161,7 +193,7 @@ namespace DEV2A_final_project
         {
             bool userSignedIn = false;
             SqlConnection conn = new SqlConnection(connectionString);
-            string commandText = $"select * from Admin where email = '{email}' and Password = {password}";
+            string commandText = $"select * from Admin where email = '{email}' and Password = '{password}'";
             try
             {
                 SqlDataReader dataReader;
@@ -185,40 +217,6 @@ namespace DEV2A_final_project
                 userSignedIn = false;
             }
             return userSignedIn;
-        }
-
-        public static string GenerateUnique4DigitNumber()
-        {
-            Random rand = new Random();
-            string number = rand.Next(1000, 10000).ToString();
-
-            // Check if the number has already been used
-            while (IsNumberUsed(number))
-            {
-                number = rand.Next(1000, 10000).ToString();
-            }
-
-            // Save the number as used
-            SaveNumber(number);
-
-            return number;
-        }
-
-        private static bool IsNumberUsed(string number)
-        {
-            // Implement your own logic here to check if the number has already been used
-            // This could involve checking a database or file to see if the number exists
-            // You could also store the used numbers in a HashSet or other data structure
-            // In this example, we'll always return false to simulate a new number being generated every time
-            return false;
-        }
-
-        private static void SaveNumber(string number)
-        {
-            // Implement your own logic here to save the number as used
-            // This could involve writing the number to a database or file, or adding it to a HashSet or other data structure
-            // In this example, we'll just write the number to the console to simulate saving it
-            Console.WriteLine($"Saving number {number}");
         }
 
         public static bool validEmail(string email)
@@ -246,14 +244,14 @@ namespace DEV2A_final_project
             }
         }
 
-        public  SqlDataReader MovieListbyCat(int catagory)
+        public  SqlDataReader MovieListbyCat(int catagory,int sub)
         {
             SqlDataReader reader = null;
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand cmd;
 
             conn.Open();
-            string SQL = "SELECT * FROM Movies where CatergoryID = '" + catagory + "';";
+            string SQL = "SELECT * FROM Movies where CatergoryID = '" + catagory + "' and Subid <= '" +sub + "';";
             cmd = new SqlCommand(SQL, conn);
 
             reader = cmd.ExecuteReader();
@@ -261,6 +259,23 @@ namespace DEV2A_final_project
             
             return reader;
             
+        }
+
+        public SqlDataReader MoreInfo(string name)
+        {
+            SqlDataReader reader = null;
+            SqlConnection conn = new SqlConnection(connectionString);
+            SqlCommand cmd;
+
+            conn.Open();
+            string SQL = "SELECT MovieTitle,RunTime,Release_Year,TrailerLink,Ratings,AgeRating,ShortDiscription,ImageName FROM Movies where MovieTitle = '" + name + "';";
+            cmd = new SqlCommand(SQL, conn);
+
+            reader = cmd.ExecuteReader();
+
+
+            return reader;
+
         }
 
         public SqlDataReader GetUser(int ID )
@@ -271,7 +286,7 @@ namespace DEV2A_final_project
             SqlCommand cmd;
 
             conn.Open();
-            string SQL = "SELECT * FROM User where UserID = '" + ID + "';";
+            string SQL = "SELECT * FROM Users where UserId = '" + ID + "';";
             cmd = new SqlCommand(SQL, conn);
 
             reader = cmd.ExecuteReader();
@@ -280,5 +295,300 @@ namespace DEV2A_final_project
             return reader;
             
         }
+
+        public void updateviews(string title)
+        {
+            SqlConnection conn = new SqlConnection(connectionString );
+            SqlCommand cmd;
+
+            conn.Open();
+            string sql = "EXEC UpdateViews '" + title+ "';";
+
+            cmd = new SqlCommand(sql, conn);
+
+            cmd.ExecuteNonQuery();
+
+        }
+
+        public SqlDataReader seeWatchlist(string userId)
+        {
+            SqlDataReader reader = null;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            SqlCommand cmd;
+
+            conn.Open();
+            string SQL = "EXEC seeWatchlist @UserId = '" + userId + "';";
+            cmd = new SqlCommand(SQL, conn);
+
+            reader = cmd.ExecuteReader();
+
+
+            return reader;
+        }
+
+        public SqlDataReader getuserSubid(string useremail)
+        {
+            SqlDataReader reader = null;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            SqlCommand cmd;
+
+            conn.Open();
+            string SQL = "EXEC Getusersubid @Username = '" + useremail + "';";
+            cmd = new SqlCommand(SQL, conn);
+
+            reader = cmd.ExecuteReader();
+
+
+            return reader;
+        }
+
+        public string getuserid(string userId) 
+        {
+            string res = "";
+            SqlDataReader reader = null;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            SqlCommand cmd;
+
+            conn.Open();
+            string SQL = "SELECT UserId FROM Users where Email = '" + userId + "';";
+            cmd = new SqlCommand(SQL, conn);
+
+            reader = cmd.ExecuteReader();
+            while (reader.Read()) 
+            {
+                res = reader[0].ToString();    
+            }
+
+            return res;
+        }
+
+        
+
+        public void setUserEmail(string email)
+        {
+            userEmail = email;
+        }
+
+        public string getUserEmail() { return userEmail;} 
+
+
+        public void setUserProfile(string UserEmail)
+        {
+            
+            SqlDataReader reader = null;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            SqlCommand cmd;
+
+            conn.Open();
+            string SQL = "SELECT Fname, Lname, SubID  FROM Users where Email = '" + UserEmail + "';";
+            cmd = new SqlCommand(SQL, conn);
+
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                UserFname = reader[0].ToString();
+                UserLname = reader[1].ToString();
+                userSubId =Convert.ToInt32(reader[2]);
+                
+            }            
+        }
+
+
+        public bool updateUserProfile(string fname, string lname, string email)
+        {
+            bool success = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+            
+            string cmdText = "update Users set Fname = '" + fname + "', Lname = "+ lname +"', Email = '"+ email +"' where Email = '" + userEmail + "';";
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(cmdText, conn);
+                int execution = cmd.ExecuteNonQuery();  
+                if (execution > 0) 
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+                conn.Close();
+            }
+            catch { success = false; }
+
+            return success;
+
+
+
+        }
+        public void addtowatchlist(string userid, string Movieid)
+        {
+            SqlConnection cnn = new SqlConnection(connectionString);
+
+            string Sql = "EXEC AddtoWatchList @userid = '" + userid + "', @movieid = '" + Movieid + "';";
+
+            cnn.Open();
+
+            SqlCommand cmd = new SqlCommand(Sql, cnn);
+
+            cmd.ExecuteNonQuery();
+        }
+        public string getmovieID(string movietitle)
+        {
+            string res = "";
+            SqlDataReader reader = null;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            SqlCommand cmd;
+
+            conn.Open();
+            string SQL = "SELECT MovieID FROM Movies where MovieTitle = '" + movietitle + "';";
+            cmd = new SqlCommand(SQL, conn);
+
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                res = reader[0].ToString();
+            }
+
+            return res;
+        }
+
+        public bool changeName(string FirstName)
+        {
+            bool success = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+            string cmdText = "update Users set Fname = '" + FirstName + "' where Email = '" + userEmail + "';";
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(cmdText, conn);
+                int execution = cmd.ExecuteNonQuery();
+                if (execution > 0)
+                {
+                    success = true;
+                    
+                }
+                else
+                {
+                    success = false;
+                }
+                conn.Close();
+            }
+            catch { success = false; }
+
+            return success;
+        }
+
+        public bool changeSurname(string Lastname)
+        {
+            bool success = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+            string cmdText = "update Users set Lname = '" + Lastname + "' where Email = '" + userEmail + "';";
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(cmdText, conn);
+                int execution = cmd.ExecuteNonQuery();
+                if (execution > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+                conn.Close();
+            }
+            catch { success = false; }
+
+            return success;
+        }
+
+        public bool changeEmail(string Email)
+        {
+            bool success = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+            string cmdText = "update Users set Email = '" + Email + "' where Email = '" + userEmail + "';";
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(cmdText, conn);
+                int execution = cmd.ExecuteNonQuery();
+                if (execution > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+                conn.Close();
+            }
+            catch { success = false; }
+
+            return success;
+        }
+
+        public bool changePassword(string password, string email)
+        {
+            bool success = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+            string cmdText = "update Users set Password = '" + encrypt(password) + "' where Email = '" + email + "';";
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(cmdText, conn);
+                int execution = cmd.ExecuteNonQuery();
+                if (execution > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+                conn.Close();
+            }
+            catch { success = false; }
+
+            return success;
+        }
+
+        public string getMovieLink(int movieId)
+        {
+            string movieLink = "";
+            SqlDataReader reader = null;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            SqlCommand cmd;
+
+            conn.Open();
+            string SQL = "select TrailerLInk from Movies where MovieID = '"+ movieId +"'";
+            cmd = new SqlCommand(SQL, conn);
+
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                movieLink = reader[0].ToString();
+
+            }
+
+            return movieLink;
+        }
+
+        
+
+
     }
 }

@@ -59,11 +59,42 @@
         });
 
     </script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.watch-button').click(function (event) {
+            var cardTitle = $(this).closest('.card').find('.card-title').text();
+            console.log(cardTitle); // You can use the title as per your requirement
+            document.getElementById('ht').value = cardTitle;
+            // Send the title to the server using an AJAX request
+            $.ajax({
+                type: 'POST',
+                url: 'UserHomePage.aspx/HandleWatchButtonClick',
+                data: JSON.stringify({ title: cardTitle }),
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                success: function (response) {
+                    // Handle the server response if needed
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    // Handle the error if needed
+                }
+            });
+        });
+    });
+</script>
+
+
+
+
+
     
    
 </head>
 
 <body class="Home_body" >
+    <form runat="server">
 <header class="top-bar">
   <div class="Search_container1">
     <div class="logo">
@@ -71,22 +102,24 @@
     </div>
     <div class="nav-links">
       <a href="LandingPage.aspx">Landing</a>
-      <a style="margin-right:50px;color:#05ab05;text-decoration:underline" href="UserHomePage.aspx">Home Page</a>
+        <a href="#" runat="server" onserverclick="btnwatchlist">Watch List</a>
+        <a style="margin-right:50px;color:#05ab05;text-decoration:underline" href="#">Home Page</a>
     </div>
     <div class="search-bar">
       <input type="text" placeholder="Search...">
       <button type="submit">Search</button>
     </div>
-    <a href="User Profile.aspx" class="profile-button">
+        <a href="User Profile.aspx" class="profile-button" runat="server" onclick="btnUserEmail">
       <img src="assets/img/User_Icon.png" alt="Profile Image">
     </a>
   </div>
 </header>
 
 <div class="vcontainer">
-    <iframe src="https://www.youtube.com/embed/Y274jZs5s7s" frameborder="0" allowfullscreen autoplay></iframe>
+    <iframe runat="server" id="Moviescr" src="https://www.youtube.com/embed/Y274jZs5s7s" frameborder="0" allowfullscreen autoplay></iframe>
+    
     <div class="vbutton-container">
-      <a href="#" class="vbutton">More Info</a>
+      <a href="#" class="vbutton">+Watch List</a>
       <a href="#" class="vbutton">Watch Now</a>
     </div>
   </div>
@@ -95,32 +128,26 @@
 
 <%-- first card container --%>
    
-     <div class="labels">
-         <asp:Label ID="Label1" runat="server">Comedy</asp:Label> 
-     </div>
-
-     
-<div>
-     <div class ="card-container" >
-        
-        <asp:Repeater ID="rptCards1" runat="server">
-    <ItemTemplate>
-        <div class ="card">
-            <img class="card img" src="<%# Eval("ImageUrl") %>" />
-            <h2 class ="card-title"><%# Eval("Title") %></h2>  
-            <p class ="card-description"><%# Eval("Description") %></p>  
-            <div class="card-buttons">
-    <a href="#" class="card-button">More Info</a>
-    <a href="#" class="card-button">Watch</a>
-  </div>
-        </div>        
-    </ItemTemplate>
-</asp:Repeater>   
-         <div class="arrow previous">&lt;</div>
-    <div class="arrow next">&gt;</div>
+<div class="labels">
+     <asp:Label ID="Label1" runat="server">Action</asp:Label> 
  </div>
-    
-    
+<div class="card-container">
+    <asp:Repeater ID="rptCards1" runat="server">
+        <ItemTemplate>
+            <div class="card">
+                <img class="card img" src="<%# Eval("ImageUrl") %>" />
+                <h2 class="card-title"><%# Eval("Title") %></h2>  
+                <p class="card-description"><%# Eval("Description") %></p>
+                <div class="card-buttons">
+                    <a href="#" class="card-button watch-button"  runat="server" onserverclick="btnwatchlists">+Watch List</a>
+                    <a href="WatchMovie.aspx" class="card-button watch-button" runat="server" onserverclick="btnwatch">Watch</a>
+
+                </div>
+            </div>
+        </ItemTemplate>
+    </asp:Repeater> 
+    <div class="arrow previous">&lt;</div>
+    <div class="arrow next">&gt;</div>
 </div>
      
 
@@ -128,7 +155,7 @@
 
     <%-- second card container --%>  
 <div class="labels">
-     <asp:Label ID="Label2" runat="server">Action</asp:Label> 
+     <asp:Label ID="Label2" runat="server">Comedy</asp:Label> 
  </div>
 <div class="card-container">
     <asp:Repeater ID="rptCards2" runat="server">
@@ -138,8 +165,9 @@
                 <h2 class="card-title"><%# Eval("Title") %></h2>  
                 <p class="card-description"><%# Eval("Description") %></p>
                 <div class="card-buttons">
-                    <a href="#" class="card-button">More Info</a>
-                    <a href="#" class="card-button">Watch</a>
+                    <a href="#" class="card-button watch-button"  runat="server" onserverclick="btnwatchlists">+Watch List</a>
+                    <a href="WatchMovie.aspx" class="card-button watch-button" runat="server" onserverclick="btnwatch">Watch</a>
+
                 </div>
             </div>
         </ItemTemplate>
@@ -147,12 +175,12 @@
     <div class="arrow previous">&lt;</div>
     <div class="arrow next">&gt;</div>
 </div>
-
+<asp:HiddenField runat="server" id="ht"/>
 
 
     <%-- third card container --%>  
 <div class="labels">
-     <asp:Label ID="Label3" runat="server">Romance</asp:Label> 
+     <asp:Label ID="Label3" runat="server">Drama</asp:Label> 
  </div>
 <div class="card-container">
     <asp:Repeater ID="rptCards3" runat="server">
@@ -162,8 +190,9 @@
                 <h2 class="card-title"><%# Eval("Title") %></h2>  
                 <p class="card-description"><%# Eval("Description") %></p>
                 <div class="card-buttons">
-                    <a href="#" class="card-button">More Info</a>
-                    <a href="#" class="card-button">Watch</a>
+                    <a href="#" class="card-button watch-button"  runat="server" onserverclick="btnwatchlists">+Watch List</a>
+                    <a href="WatchMovie.aspx" class="card-button watch-button" runat="server" onserverclick="btnwatch">Watch</a>
+
                 </div>
             </div>
         </ItemTemplate>
@@ -175,7 +204,7 @@
 <%-- 4th card container --%>
    
      <div class="labels">
-         <asp:Label ID="Label4" runat="server">Horror</asp:Label> 
+         <asp:Label ID="Label4" runat="server">Thriller</asp:Label> 
      </div>
 
      
@@ -189,20 +218,142 @@
             <h2 class ="card-title"><%# Eval("Title") %></h2>  
             <p class ="card-description"><%# Eval("Description") %></p>  
             <div class="card-buttons">
-    <a href="#" class="card-button">More Info</a>
-    <a href="#" class="card-button">Watch</a>
+                    <a href="#" class="card-button watch-button"  runat="server" onserverclick="btnwatchlists">+Watch List</a>
+    <a href="WatchMovie.aspx" class="card-button watch-button" runat="server" onserverclick="btnwatch">Watch</a>
   </div>
         </div>        
     </ItemTemplate>
 </asp:Repeater>   
          <div class="arrow previous">&lt;</div>
     <div class="arrow next">&gt;</div>
- </div>
-    
-    
+ </div> 
 </div>
-     
 
+<%-- 5th card container --%>
+
+<div class="labels">
+     <asp:Label ID="Label5" runat="server">Horror</asp:Label> 
+ </div>
+<div class="card-container">
+    <asp:Repeater ID="rptCards5" runat="server">
+        <ItemTemplate>
+            <div class="card">
+                <img class="card img" src="<%# Eval("ImageUrl") %>" />
+                <h2 class="card-title"><%# Eval("Title") %></h2>  
+                <p class="card-description"><%# Eval("Description") %></p>
+                <div class="card-buttons">
+                    <a href="#" class="card-button watch-button"  runat="server" onserverclick="btnwatchlists">+Watch List</a>
+                    <a href="WatchMovie.aspx" class="card-button watch-button" runat="server" onserverclick="btnwatch">Watch</a>
+
+                </div>
+            </div>
+        </ItemTemplate>
+    </asp:Repeater> 
+    <div class="arrow previous">&lt;</div>
+    <div class="arrow next">&gt;</div>
+</div>
+
+
+<%-- 6th card container --%>
+
+<div class="labels">
+     <asp:Label ID="Label6" runat="server">Romance</asp:Label> 
+ </div>
+<div class="card-container">
+    <asp:Repeater ID="rptCards6" runat="server">
+        <ItemTemplate>
+            <div class="card">
+                <img class="card img" src="<%# Eval("ImageUrl") %>" />
+                <h2 class="card-title"><%# Eval("Title") %></h2>  
+                <p class="card-description"><%# Eval("Description") %></p>
+                <div class="card-buttons">
+                    <a href="#" class="card-button watch-button"  runat="server" onserverclick="btnwatchlists">+Watch List</a>
+                    <a href="WatchMovie.aspx" class="card-button watch-button" runat="server" onserverclick="btnwatch">Watch</a>
+
+                </div>
+            </div>
+        </ItemTemplate>
+    </asp:Repeater> 
+    <div class="arrow previous">&lt;</div>
+    <div class="arrow next">&gt;</div>
+</div>
+
+
+<%-- 7th card container --%>
+
+<div class="labels">
+     <asp:Label ID="Label7" runat="server">Sci-Fi</asp:Label> 
+ </div>
+<div class="card-container">
+    <asp:Repeater ID="rptCards7" runat="server">
+        <ItemTemplate>
+            <div class="card">
+                <img class="card img" src="<%# Eval("ImageUrl") %>" />
+                <h2 class="card-title"><%# Eval("Title") %></h2>  
+                <p class="card-description"><%# Eval("Description") %></p>
+                <div class="card-buttons">
+                    <a href="#" class="card-button watch-button"  runat="server" onserverclick="btnwatchlists">+Watch List</a>
+                    <a href="WatchMovie.aspx" class="card-button watch-button" runat="server" onserverclick="btnwatch">Watch</a>
+
+                </div>
+            </div>
+        </ItemTemplate>
+    </asp:Repeater> 
+    <div class="arrow previous">&lt;</div>
+    <div class="arrow next">&gt;</div>
+</div>
+
+<%-- 8th card container --%>
+
+<div class="labels">
+     <asp:Label ID="Label8" runat="server">Documentary</asp:Label> 
+ </div>
+<div class="card-container">
+    <asp:Repeater ID="rptCards8" runat="server">
+        <ItemTemplate>
+            <div class="card">
+                <img class="card img" src="<%# Eval("ImageUrl") %>" />
+                <h2 class="card-title"><%# Eval("Title") %></h2>  
+                <p class="card-description"><%# Eval("Description") %></p>
+                <div class="card-buttons">
+                    <a href="#" class="card-button watch-button"  runat="server" onserverclick="btnwatchlists">+Watch List</a>
+                    <a href="WatchMovie.aspx" class="card-button watch-button" runat="server" onserverclick="btnwatch">Watch</a>
+
+                </div>
+            </div>
+        </ItemTemplate>
+    </asp:Repeater> 
+    <div class="arrow previous">&lt;</div>
+    <div class="arrow next">&gt;</div>
+</div>
+
+<%-- 9th card container --%>
+
+<div class="labels">
+     <asp:Label ID="Label9" runat="server">Kids</asp:Label> 
+ </div>
+<div class="card-container">
+    <asp:Repeater ID="rptCards9" runat="server">
+        <ItemTemplate>
+            <div class="card">
+                <img class="card img" src="<%# Eval("ImageUrl") %>" />
+                <h2 class="card-title"><%# Eval("Title") %></h2>  
+                <p class="card-description"><%# Eval("Description") %></p>
+                <div class="card-buttons">
+                    <a href="#" class="card-button watch-button"  runat="server" onserverclick="btnwatchlists">+Watch List</a>
+                    <a href="WatchMovie.aspx" class="card-button watch-button" runat="server" onserverclick="btnwatch">Watch</a>
+
+                </div>
+            </div>
+        </ItemTemplate>
+    </asp:Repeater> 
+    <div class="arrow previous">&lt;</div>
+    <div class="arrow next">&gt;</div>
+</div>
+        
+
+
+</form>
 </body>
 </html>
 
