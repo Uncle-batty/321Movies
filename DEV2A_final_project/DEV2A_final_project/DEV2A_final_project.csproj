@@ -140,7 +140,7 @@
     <Content Include="assets\Movies\Back to the Future.jpg" />
     <Content Include="assets\Movies\Birdman.jpg" />
     <Content Include="assets\Movies\Black Swan.jpg" />
-    <Content Include="assets\Movies\Blackfis.jpg" />
+    <Content Include="assets\Movies\Blackfish.jpg" />
     <Content Include="assets\Movies\Blade Runner.jpg" />
     <Content Include="assets\Movies\Boss Baby.jpeg" />
     <Content Include="assets\Movies\Boss Baby.jpg" />
@@ -195,8 +195,8 @@
     <Content Include="assets\Movies\Plane.jpg" />
     <Content Include="assets\Movies\Pulp Fiction.jpeg" />
     <Content Include="assets\Movies\Pulp Fiction.jpg" />
-    <Content Include="assets\Movies\Romeo + Juliet.jpg" />
-    <Content Include="assets\Movies\Schindler%27%27s List.jpg" />
+    <Content Include="assets\Movies\Romeo  Juliet.jpg" />
+    <Content Include="assets\Movies\Schindlers List.jpg" />
     <Content Include="assets\Movies\Searching for Sugar Man.jpg" />
     <Content Include="assets\Movies\Shazam!.jpeg" />
     <Content Include="assets\Movies\Shazam!.jpg" />
@@ -204,11 +204,11 @@
     <Content Include="assets\Movies\Silver Linings Playbook.jpg" />
     <Content Include="assets\Movies\Snatch.jpg" />
     <Content Include="assets\Movies\The Avengers.jpg" />
-    <Content Include="assets\Movies\The Bad Guys.jpeg" />
+    <Content Include="assets\Movies\The Bad Guys.jpg" />
     <Content Include="assets\Movies\The Conjuring.jpg" />
     <Content Include="assets\Movies\The Cove.jpg" />
     <Content Include="assets\Movies\The Curse of Bridge Hollow.jpeg" />
-    <Content Include="assets\Movies\The Curse of Bridge Hollow.jpg" />
+    <Content Include="assets\Movies\The Curse of Bridge Hollows.jpg" />
     <Content Include="assets\Movies\The Dark Knight Rises.jpg" />
     <Content Include="assets\Movies\The Dark Knight.jpg" />
     <Content Include="assets\Movies\The Departed.jpg" />
@@ -239,7 +239,7 @@
     <Content Include="assets\Movies\The Takeover.jpg" />
     <Content Include="assets\Movies\The Texas Chain Saw Massacre.jpg" />
     <Content Include="assets\Movies\The Thin Blue Line.jpg" />
-    <Content Include="assets\Movies\The Time Traveler.jpg" />
+    <Content Include="assets\Movies\The Time Travelers Wife.jpg" />
     <Content Include="assets\Movies\The Usual Suspects.jpg" />
     <Content Include="assets\Movies\Titanic.jpg" />
     <Content Include="assets\Movies\Toy Story.jpg" />
